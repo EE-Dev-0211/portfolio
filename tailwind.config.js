@@ -1,18 +1,35 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      md: "920px",
+      lg: "1024px",
+    },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      boxShadow: {
+        glow: "0 0 15px 7px rgba(107, 114, 128, 0.5)",
+      },
+      letterSpacing: {
+        wider: "0.1em",
+      },
+      width: {
+        30: "30%",
+        40: "40%",
+        70: "70%",
+      },
+      height: {
+        30: "30%",
+        40: "40%",
+        60: "60%",
+        70: "70%",
       },
     },
   },
-  plugins: [],
-}
+  plugins: [require("tailwind-scrollbar-hide"), require("tailwind-scrollbar")],
+};

@@ -2,26 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.animate-fadeInLeft {
+  animation-name: fadeInLeft;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  opacity: 0;
 }
+
+.animate-fadeInLeftLoading1 {
+  animation-name: fadeInLeft;
+  animation-duration:.2s;
+  animation-delay: .1s;
+  opacity: 0;
+}
+
+.animate-fadeInLeftLoading2 {
+  animation-name: fadeInLeft;
+  animation-duration: .4s;
+  animation-delay: .2s;
+  opacity: 0;
+}
+
+.animate-fadeInLeftLoading3 {
+  animation-name: fadeInLeft;
+  animation-duration: .6s;
+  animation-delay: .3s;
+  opacity: 0;
+}
+
+.animate-fadeInLeftLoading4 {
+  animation-name: fadeInLeft;
+  animation-duration: .8s;
+  animation-delay: .5s;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 6s;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+.animate-fadeIn-Avatar {
+  animation-name: fadeIn;
+  animation-duration: 7s;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+.animate-fadeIn-TopText {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+body {
+  background: black;
+  color: white;
+  /*overflow: hidden;*/
+}
+
+.animate-fadeIn, .animate-fadeIn-Avatar, .animate-fadeIn-TopText, .animate-fadeInLeft {
+  animation-delay: 0s;
+  opacity: 1;
+}
+
+.flip {
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+}
+
+.flip.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip > div {
+  backface-visibility: hidden;
+}
+
+.flip img {
+  transform: rotateY(180deg);
+}
+
