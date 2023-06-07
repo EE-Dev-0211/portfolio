@@ -32,7 +32,7 @@ export default function Home() {
     // timeout for loading screen (formerly bc of FOUC)
     const timeout = setTimeout(() => {
       setContentLoading(false);
-    }, 500);
+    }, 1000);
 
     return () => clearTimeout(timeout);
   }, []);
