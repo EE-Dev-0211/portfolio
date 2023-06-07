@@ -5,7 +5,7 @@ export default function Resume() {
   return (
     <section
       id="resume"
-      className="flex flex-col items-center justify-center md:pt-10 md:snap-start md:min-h-full text-center "
+      className="flex flex-col items-center justify-center md:pt-10 hw-md:snap-start md:min-h-full text-center "
     >
       <div className="w-4/5 md:w-full mb-4">
         <h3 className="text-3xl pb-10 pt-16 text-black dark:text-white">

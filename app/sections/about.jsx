@@ -13,7 +13,7 @@ export default function About() {
   const isAboveFold = true;
 
   return (
-    <section id="about" className="pt-20 snap-start min-h-full">
+    <section id="about" className="pt-20 hw-md:snap-start min-h-full">
       <div className="text-center p-10">
         <span className="animate-fadeIn-TopText select-none text-black dark:text-white text-xl py-2 md:text-2xl">
           Hi, I am

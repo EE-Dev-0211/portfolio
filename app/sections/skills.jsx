@@ -5,29 +5,31 @@ export default function Skills() {
   const [tooltipContent, setTooltipContent] = useState(null);
 
   return (
-    <section id="skills" className="pt-20 snap-start min-h-full text-center">
+    <section
+      id="skills"
+      className="pt-20 hw-md:snap-start min-h-full text-center"
+    >
       <div>
-        <h3 className="text-3xl text-black pt-6 dark:text-white">
+        <h3 className="text-3xl text-black pt-4 dark:text-white">
           Technologies
         </h3>
 
-        <p className="text-md pt-6 px-6 leading-8 text-gray-800 md:text-xl mx-auto dark:text-amber-50">
+        <p className="text-md pt-6 px-6 leading-8 text-gray-800 md:text-lg mx-auto dark:text-amber-50">
           Here you will find various technologies that I have had the pleasure
           of getting to know. I have worked with some of them more intensively,
-          with others only superficially. I am looking forward to dealing more
-          intensively with many old and new technologies in the future.
+          with others only superficially.
         </p>
       </div>
 
       <div className="flex flex-col items-center md:flex md:justify-center md:gap-16 md:flex-row md:items-start md:mx-10">
-        <div className="w-60 items-center bg-gray-100 dark:bg-black text-center shadow-lg p-10 rounded-xl my-10 md:w-1/4 flex flex-col">
+        <div className="w-60 items-center bg-gray-100 dark:bg-black text-center shadow-lg p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 md:w-1/4 flex flex-col">
           <h3 className="text-lg text-black font-medium pb-6 dark:text-white">
             Languages
           </h3>
           {/*iterating over the languages*/}
 
           {languages.map((language) => (
-            <div key={language.id} className="md:grid md:grid-cols-3 md:h-24">
+            <div key={language.id} className="md:grid md:grid-cols-3 md:h-20">
               <div className="col-span-1 flex justify-start">
                 <div className="relative">
                   {" "}
@@ -79,13 +81,13 @@ export default function Skills() {
           ))}
         </div>
 
-        <div className="w-60 items-center bg-gray-100 dark:bg-black text-center shadow-lg p-10 rounded-xl my-10 flex flex-col md:w-1/4">
+        <div className="w-60 items-center bg-gray-100 dark:bg-black text-center shadow-lg p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 flex flex-col md:w-1/4">
           <h3 className="text-lg text-black font-medium pb-6 dark:text-white">
             Frameworks & Libraries
           </h3>
           {/*iterating over frameworks & libraries*/}
           {framLibs.map((framLib) => (
-            <div key={framLib.id} className="md:grid md:grid-cols-3 md:h-24">
+            <div key={framLib.id} className="md:grid md:grid-cols-3 md:h-20">
               <div className="md:col-span-1 md:flex md:justify-start">
                 <div className="relative">
                   {/*----*/}
@@ -135,7 +137,7 @@ export default function Skills() {
           ))}
         </div>
 
-        <div className="w-4/5 bg-gray-100 dark:bg-black text-center shadow-lg p-10 rounded-xl my-10 flex flex-col md:w-1/4">
+        <div className="w-4/5 bg-gray-100 dark:bg-black text-center shadow-lg  p-10  rounded-xl mt-6 mb-10   flex flex-col md:w-1/4">
           <h3 className="text-lg text-black font-medium pb-6 dark:text-white">
             Software
           </h3>

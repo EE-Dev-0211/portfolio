@@ -8,8 +8,8 @@ module.exports = {
   ],
   theme: {
     screens: {
-      md: "920px",
-      lg: "1024px",
+      md: "1130px",
+      "hw-md": { raw: "(min-height: 940px) and (min-width: 1130px)" },
     },
     extend: {
       boxShadow: {

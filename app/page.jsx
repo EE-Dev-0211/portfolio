@@ -286,7 +286,7 @@ export default function Home() {
         )}
       </div>
       <main className="bg-white dark:bg-gray-900 scroll-smooth overscroll-none ">
-        <div className="md:snap-y md:snap-mandatory h-screen overflow-scroll scrollbar-hide">
+        <div className="hw-md:snap-y hw-md:snap-mandatory h-screen overflow-scroll scrollbar-hide">
           <About />
           <Skills />
           <Resume />
