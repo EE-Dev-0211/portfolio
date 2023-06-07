@@ -39,7 +39,7 @@ export const workSections = [
   {
     id: 7,
     period: "10/2015 - 06/2016",
-    position: "CEO Texter &",
+    position: "SEO Texter &",
     positionSL: "Junior Online Marketing Manager",
     company: "20content GmbH",
     location: "Leipzig, Saxony, Germany",

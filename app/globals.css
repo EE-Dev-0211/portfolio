@@ -107,3 +107,12 @@ body {
   transform: rotateY(180deg);
 }
 
+@keyframes fill {
+  0% { background-color: teal; }
+  50% { background-color: white; }
+  100% { background-color: teal; }
+}
+
+.animate-fill {
+  animation: fill 2s linear infinite;
+}
