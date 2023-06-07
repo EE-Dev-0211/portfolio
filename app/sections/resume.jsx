@@ -12,8 +12,8 @@ export default function Resume() {
           Resumé
         </h3>
         {/*-----*/}
-        <div className="md:flex md:flex-row md:justify-center">
-          <div className="px-12 w-4/5 md:w-1/3 md:flex md:flex-col md:items-center">
+        <div className="flex flex-col items-center md:flex-row md:justify-center">
+          <div className="pb-10 md:pb-0 md:px-12 w-4/5 md:w-1/3 md:flex-col md:items-center">
             {educationSections.map((educationSection) => (
               <div
                 key={educationSection.id}
@@ -35,7 +35,7 @@ export default function Resume() {
             ))}{" "}
           </div>
 
-          <div className="px-12 w-4/5 md:w-1/3 md:flex md:flex-col md:items-center">
+          <div className="md:px-12 w-4/5 md:w-1/3 md:flex md:flex-col md:items-center">
             {/*-----*/}
             {workSections.map((workSection) => (
               <div
