@@ -111,7 +111,7 @@ export default function Home() {
               key={index}
               className={`ml-4 animate-fadeInLeftLoading${
                 index + 1
-              } text-5xl font-semibold py-2 text-teal-500 select-none`}
+              } md:text-5xl text-xl font-semibold py-2 text-teal-500 select-none`}
             >
               {word}
             </span>
@@ -285,7 +285,7 @@ export default function Home() {
           </div>
         )}
       </div>
-      <main className="bg-white scroll-smooth overscroll-none dark:bg-gray-900">
+      <main className="bg-white dark:bg-gray-900 scroll-smooth overscroll-none ">
         <div className="md:snap-y md:snap-mandatory h-screen overflow-scroll scrollbar-hide">
           <About />
           <Skills />

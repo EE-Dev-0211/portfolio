@@ -7,17 +7,23 @@ export default function Resume() {
       id="resume"
       className="flex flex-col items-center justify-center md:pt-10 md:snap-start md:min-h-full text-center "
     >
-      <div className="w-4/5 mb-4">
+      <div className="w-4/5 md:w-full mb-4">
         <h3 className="text-3xl pb-10 pt-16 text-black dark:text-white">
           Resumé
         </h3>
         {/*-----*/}
-        <div className="flex flex-col items-center md:flex-row md:justify-center">
-          <div className="pb-10 md:pb-0 md:px-12 w-4/5 md:w-1/3 md:flex-col md:items-center">
+
+        <div className="flex flex-col items-center md:justify-evenly md:items-start md:flex-row ">
+          <div className="pb-10 w-4/5 md:w-1/3 md:flex md:flex-col md:items-center">
+            <span className="text-black dark:text-white font-bold">
+              Education
+            </span>
             {educationSections.map((educationSection) => (
               <div
                 key={educationSection.id}
-                className="md:w-full items-center text-black dark:text-white flex flex-col p-4 text-center bg-gray-100 dark:bg-black"
+                className={`md:w-full items-center text-black dark:text-white flex flex-col p-4 text-center bg-gray-100 dark:bg-black ${
+                  educationSection.id === 1 ? "mt-4" : ""
+                }`}
               >
                 <div
                   className="w-2 h-2 rounded-full bg-gradient-to-tr from-rose-950 to-orange-300
@@ -35,12 +41,17 @@ export default function Resume() {
             ))}{" "}
           </div>
 
-          <div className="md:px-12 w-4/5 md:w-1/3 md:flex md:flex-col md:items-center">
+          <div className="w-4/5 md:w-1/3 md:flex md:flex-col md:items-center">
             {/*-----*/}
+            <span className="text-black dark:text-white font-bold">
+              Work Experience
+            </span>
             {workSections.map((workSection) => (
               <div
                 key={workSection.id}
-                className="md:w-full items-center text-black dark:text-white flex flex-col p-4 text-center bg-gray-100 dark:bg-black"
+                className={`md:w-full items-center text-black dark:text-white flex flex-col p-4 text-center bg-gray-100 dark:bg-black ${
+                  workSection.id === 2 ? "mt-4" : ""
+                }`}
               >
                 <div
                   className="w-2 h-2 rounded-full bg-gradient-to-tr from-rose-950 to-orange-300

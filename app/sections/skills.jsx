@@ -3,7 +3,6 @@ import React, { useRef, useState } from "react";
 import { SiJquery } from "react-icons/si";
 export default function Skills() {
   const [tooltipContent, setTooltipContent] = useState(null);
-  const sectionRefs = useRef({});
 
   return (
     <section id="skills" className="pt-20 snap-start min-h-full text-center">
@@ -39,7 +38,7 @@ export default function Skills() {
                         className={`absolute bottom-0 left-0 w-full ${language.filled} ${language.bgColor} dark:bg-blue-600`}
                       />
                       <div
-                        className={`md:hidden absolute top-0 left-0 w-full ${language.notFilled} bg-gray-200`}
+                        className={`md:hidden absolute top-0 left-0 w-full ${language.notFilled} bg-gray-400`}
                       />
                     </div>
                     <div className="md:hidden absolute top-0 left-0 w-full h-full flex items-center justify-center">
@@ -96,7 +95,7 @@ export default function Skills() {
                         className={`absolute bottom-0 left-0 w-full  ${framLib.filled} ${framLib.bgColor} dark:bg-blue-600`}
                       />
                       <div
-                        className={`absolute top-0 left-0 w-full ${framLib.notFilled} bg-gray-200`}
+                        className={`absolute top-0 left-0 w-full ${framLib.notFilled} bg-gray-400`}
                       />
                     </div>
                     <div className="md:hidden absolute top-0 left-0 w-full h-full flex items-center justify-center">
