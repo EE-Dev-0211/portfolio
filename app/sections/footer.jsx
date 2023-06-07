@@ -17,7 +17,7 @@ const Footer = ({ darkMode }) => {
     >
       <div className="text-md text-black text-center leading-8 dark:text-gray-600">
         Coded in Webstorm. Built with Next.js and Tailwind CSS, deployed with
-        Vercel. 8bit-Avatar by{" "}
+        Applify. 8bit-Avatar by{" "}
         <a href="https://8bitpix.com/" target="_blank">
           8bitpix.com
         </a>

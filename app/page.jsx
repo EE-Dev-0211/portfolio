@@ -6,7 +6,7 @@ import Skills from "./sections/skills";
 import Resume from "./sections/resume";
 import Footer from "./sections/footer";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { AiFillCloseCircle } from "react-icons/all";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 export default function Home() {
   const [contentLoading, setContentLoading] = useState(true);
@@ -32,7 +32,7 @@ export default function Home() {
     // timeout for loading screen (formerly bc of FOUC)
     const timeout = setTimeout(() => {
       setContentLoading(false);
-    }, 350);
+    }, 500);
 
     return () => clearTimeout(timeout);
   }, []);
