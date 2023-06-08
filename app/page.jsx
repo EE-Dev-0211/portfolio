@@ -14,6 +14,7 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // toggles for Mobile Menu & Darkmode
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -23,13 +24,19 @@ export default function Home() {
   }
 
   useEffect(() => {
+    // Save darkMode state to localStorage when it's changed
+    localStorage.setItem("darkMode", darkMode.toString());
+  }, [darkMode]);
+
+  useEffect(() => {
     //get DarkModeState from LS
     const storedDarkMode = localStorage.getItem("darkMode");
+    // set Darkmode
     if (storedDarkMode !== null) {
       setDarkMode(storedDarkMode === "true");
     }
 
-    // timeout for loading screen (formerly bc of FOUC)
+    // timeout for loading screen (formerly bc of FOUC, now for style)
     const timeout = setTimeout(() => {
       setContentLoading(false);
     }, 1000);
@@ -37,11 +44,7 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, []);
 
-  useEffect(() => {
-    // Save darkMode state to localStorage when it's changed
-    localStorage.setItem("darkMode", darkMode.toString());
-  }, [darkMode]);
-
+  // scroll function when loading screen finished
   useEffect(() => {
     if (!contentLoading) {
       const handleScroll = () => {
@@ -59,8 +62,8 @@ export default function Home() {
   }, [activeSection]);
 
   useEffect(() => {
-    //monitor the viewed sections after the loading screen has disappeared
     if (!contentLoading) {
+      //monitor the viewed sections after the loading screen has disappeared
       const observer = new IntersectionObserver(getSectionIDs, {
         rootMargin: "-50% 0% -50% 0%",
       });
@@ -70,6 +73,7 @@ export default function Home() {
         observer.observe(section);
       });
 
+      //reset active section
       return () => {
         sections.forEach((section) => {
           observer.unobserve(section);
@@ -79,7 +83,7 @@ export default function Home() {
   }, [contentLoading]);
 
   const getSectionIDs = (entries) => {
-    // set activeSection to the targets id, when there is no loading screen
+    // set activeSection to the targets id, when there is no loading screen to apply effects
     entries.forEach((entry) => {
       if (entry.isIntersecting && !contentLoading) {
         setActiveSection(entry.target.id);
@@ -87,6 +91,7 @@ export default function Home() {
     });
   };
 
+  // scroll to sections onclick
   function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -94,6 +99,7 @@ export default function Home() {
     }
   }
 
+  // scroll to sections on click in mobile version, after a delay of closing the mobile menu
   function scrollToSectionBurgerMenu(sectionId) {
     toggleMenu();
     setTimeout(() => {
@@ -101,7 +107,7 @@ export default function Home() {
     }, 300);
   }
 
-  // TODO: Dynamisches Anpassen der Inhalte an Bildschirmgrößen
+  // Loadingscreen for 1 second with animated text and spinner
   if (contentLoading) {
     return (
       <div className="flex justify-center flex-col items-center h-screen bg-black">
@@ -221,7 +227,7 @@ export default function Home() {
           </li>
         </ul>
       </nav>
-      {/*burger menu*/}
+      {/*burger menu instead of navbar when width of screen is below 1130px*/}
       <div className="md:hidden">
         <button
           className="fixed top-0 right-0 m-4 z-50 p-2 rounded-md bg-gray-800 text-white"
@@ -286,6 +292,7 @@ export default function Home() {
         )}
       </div>
       <main className="bg-white dark:bg-gray-900 scroll-smooth overscroll-none ">
+        {/* scroll snap for the sections is deactivated when height <940px && width <1130px */}
         <div className="hw-md:snap-y hw-md:snap-mandatory h-screen overflow-scroll scrollbar-hide">
           <About />
           <Skills />

@@ -1,16 +1,15 @@
 import { AiFillLinkedin } from "react-icons/ai";
 import Image from "next/image";
 import React, { useState } from "react";
-import { SiJabber, SiJquery } from "react-icons/si";
 
 export default function About() {
+  // state for the Avatarcoin
   const [isFlipped, setIsFlipped] = useState(true);
 
+  // Avatar toggle
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
   };
-
-  const isAboveFold = true;
 
   return (
     <section id="about" className="pt-20 hw-md:snap-start min-h-full">
@@ -35,11 +34,9 @@ export default function About() {
         <a href="https://www.linkedin.com/in/eric-e-720431201/" target="_blank">
           <AiFillLinkedin className="dark:text-amber-50 " />
         </a>
-        {/*-----*/}
-
-        {/*-----*/}
       </div>
 
+      {/*Avatar Coin*/}
       <div className="select-none relative mx-auto w-60 h-60 mt-20">
         <div
           className={`shadow-glow bg-gradient-to-b from-teal-500 w-60 h-60 rounded-full flex items-center justify-center overflow-hidden cursor-pointer flip ${

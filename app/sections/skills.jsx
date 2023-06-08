@@ -27,14 +27,13 @@ export default function Skills() {
             Languages
           </h3>
           {/*iterating over the languages*/}
-
           {languages.map((language) => (
             <div key={language.id} className="md:grid md:grid-cols-3 md:h-20">
+              {/*mobile version */}
               <div className="col-span-1 flex justify-start">
                 <div className="relative">
-                  {" "}
-                  {/*----*/}
                   <div className="my-2 md:hidden relative w-16 h-16 ">
+                    {/*icons on mobile version are filled corresponding to the level of the progress bar in desktop mode */}
                     <div className="absolute top-0 left-0 w-full h-full overflow-hidden rounded-full">
                       <div
                         className={`absolute bottom-0 left-0 w-full ${language.filled} ${language.bgColor} dark:bg-blue-600`}
@@ -51,13 +50,13 @@ export default function Skills() {
                       })}
                     </div>
                   </div>
-                  {/*---*/}
+                  {/* Desktop version */}
                   {React.createElement(language.icon, {
                     className: `hidden md:block ${language.iconColor} text-5xl dark:text-white hover:cursor-help md:mr-16`,
                     onMouseEnter: () => setTooltipContent(language.name),
                     onMouseLeave: () => setTooltipContent(null),
                   })}
-                  {/*show Tooltip only when != Null (on Hover)*/}
+                  {/*show Tooltip only when != Null (on Hover) [mobile & desktop] */}
                   {tooltipContent === language.name && (
                     <div className="absolute top-0 left-full ml-2 mt-2 bg-gray-700 text-white px-4 py-2 rounded-md dark:bg-blue-600">
                       {language.name}
@@ -66,6 +65,7 @@ export default function Skills() {
                 </div>
               </div>
               <div className="col-span-2">
+                {/* Progress bars are only shown when width > 1130px */}
                 <div
                   className="hidden md:block md:mt-4 md:w-full md:bg-gray-500 md:rounded-full
                 md:border-2 md:border-gray-500 md:dark:bg-white md:dark:border-white"
@@ -142,8 +142,8 @@ export default function Skills() {
             Software
           </h3>
 
-          {/*TODO andere Form des Technologienamens anzeigen lassen*/}
           <div className="grid grid-cols-3 text-black dark:text-white">
+            {/*iterating over the software entries*/}
             {software.map((software) => (
               <div
                 key={software.id}
