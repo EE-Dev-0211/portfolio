@@ -295,7 +295,21 @@ export default function Home() {
         {/* scroll snap for the sections is deactivated when height <940px && width <1130px */}
         <div className="hw-md:snap-y hw-md:snap-mandatory h-screen overflow-scroll scrollbar-hide">
           <About />
+          {/* separator only visible, when screen too small to use scroll snapping */}
+          <hr
+            className="hw-md:hidden block mt-24 mb-2 h-px border-t-0 bg-transparent
+          bg-gradient-to-r from-transparent dark:via-teal-300 via-gray-800
+          to-transparent opacity-25
+          dark:opacity-100"
+          />
           <Skills />
+          {/* separator only visible, when screen too small to use scroll snapping*/}
+          <hr
+            className="hw-md:hidden block mt-10 mb-0 h-px border-t-0 bg-transparent
+          bg-gradient-to-r from-transparent dark:via-teal-300 via-gray-800
+          to-transparent opacity-25
+          dark:opacity-100"
+          />
           <Resume />
           <Footer darkMode={darkMode} />
         </div>
