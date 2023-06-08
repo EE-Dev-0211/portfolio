@@ -296,20 +296,10 @@ export default function Home() {
         <div className="hw-md:snap-y hw-md:snap-mandatory h-screen overflow-scroll scrollbar-hide">
           <About />
           {/* separator only visible, when screen too small to use scroll snapping */}
-          <hr
-            className="hw-md:hidden block mt-24 mb-2 h-px border-t-0 bg-transparent
-          bg-gradient-to-r from-transparent dark:via-teal-300 via-gray-800
-          to-transparent opacity-25
-          dark:opacity-100"
-          />
+          <hr className="hw-md:hidden separator block mt-24 mb-2 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent dark:via-teal-300 via-blue-950 to-transparent animate-separator" />
           <Skills />
           {/* separator only visible, when screen too small to use scroll snapping*/}
-          <hr
-            className="hw-md:hidden block mt-10 mb-0 h-px border-t-0 bg-transparent
-          bg-gradient-to-r from-transparent dark:via-teal-300 via-gray-800
-          to-transparent opacity-25
-          dark:opacity-100"
-          />
+          <hr className="hw-md:hidden separator block mt-10 mb-0 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent dark:via-teal-300 via-blue-950 to-transparent animate-separator" />{" "}
           <Resume />
           <Footer darkMode={darkMode} />
         </div>
