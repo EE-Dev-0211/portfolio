@@ -238,12 +238,13 @@ export default function Home() {
 
         {isMenuOpen && (
           <div
-            className="fixed top-0 left-0 right-0 bottom-0 bg-black
-          bg-opacity-50 flex justify-center items-center z-50"
+            className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+            onClick={toggleMenu} //  close menu if click outside of it
           >
             <div
-              className="border-2 border-gray-800 dark:border-gray-400 text-center bg-white text-black font-bold
-             dark:text-white dark:bg-gray-800 w-3/5 p-4 rounded-lg shadow"
+              className="border-2 border-gray-800 dark:border-gray-400 text-center bg-white text-black font-bold dark:text-white dark:bg-gray-800 w-3/5 p-4 rounded-lg shadow"
+              // Prevent the menu from closing, stop the click event from propagating to the parent element
+              onClick={(e) => e.stopPropagation()}
             >
               <div className="p-2 border-b border-gray-300 mt-2">
                 <button onClick={() => scrollToSectionBurgerMenu("about")}>
@@ -263,16 +264,14 @@ export default function Home() {
               <div className="flex items-center justify-center p-2 mt-2 gap-10">
                 {darkMode ? (
                   <button
-                    className="flex items-center justify-center
-                  w-10 h-10 bg-black border-gray-400 border-2 text-gray-800 font-bold rounded"
+                    className="flex items-center justify-center w-10 h-10 bg-black border-gray-400 border-2 text-gray-800 font-bold rounded"
                     onClick={darkmodeToggle}
                   >
                     <BsFillMoonStarsFill className="text-2xl text-amber-200" />{" "}
                   </button>
                 ) : (
                   <button
-                    className="flex items-center justify-center
-                  w-10 h-10 dark:bg-black border-gray-400 border-2 text-gray-800 font-bold rounded"
+                    className="flex items-center justify-center w-10 h-10 dark:bg-black border-gray-400 border-2 text-gray-800 font-bold rounded"
                     onClick={darkmodeToggle}
                   >
                     <BsFillSunFill className="text-2xl text-yellow-600" />{" "}
@@ -280,8 +279,7 @@ export default function Home() {
                 )}
 
                 <button
-                  className="flex items-center justify-center
-                  w-10 h-10 dark:bg-black border-gray-400 border-2 text-gray-800 font-bold rounded"
+                  className="flex items-center justify-center w-10 h-10 dark:bg-black border-gray-400 border-2 text-gray-800 font-bold rounded"
                   onClick={toggleMenu}
                 >
                   <AiFillCloseCircle className="text-red-800 dark:text-red-500 text-2xl" />
