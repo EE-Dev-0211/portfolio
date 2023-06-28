@@ -163,17 +163,17 @@ export default function Home() {
       <nav className="hidden md:py-6 md:fixed md:flex md:w-screen md:justify-between md:top-0 md:z-50 md:mx-auto md:bg-gray-800 md:dark:bg-black">
         <span className="mx-10 select-none">Portfolio.</span>
 
-        {isGameActive ? (
-          <CgPlayStopO
-            onClick={gamemodeToggle}
-            className="mr-14 ml-10 cursor-pointer text-2xl text-amber-200 hover:text-gray-400"
-          />
-        ) : (
-          <AiFillPlayCircle
-            onClick={gamemodeToggle}
-            className="mr-14 ml-10 cursor-pointer text-2xl text-yellow-400 hover:text-red-200"
-          />
-        )}
+        {/*{isGameActive ? (*/}
+        {/*  <CgPlayStopO*/}
+        {/*    onClick={gamemodeToggle}*/}
+        {/*    className="mr-14 ml-10 cursor-pointer text-2xl text-amber-200 hover:text-gray-400"*/}
+        {/*  />*/}
+        {/*) : (*/}
+        {/*  <AiFillPlayCircle*/}
+        {/*    onClick={gamemodeToggle}*/}
+        {/*    className="mr-14 ml-10 cursor-pointer text-2xl text-yellow-400 hover:text-red-200"*/}
+        {/*  />*/}
+        {/*)}*/}
 
         <motion.div
           ref={ref}
