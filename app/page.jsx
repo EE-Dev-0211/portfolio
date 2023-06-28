@@ -12,13 +12,15 @@ import { useFollowPointer } from "app/use-follow-pointer.ts";
 import { CgPlayStopO } from "react-icons/cg";
 
 export default function Home() {
-  const ref = useRef(null);
-  const { x, y } = useFollowPointer(ref);
   const [contentLoading, setContentLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(true);
   const [activeSection, setActiveSection] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isGameActive, setIsGameActive] = useState(false);
+
+  const [isLoadingScreenFinished, setIsLoadingScreenFinished] = useState(false);
+  const ref = useRef(null);
+  const { x, y } = useFollowPointer(ref, isLoadingScreenFinished);
 
   // toggles for Mobile Menu & Darkmode
   const toggleMenu = () => {
@@ -49,6 +51,7 @@ export default function Home() {
 
     // timeout for loading screen (formerly bc of FOUC, now for style)
     const timeout = setTimeout(() => {
+      setIsLoadingScreenFinished(true);
       setContentLoading(false);
     }, 1000);
 
@@ -57,7 +60,7 @@ export default function Home() {
 
   // scroll function when loading screen finished
   useEffect(() => {
-    if (!contentLoading) {
+    if (!isLoadingScreenFinished) {
       const handleScroll = () => {
         document.body.classList.toggle(
           "scroll-lock",
@@ -70,7 +73,7 @@ export default function Home() {
         window.removeEventListener("scroll", handleScroll);
       };
     }
-  }, [activeSection]);
+  }, [isLoadingScreenFinished]);
 
   useEffect(() => {
     if (!contentLoading) {
@@ -161,19 +164,21 @@ export default function Home() {
   return (
     <div className={darkMode ? "dark " : ""}>
       <nav className="hidden md:py-6 md:fixed md:flex md:w-screen md:justify-between md:top-0 md:z-50 md:mx-auto md:bg-gray-800 md:dark:bg-black">
-        <span className="mx-10 select-none">Portfolio.</span>
+        <div className="flex flex-row ">
+          <span className="mx-10 select-none">Portfolio.</span>
 
-        {/*{isGameActive ? (*/}
-        {/*  <CgPlayStopO*/}
-        {/*    onClick={gamemodeToggle}*/}
-        {/*    className="mr-14 ml-10 cursor-pointer text-2xl text-amber-200 hover:text-gray-400"*/}
-        {/*  />*/}
-        {/*) : (*/}
-        {/*  <AiFillPlayCircle*/}
-        {/*    onClick={gamemodeToggle}*/}
-        {/*    className="mr-14 ml-10 cursor-pointer text-2xl text-yellow-400 hover:text-red-200"*/}
-        {/*  />*/}
-        {/*)}*/}
+          {isGameActive ? (
+            <CgPlayStopO
+              onClick={gamemodeToggle}
+              className="mr-14 ml-10 cursor-pointer text-2xl text-amber-200 hover:text-gray-400"
+            />
+          ) : (
+            <AiFillPlayCircle
+              onClick={gamemodeToggle}
+              className="mr-14 ml-10 cursor-pointer text-2xl text-yellow-400 hover:text-red-200"
+            />
+          )}
+        </div>
 
         <motion.div
           ref={ref}

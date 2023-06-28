@@ -126,3 +126,11 @@ body {
   background: red;
   border: 1px solid white;
 }
+
+
+.box {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--accent);
+}

@@ -1,6 +1,9 @@
 import { useState, RefObject, useEffect } from "react";
 
-export function useFollowPointer(ref: RefObject<HTMLElement>) {
+export function useFollowPointer(
+  ref: RefObject<HTMLElement>,
+  isLoadingScreenFinished: boolean
+) {
   const [point, setPoint] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -14,10 +17,14 @@ export function useFollowPointer(ref: RefObject<HTMLElement>) {
       setPoint({ x, y });
     };
 
-    window.addEventListener("pointermove", handlePointerMove);
+    if (isLoadingScreenFinished) {
+      window.addEventListener("pointermove", handlePointerMove);
+    }
 
-    return () => window.removeEventListener("pointermove", handlePointerMove);
-  }, []);
+    return () => {
+      window.removeEventListener("pointermove", handlePointerMove);
+    };
+  }, [isLoadingScreenFinished, ref]);
 
   return point;
 }
