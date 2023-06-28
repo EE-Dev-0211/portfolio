@@ -11,7 +11,6 @@ module.exports = {
   theme: {
     screens: {
       md: "1130px",
-      "hw-md": { raw: "(min-height: 940px) and (min-width: 1130px)" },
     },
     extend: {
       boxShadow: {
@@ -30,6 +29,12 @@ module.exports = {
         40: "40%",
         60: "60%",
         70: "70%",
+      },
+      backgroundImage: {
+        darkGradient1: "linear-gradient(180deg, #111827, #273759, #111827)",
+        darkGradient2: "linear-gradient(180deg, #273759, #111827, #273759)",
+        gradient1: "linear-gradient(180deg, #ffffff, #e9ebf0, #ffffff)",
+        gradient2: "linear-gradient(180deg, #e9ebf0, #ffffff, #e9ebf0)",
       },
     },
   },

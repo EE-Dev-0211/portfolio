@@ -6,13 +6,19 @@ import Skills from "./sections/skills";
 import Resume from "./sections/resume";
 import Footer from "./sections/footer";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { AiFillCloseCircle } from "react-icons/ai";
+import { AiFillCloseCircle, AiFillPlayCircle } from "react-icons/ai";
+import { motion } from "framer-motion";
+import { useFollowPointer } from "app/use-follow-pointer.ts";
+import { CgPlayStopO } from "react-icons/cg";
 
 export default function Home() {
+  const ref = useRef(null);
+  const { x, y } = useFollowPointer(ref);
   const [contentLoading, setContentLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(true);
   const [activeSection, setActiveSection] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isGameActive, setIsGameActive] = useState(false);
 
   // toggles for Mobile Menu & Darkmode
   const toggleMenu = () => {
@@ -23,6 +29,11 @@ export default function Home() {
     setDarkMode(!darkMode);
   }
 
+  function gamemodeToggle() {
+    setIsGameActive(!isGameActive);
+  }
+
+  // Darkmode
   useEffect(() => {
     // Save darkMode state to localStorage when it's changed
     localStorage.setItem("darkMode", darkMode.toString());
@@ -152,6 +163,29 @@ export default function Home() {
       <nav className="hidden md:py-6 md:fixed md:flex md:w-screen md:justify-between md:top-0 md:z-50 md:mx-auto md:bg-gray-800 md:dark:bg-black">
         <span className="mx-10 select-none">Portfolio.</span>
 
+        {isGameActive ? (
+          <CgPlayStopO
+            onClick={gamemodeToggle}
+            className="mr-14 ml-10 cursor-pointer text-2xl text-amber-200 hover:text-gray-400"
+          />
+        ) : (
+          <AiFillPlayCircle
+            onClick={gamemodeToggle}
+            className="mr-14 ml-10 cursor-pointer text-2xl text-yellow-400 hover:text-red-200"
+          />
+        )}
+
+        <motion.div
+          ref={ref}
+          className={`${isGameActive === true ? "" : "hidden"} ball`}
+          animate={{ x, y }}
+          transition={{
+            type: "spring",
+            damping: 3,
+            stiffness: 50,
+            restDelta: 0.001,
+          }}
+        />
         {/*big menu*/}
         <ul className="flex items-center">
           <li key="about">
@@ -289,16 +323,17 @@ export default function Home() {
           </div>
         )}
       </div>
-      <main className="bg-white dark:bg-gray-900 scroll-smooth overscroll-none ">
-        {/* scroll snap for the sections is deactivated when height <940px && width <1130px */}
+
+      <main className="bg-white dark:bg-gray-900 scroll-smooth overscroll-none">
         <div className="hw-md:snap-y hw-md:snap-mandatory h-screen overflow-scroll scrollbar-hide">
           <About />
-          {/* separator only visible, when screen too small to use scroll snapping */}
-          <hr className="hw-md:hidden separator block mt-24 mb-2 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent dark:via-teal-300 via-blue-950 to-transparent animate-separator" />
-          <Skills />
-          {/* separator only visible, when screen too small to use scroll snapping*/}
-          <hr className="hw-md:hidden separator block mt-10 mb-0 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent dark:via-teal-300 via-blue-950 to-transparent animate-separator" />{" "}
+
+          <div className="tbWaves">
+            <Skills />
+          </div>
+
           <Resume />
+
           <Footer darkMode={darkMode} />
         </div>
       </main>

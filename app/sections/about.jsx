@@ -12,8 +12,11 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="pt-20 hw-md:snap-start min-h-full">
-      <div className="text-center p-10">
+    <section
+      id="about"
+      className="pt-20 pb-10 min-h-full bg-gradient1 dark:bg-darkGradient1"
+    >
+      <div className=" text-center p-10">
         <span className="animate-fadeIn-TopText select-none text-black dark:text-white text-xl py-2 md:text-2xl">
           Hi, I am
         </span>
@@ -23,16 +26,21 @@ export default function About() {
         <h3 className="animate-fadeInLeft select-none text-black dark:text-white text-2xl py-2 md:text-3xl">
           Aspiring Frontend Developer
         </h3>
-        <p className="animate-fadeIn-Avatar select-none text-md py-5 leading-8 text-gray-800 md:text-xl max-w-lg mx-auto dark:text-amber-50">
+        <p className="break-words md:break-normal animate-fadeIn-Avatar select-none text-md py-5 leading-8 text-gray-800 md:text-xl max-w-lg mx-auto dark:text-amber-50 ">
           and I am currently in my final year of training to become an
           application developer. During my apprenticeship, I had many different
           insights into different areas, but I was most taken with frontend
           development.
         </p>
       </div>
+
       <div className="animate-fadeIn-Avatar select-none text-5xl flex justify-center gap-16 text-gray-600">
-        <a href="https://www.linkedin.com/in/eric-e-720431201/" target="_blank">
-          <AiFillLinkedin className="dark:text-amber-50 " />
+        <a
+          className="z-10"
+          href="https://www.linkedin.com/in/eric-e-720431201/"
+          target="_blank"
+        >
+          <AiFillLinkedin className="dark:text-amber-50" />
         </a>
       </div>
 

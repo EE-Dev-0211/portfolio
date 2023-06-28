@@ -1,13 +1,13 @@
 import { framLibs, languages, software } from "./techData";
-import React, { useRef, useState } from "react";
-import { SiJquery } from "react-icons/si";
+import React, { useState } from "react";
+
 export default function Skills() {
   const [tooltipContent, setTooltipContent] = useState(null);
 
   return (
     <section
       id="skills"
-      className="pt-20 hw-md:snap-start min-h-full text-center"
+      className="py-16  min-h-full text-center bg-gradient2 dark:bg-darkGradient2"
     >
       <div>
         <h3 className="text-3xl text-black pt-4 dark:text-white">

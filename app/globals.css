@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
@@ -107,10 +108,21 @@ body {
   transform: rotateY(180deg);
 }
 
+.tbWaves {
+  --mask:
+          radial-gradient(67.08px at 50% 90.00px,#000 99%,#0000 101%) calc(50% - 60px) 0/120px 51% repeat-x,
+          radial-gradient(67.08px at 50% -60px,#0000 99%,#000 101%) 50% 30px/120px calc(51% - 30px) repeat-x,
+          radial-gradient(67.08px at 50% calc(100% - 90.00px),#000 99%,#0000 101%) calc(50% - 60px) 100%/120px 51% repeat-x,
+          radial-gradient(67.08px at 50% calc(100% + 60.00px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px calc(51% - 30px) repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
 
-/* separator css */
 
-
-.separator {
-  background-image: linear-gradient(to right, transparent 30%, teal 40%, blue 60%, transparent 70%);
+.ball {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  border: 1px solid white;
 }
