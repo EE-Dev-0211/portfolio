@@ -122,15 +122,8 @@ body {
 .ball {
   width: 20px;
   height: 20px;
-  border-radius: 50%;
-  background: red;
+  border-radius: 50% 50%;
+  background: aqua;
   border: 1px solid white;
 }
 
-
-.box {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: var(--accent);
-}

@@ -1,15 +1,16 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
+import { CgPlayStopO } from "react-icons/cg";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiFillCloseCircle, AiFillPlayCircle } from "react-icons/ai";
 import About from "./sections/about";
 import Skills from "./sections/skills";
 import Resume from "./sections/resume";
 import Footer from "./sections/footer";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { AiFillCloseCircle, AiFillPlayCircle } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { useFollowPointer } from "app/use-follow-pointer.ts";
-import { CgPlayStopO } from "react-icons/cg";
 
 export default function Home() {
   const [contentLoading, setContentLoading] = useState(true);
@@ -162,22 +163,31 @@ export default function Home() {
   }
 
   return (
-    <div className={darkMode ? "dark " : ""}>
-      <nav className="hidden md:py-6 md:fixed md:flex md:w-screen md:justify-between md:top-0 md:z-50 md:mx-auto md:bg-gray-800 md:dark:bg-black">
-        <div className="flex flex-row ">
-          <span className="mx-10 select-none">Portfolio.</span>
-
+    <div className={darkMode ? "dark" : ""}>
+      <nav
+        className="hidden md:py-6 md:fixed md:flex md:w-screen md:justify-between
+      md:top-0 md:z-50 md:mx-auto md:bg-gray-800 md:dark:bg-black
+    "
+      >
+        <div className="absolute -left-6 -bottom-10 w-20 h-16 z-0 rounded-b-full bg-gray-800 dark:bg-black">
+          {" "}
           {isGameActive ? (
             <CgPlayStopO
               onClick={gamemodeToggle}
-              className="mr-14 ml-10 cursor-pointer text-2xl text-amber-200 hover:text-gray-400"
+              className="mt-6 ml-8 cursor-pointer text-2xl text-amber-200 hover:text-gray-400"
             />
           ) : (
             <AiFillPlayCircle
               onClick={gamemodeToggle}
-              className="mr-14 ml-10 cursor-pointer text-2xl text-yellow-400 hover:text-red-200"
+              className="mt-6 ml-8 cursor-pointer text-2xl text-yellow-400 hover:text-red-200"
             />
           )}
+        </div>
+        <div
+          className="flex flex-row
+        "
+        >
+          <span className="mx-10 select-none">Portfolio.</span>
         </div>
 
         <motion.div
@@ -331,7 +341,7 @@ export default function Home() {
 
       <main className="bg-white dark:bg-gray-900 scroll-smooth overscroll-none">
         <div className="hw-md:snap-y hw-md:snap-mandatory h-screen overflow-scroll scrollbar-hide">
-          <About />
+          <About darkMode={darkMode} />
 
           <div className="tbWaves">
             <Skills />

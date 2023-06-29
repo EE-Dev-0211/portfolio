@@ -2,7 +2,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 import Image from "next/image";
 import React, { useState } from "react";
 
-export default function About() {
+const About = ({ darkMode }) => {
   // state for the Avatarcoin
   const [isFlipped, setIsFlipped] = useState(true);
 
@@ -15,18 +15,37 @@ export default function About() {
     <section
       id="about"
       className="pt-20 pb-10 min-h-full bg-gradient1 dark:bg-darkGradient1"
+      style={{
+        backgroundImage: darkMode ? 'url("/dotgrid.svg")' : "",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
     >
       <div className=" text-center p-10">
-        <span className="animate-fadeIn-TopText select-none text-black dark:text-white text-xl py-2 md:text-2xl">
+        <span
+          className="animate-fadeIn-TopText select-none
+        text-green-800 font-extrabold dark:text-white text-xl py-2 md:text-2xl"
+        >
           Hi, I am
         </span>
-        <h2 className="animate-fadeInLeft text-5xl py-2 text-teal-500 font-medium select-none md:text-6xl">
+        <h2
+          className="animate-fadeInLeft text-5xl py-2
+        text-teal-500 font-extrabold select-none md:text-6xl"
+        >
           Eric Eiselt
         </h2>
-        <h3 className="animate-fadeInLeft select-none text-black dark:text-white text-2xl py-2 md:text-3xl">
+        <h3
+          className="animate-fadeInLeft select-none font-extrabold
+        text-black dark:text-white text-2xl py-2 md:text-3xl"
+        >
           Aspiring Frontend Developer
         </h3>
-        <p className="break-words md:break-normal animate-fadeIn-Avatar select-none text-md py-5 leading-8 text-gray-800 md:text-xl max-w-lg mx-auto dark:text-amber-50 ">
+
+        <p
+          className="break-words md:break-normal animate-fadeIn-Avatar select-none
+        text-md py-5 leading-8 text-gray-800 md:text-xl max-w-lg mx-auto dark:text-amber-50 "
+        >
           and I am currently in my final year of training to become an
           application developer. During my apprenticeship, I had many different
           insights into different areas, but I was most taken with frontend
@@ -47,9 +66,10 @@ export default function About() {
       {/*Avatar Coin*/}
       <div className="select-none relative mx-auto w-60 h-60 mt-20">
         <div
-          className={`shadow-glow bg-gradient-to-b from-teal-500 w-60 h-60 rounded-full flex items-center justify-center overflow-hidden cursor-pointer flip ${
-            isFlipped ? "flipped" : ""
-          }`}
+          className={`
+          shadow-glow bg-gradient-to-b from-teal-600 to bg-teal-400
+          w-60 h-60 rounded-full flex items-center justify-center 
+          overflow-hidden cursor-pointer flip ${isFlipped ? "flipped" : ""}`}
           onClick={handleFlip}
         >
           <div>
@@ -67,4 +87,6 @@ export default function About() {
       </div>
     </section>
   );
-}
+};
+
+export default About;
