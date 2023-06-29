@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import { CgPlayStopO } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiFillCloseCircle, AiFillPlayCircle } from "react-icons/ai";
+import { FaCat } from "react-icons/fa";
 import About from "./sections/about";
 import Skills from "./sections/skills";
 import Resume from "./sections/resume";
@@ -18,12 +18,12 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isGameActive, setIsGameActive] = useState(false);
-
   const [isLoadingScreenFinished, setIsLoadingScreenFinished] = useState(false);
   const ref = useRef(null);
   const { x, y } = useFollowPointer(ref, isLoadingScreenFinished);
+  const [hasCatVanished, setHasCatVanished] = useState(false);
 
-  // toggles for Mobile Menu & Darkmode
+  // toggles for Mobile Menu, Cat & Darkmode
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -34,6 +34,10 @@ export default function Home() {
 
   function gamemodeToggle() {
     setIsGameActive(!isGameActive);
+  }
+
+  function catToggle() {
+    setHasCatVanished(!hasCatVanished);
   }
 
   // Darkmode
@@ -170,16 +174,22 @@ export default function Home() {
     "
       >
         <div className="absolute -left-6 -bottom-10 w-20 h-16 z-0 rounded-b-full bg-gray-800 dark:bg-black">
-          {" "}
-          {isGameActive ? (
-            <CgPlayStopO
-              onClick={gamemodeToggle}
-              className="mt-6 ml-8 cursor-pointer text-2xl text-amber-200 hover:text-gray-400"
-            />
+          {hasCatVanished ? (
+            isGameActive ? (
+              <CgPlayStopO
+                onClick={gamemodeToggle}
+                className="mt-6 ml-8 cursor-pointer text-2xl text-red-400 hover:text-red-700"
+              />
+            ) : (
+              <AiFillPlayCircle
+                onClick={gamemodeToggle}
+                className="mt-6 ml-8 cursor-pointer text-2xl text-green-800 hover:text-green-300"
+              />
+            )
           ) : (
-            <AiFillPlayCircle
-              onClick={gamemodeToggle}
-              className="mt-6 ml-8 cursor-pointer text-2xl text-yellow-400 hover:text-red-200"
+            <FaCat
+              onClick={catToggle}
+              className="mt-6 ml-8 cursor-pointer text-2xl text-gray-400 hover:text-white"
             />
           )}
         </div>
