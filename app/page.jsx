@@ -22,6 +22,7 @@ export default function Home() {
   const ref = useRef(null);
   const { x, y } = useFollowPointer(ref, isLoadingScreenFinished);
   const [hasCatVanished, setHasCatVanished] = useState(false);
+  const [isCustomCursorActive, setIsCustomCursorActive] = useState(false);
 
   // toggles for Mobile Menu, Cat & Darkmode
   const toggleMenu = () => {
@@ -32,14 +33,17 @@ export default function Home() {
     setDarkMode(!darkMode);
   }
 
+  // activate gamemode and default paw cursor for whole page
   function gamemodeToggle() {
     setIsGameActive(!isGameActive);
+    setIsCustomCursorActive(!isCustomCursorActive);
   }
+
+  const defaultCursor = isCustomCursorActive ? "cursor-paw" : "";
 
   function catToggle() {
     setHasCatVanished(!hasCatVanished);
   }
-
   // Darkmode
   useEffect(() => {
     // Save darkMode state to localStorage when it's changed
@@ -167,7 +171,7 @@ export default function Home() {
   }
 
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div className={` ${darkMode ? "dark" : ""} ${defaultCursor}`}>
       <nav
         className="hidden md:py-6 md:fixed md:flex md:w-screen md:justify-between
       md:top-0 md:z-50 md:mx-auto md:bg-gray-800 md:dark:bg-black
@@ -183,13 +187,13 @@ export default function Home() {
             ) : (
               <AiFillPlayCircle
                 onClick={gamemodeToggle}
-                className="mt-6 ml-8 cursor-pointer text-2xl text-green-800 hover:text-green-300"
+                className="mt-6 ml-8 text-2xl text-green-800 hover:text-green-300"
               />
             )
           ) : (
             <FaCat
               onClick={catToggle}
-              className="mt-6 ml-8 cursor-pointer text-2xl text-gray-400 hover:text-white"
+              className="mt-6 ml-8 text-2xl text-gray-400 cursor-paw2 hover:text-white"
             />
           )}
         </div>
@@ -202,7 +206,7 @@ export default function Home() {
 
         <motion.div
           ref={ref}
-          className={`${isGameActive === true ? "" : "hidden"} ball`}
+          className={`${isGameActive === true ? "" : "hidden"} woolBall`}
           animate={{ x, y }}
           transition={{
             type: "spring",
@@ -211,6 +215,7 @@ export default function Home() {
             restDelta: 0.001,
           }}
         />
+
         {/*big menu*/}
         <ul className="flex items-center">
           <li key="about">

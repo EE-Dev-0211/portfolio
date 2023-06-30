@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
@@ -119,7 +118,7 @@ body {
 }
 
 
-.ball {
+.woolBall {
   width: 20px;
   height: 20px;
   border-radius: 50% 50%;

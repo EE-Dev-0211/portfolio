@@ -1,6 +1,7 @@
 import { AiFillLinkedin } from "react-icons/ai";
 import Image from "next/image";
 import React, { useState } from "react";
+import { motion, Variants } from "framer-motion";
 
 const About = ({ darkMode }) => {
   // state for the Avatarcoin
@@ -25,10 +26,11 @@ const About = ({ darkMode }) => {
       <div className=" text-center p-10">
         <span
           className="animate-fadeIn-TopText select-none
-        text-green-800 font-extrabold dark:text-white text-xl py-2 md:text-2xl"
+        text-black font-extrabold dark:text-white text-xl py-2 md:text-2xl"
         >
           Hi, I am
         </span>
+
         <h2
           className="animate-fadeInLeft text-5xl py-2
         text-teal-500 font-extrabold select-none md:text-6xl"
