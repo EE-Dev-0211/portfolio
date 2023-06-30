@@ -7,14 +7,14 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-16  min-h-full text-center bg-gradient2 dark:bg-darkGradient2"
+      className="py-16  min-h-full text-center dark:bg-darkGradient2"
     >
       <div>
-        <h3 className="text-3xl text-black pt-4 dark:text-white">
+        <h3 className="text-3xl  pt-4 text-white font-extrabold">
           Technologies
         </h3>
 
-        <p className="text-md pt-6 px-6 leading-8 text-gray-800 md:text-lg mx-auto dark:text-amber-50">
+        <p className="text-md pt-6 px-6 leading-8 text-white font-semibold md:text-lg mx-auto">
           Here you will find various technologies that I have had the pleasure
           of getting to know. I have worked with some of them more intensively,
           with others only superficially.

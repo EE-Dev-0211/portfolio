@@ -1,7 +1,6 @@
 import { AiFillLinkedin } from "react-icons/ai";
 import Image from "next/image";
 import React, { useState } from "react";
-import { motion, Variants } from "framer-motion";
 
 const About = ({ darkMode }) => {
   // state for the Avatarcoin
@@ -15,12 +14,12 @@ const About = ({ darkMode }) => {
   return (
     <section
       id="about"
-      className="pt-20 pb-10 min-h-full bg-gradient1 dark:bg-darkGradient1"
+      className="pt-20 pb-10 min-h-full bg-transparent dark:bg-darkGradient1 "
       style={{
         backgroundImage: darkMode ? 'url("/dotgrid.svg")' : "",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "top",
       }}
     >
       <div className=" text-center p-10">
@@ -46,7 +45,8 @@ const About = ({ darkMode }) => {
 
         <p
           className="break-words md:break-normal animate-fadeIn-Avatar select-none
-        text-md py-5 leading-8 text-gray-800 md:text-xl max-w-lg mx-auto dark:text-amber-50 "
+        text-md py-5 leading-8 text-white md:text-xl max-w-lg mx-auto
+        dark:text-amber-50 "
         >
           and I am currently in my final year of training to become an
           application developer. During my apprenticeship, I had many different
@@ -61,7 +61,7 @@ const About = ({ darkMode }) => {
           href="https://www.linkedin.com/in/eric-e-720431201/"
           target="_blank"
         >
-          <AiFillLinkedin className="dark:text-amber-50" />
+          <AiFillLinkedin className="text-white dark:text-amber-50" />
         </a>
       </div>
 

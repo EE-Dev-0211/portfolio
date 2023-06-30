@@ -14,7 +14,7 @@ import { useFollowPointer } from "app/use-follow-pointer.ts";
 
 export default function Home() {
   const [contentLoading, setContentLoading] = useState(true);
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isGameActive, setIsGameActive] = useState(false);
@@ -33,9 +33,9 @@ export default function Home() {
     setDarkMode(!darkMode);
   }
 
-  // activate gamemode and default paw cursor for whole page
   function gamemodeToggle() {
     setIsGameActive(!isGameActive);
+    // toggles custom cursor as default for whole page
     setIsCustomCursorActive(!isCustomCursorActive);
   }
 
@@ -173,11 +173,16 @@ export default function Home() {
   return (
     <div className={` ${darkMode ? "dark" : ""} ${defaultCursor}`}>
       <nav
-        className="hidden md:py-6 md:fixed md:flex md:w-screen md:justify-between
-      md:top-0 md:z-50 md:mx-auto md:bg-gray-800 md:dark:bg-black
-    "
+        className={` hidden md:py-6 md:fixed md:flex md:w-screen md:justify-between
+      md:top-0 md:z-50 md:mx-auto ${
+        activeSection !== "about" ? "md:bg-gray-800" : "md:bg-transparent"
+      } md:dark:bg-black `}
       >
-        <div className="absolute -left-6 -bottom-10 w-20 h-16 z-0 rounded-b-full bg-gray-800 dark:bg-black">
+        <div
+          className={` absolute -left-6 -bottom-10 w-20 h-16 z-0 rounded-b-full dark:bg-black  ${
+            activeSection !== "about" ? "md:bg-gray-800" : "md:bg-transparent"
+          }`}
+        >
           {hasCatVanished ? (
             isGameActive ? (
               <CgPlayStopO
@@ -193,7 +198,10 @@ export default function Home() {
           ) : (
             <FaCat
               onClick={catToggle}
-              className="mt-6 ml-8 text-2xl text-gray-400 cursor-paw2 hover:text-white"
+              className={`mt-6 ml-10 dark:ml-8
+               ${
+                 activeSection === "about" ? "" : "ml-8"
+               } text-2xl text-gray-400 cursor-paw2 hover:text-white`}
             />
           )}
         </div>
@@ -222,9 +230,9 @@ export default function Home() {
             <a
               className={`${
                 activeSection === "about"
-                  ? "after:absolute after:inset-x-0 after:h-px after:bg-blue-500 after:bottom-[-10px] after:font-bold dark:text-teal-50"
+                  ? "font-bold dark:font-normal after:absolute after:inset-x-0 after:h-px after:bg-blue-500 after:bottom-[-10px] after:font-bold dark:text-teal-50"
                   : "text-white dark:text-gray-400"
-              } tracking-wider select-none mx-6 relative 
+              } tracking-wider select-none mx-6 relative
               hover:after:absolute hover:after:inset-x-0 hover:after:h-px 
               hover:after:bg-blue-700 hover:after:bottom-[-10px] hover:after:font-bold`}
               href="#about"
@@ -239,7 +247,12 @@ export default function Home() {
                 activeSection === "skills"
                   ? "after:absolute after:inset-x-0 after:h-px after:bg-blue-500 after:bottom-[-10px] after:font-bold dark:text-teal-50 "
                   : "text-white dark:text-gray-400"
-              } tracking-wider select-none mx-6 relative hover:after:absolute hover:after:inset-x-0 hover:after:h-px hover:after:bg-blue-700 hover:after:bottom-[-10px] hover:after:font-bold`}
+              }  tracking-wider select-none mx-6 relative 
+              hover:after:absolute hover:after:inset-x-0 hover:after:h-px hover:after:bg-blue-700 
+              hover:after:bottom-[-10px] hover:after:font-bold
+              ${
+                activeSection === "about" ? "font-bold dark:font-normal" : ""
+              } `}
               href="#skills"
               onClick={() => scrollToSection("skills")}
             >
@@ -253,7 +266,12 @@ export default function Home() {
                   ? "after:absolute after:inset-x-0 after:h-px after:bg-blue-500 after:bottom-[-10px] after:font-bold dark:text-teal-50"
                   : "text-white dark:text-gray-400"
               } tracking-wider mx-6 select-none relative hover:after:absolute hover:after:inset-x-0 hover:after:h-px 
-                  hover:after:bg-blue-700 hover:after:bottom-[-10px] hover:after:font-bold`}
+                  hover:after:bg-blue-700 hover:after:bottom-[-10px] hover:after:font-bold
+                   ${
+                     activeSection === "about"
+                       ? "font-bold dark:font-normal"
+                       : ""
+                   }  `}
               href="#resume"
               onClick={() => scrollToSection("resume")}
             >
@@ -280,12 +298,16 @@ export default function Home() {
             {darkMode ? (
               <BsFillMoonStarsFill
                 onClick={darkmodeToggle}
-                className="mr-14 ml-10 cursor-pointer text-2xl text-amber-200 hover:text-gray-400"
+                className="mr-14 ml-10 cursor-pointer text-2xl
+                         }
+               text-amber-200 hover:text-gray-400 "
               />
             ) : (
               <BsFillSunFill
                 onClick={darkmodeToggle}
-                className="mr-14 ml-10 cursor-pointer text-2xl text-yellow-400 hover:text-red-200"
+                className={`  ${
+                  activeSection === "about" ? "text-red-400" : "text-yellow-400"
+                }   mr-14 ml-10 cursor-pointer text-2xl  hover:text-red-800`}
               />
             )}
           </li>
@@ -355,7 +377,15 @@ export default function Home() {
       </div>
 
       <main className="bg-white dark:bg-gray-900 scroll-smooth overscroll-none">
-        <div className="hw-md:snap-y hw-md:snap-mandatory h-screen overflow-scroll scrollbar-hide">
+        <div
+          className="hw-md:snap-y hw-md:snap-mandatory h-screen overflow-scroll scrollbar-hide"
+          style={{
+            backgroundImage: darkMode ? "" : 'url("/mountains-unsplash.jpg")',
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
+        >
           <About darkMode={darkMode} />
 
           <div className="tbWaves">

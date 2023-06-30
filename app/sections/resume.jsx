@@ -5,18 +5,16 @@ export default function Resume() {
   return (
     <section
       id="resume"
-      className="flex flex-col items-center justify-center md:pt-6 md:min-h-full text-center bg-gradient1 dark:bg-darkGradient1"
+      className="flex flex-col items-center justify-center md:pt-6 md:min-h-full text-center  dark:bg-darkGradient1"
     >
       <div className="w-4/5 md:w-full mb-4">
-        <h3 className="text-3xl pb-10 pt-16 text-black dark:text-white">
+        <h3 className="text-3xl pb-10 pt-16 font-extrabold text-white">
           Resumé
         </h3>
 
         <div className="flex flex-col items-center md:justify-evenly md:items-start md:flex-row ">
           <div className="pb-10 w-4/5 md:w-1/3 md:flex md:flex-col md:items-center">
-            <span className="text-black dark:text-white font-bold">
-              Education
-            </span>
+            <span className="text-white font-bold">Education</span>
             {/*mapping the education entries*/}
             {educationSections.map((educationSection) => (
               <div
@@ -42,9 +40,7 @@ export default function Resume() {
           </div>
 
           <div className="w-4/5 md:w-1/3 md:flex md:flex-col md:items-center">
-            <span className="text-black dark:text-white font-bold">
-              Work Experience
-            </span>
+            <span className="text-white font-bold">Work Experience</span>
             {/*mapping the work experience entries*/}
             {workSections.map((workSection) => (
               <div

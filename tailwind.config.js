@@ -13,6 +13,9 @@ module.exports = {
       md: "1130px",
     },
     extend: {
+      colors: {
+        navColor: "#FED17E",
+      },
       cursor: {
         // cursor form cursor.cc with cc license
         paw: "url(/cursor.cur), default",
