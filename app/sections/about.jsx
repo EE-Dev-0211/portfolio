@@ -32,20 +32,20 @@ const About = ({ darkMode }) => {
 
         <h2
           className="animate-fadeInLeft text-5xl py-2
-        text-teal-500 font-extrabold select-none md:text-6xl"
+        text-teal-400 font-extrabold select-none md:text-6xl"
         >
           Eric Eiselt
         </h2>
         <h3
           className="animate-fadeInLeft select-none font-extrabold
-        text-black dark:text-white text-2xl py-2 md:text-3xl"
+        text-white dark:text-white text-2xl py-2 md:text-3xl"
         >
           Aspiring Frontend Developer
         </h3>
 
         <p
           className="break-words md:break-normal animate-fadeIn-Avatar select-none
-        text-md py-5 leading-8 text-white md:text-xl max-w-lg mx-auto
+        text-md py-5 leading-8 text-bolder text-gray-200 md:text-xl max-w-lg mx-auto
         dark:text-amber-50 "
         >
           and I am currently in my final year of training to become an
