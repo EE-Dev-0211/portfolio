@@ -190,27 +190,27 @@ export default function Home() {
       } md:dark:bg-black `}
       >
         <div
-          className={`absolute -left-16 -bottom-24 hover:-left-6 hover:-bottom-24 w-20 h-20 z-0 
+          className={`absolute -left-16 -bottom-24 hover:-left-4 hover:-bottom-24 w-20 h-20 z-0 
           ${hasCatVanished === true ? "" : "cursor-paw2"}
-          rounded-r-full dark:bg-black bg-gray-800 `}
+          rounded-r-full bg-gray-800 border-2 border-teal-100 `}
         >
           {hasCatVanished ? (
             isGameActive ? (
               <CgPlayStopO
                 onClick={gamemodeToggle}
-                className="mt-6 ml-8 cursor-pointer text-2xl text-red-400 hover:text-red-700"
+                className="mt-7.5 ml-7.5 cursor-pointer text-2xl text-red-400 hover:text-red-700"
               />
             ) : (
               <AiFillPlayCircle
                 onClick={gamemodeToggle}
-                className="mt-6 ml-8 text-2xl text-green-800 hover:text-green-300"
+                className="mt-7.5 ml-7.5 text-2xl text-green-800 hover:text-green-300"
               />
             )
           ) : (
             <FaCat
               onClick={catToggle}
-              className={`mt-6 ml-10 dark:ml-8
-              hover:text-white text-xl text-gray-400 `}
+              className={`mt-7.5 ml-7.5 dark:ml-8
+              hover:text-white text-2xl text-gray-400 `}
             />
           )}
         </div>
@@ -227,7 +227,7 @@ export default function Home() {
         {/*Cat Woolball Game*/}
         <motion.div
           ref={ref}
-          className={`${isGameActive === true ? "" : "hidden"} woolBall`}
+          className={`${isGameActive === true ? "" : "hidden"} woolBall `}
           animate={{ x, y }}
           transition={{
             type: "spring",

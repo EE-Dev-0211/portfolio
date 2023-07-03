@@ -13,6 +13,9 @@ module.exports = {
       md: "1130px",
     },
     extend: {
+      margin: {
+        7.5: "1.6rem",
+      },
       colors: {
         navColor: "#FED17E",
       },
