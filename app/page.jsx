@@ -367,7 +367,7 @@ export default function Home() {
             onClick={toggleMenu} //  close menu if click outside of it
           >
             <div
-              className="border-2 border-gray-800 dark:border-gray-400 text-center bg-white text-black font-bold dark:text-white dark:bg-gray-800 w-auto p-4 rounded-lg shadow"
+              className="border-4 border-double border-gray-800 dark:border-gray-400 text-center bg-white text-black font-bold dark:text-white dark:bg-gray-800 w-auto p-4 rounded-lg shadow"
               // Prevent the menu from closing, stop the click event from propagating to the parent element
               onClick={(e) => e.stopPropagation()}
             >
@@ -404,7 +404,8 @@ export default function Home() {
                 )}
 
                 <a
-                  className="flex items-center justify-center w-10 h-10 dark:bg-black border-gray-400 border-2 text-gray-800 font-bold rounded"
+                  className=" flex items-center justify-center w-10 h-10
+                  dark:bg-black border-gray-400 border-2 text-gray-800 dark:text-teal-500 font-bold rounded"
                   href="/cv.pdf"
                   target="_blank"
                 >
