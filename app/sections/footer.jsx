@@ -15,12 +15,10 @@ const Footer = ({ darkMode }) => {
       id="footer"
       className="pl-2 pt-20 snap-start h-24 flex justify-center"
     >
+      {/* Footer */}
       <div className="text-md text-white text-center leading-8 dark:text-gray-600">
         Coded in Webstorm. Built with Next.js and Tailwind CSS, deployed with
-        Applify. 8bit-Avatar by{" "}
-        <a href="https://8bitpix.com/" target="_blank">
-          8bitpix.com
-        </a>
+        Applify.
         <div className="flex flex-row px-10 gap-6 justify-center mx-auto text-white my-4 pb-10 text-m dark:text-gray-600">
           <TbBrandNextjs />
           <SiWebstorm />
