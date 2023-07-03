@@ -2,7 +2,7 @@ import { useState, RefObject, useEffect } from "react";
 
 export function useFollowPointer(
   ref: RefObject<HTMLElement>,
-  isLoadingScreenFinished: boolean
+  isGameActive: boolean
 ) {
   const [point, setPoint] = useState({ x: 0, y: 0 });
 
@@ -17,14 +17,14 @@ export function useFollowPointer(
       setPoint({ x, y });
     };
 
-    if (isLoadingScreenFinished) {
+    if (isGameActive) {
       window.addEventListener("pointermove", handlePointerMove);
     }
 
     return () => {
       window.removeEventListener("pointermove", handlePointerMove);
     };
-  }, [isLoadingScreenFinished, ref]);
+  }, [isGameActive, ref]);
 
   return point;
 }

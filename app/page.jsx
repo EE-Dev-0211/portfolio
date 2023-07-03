@@ -19,21 +19,15 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isGameActive, setIsGameActive] = useState(false);
-  const [isLoadingScreenFinished, setIsLoadingScreenFinished] = useState(false);
   const ref = useRef(null);
-  const { x, y } = useFollowPointer(ref, isLoadingScreenFinished);
+  const { x, y } = useFollowPointer(ref, isGameActive);
   const [hasCatVanished, setHasCatVanished] = useState(false);
   const [isCustomCursorActive, setIsCustomCursorActive] = useState(false);
   const [isImpressumOpen, setIsImpressumOpen] = useState(false);
 
   // toggles for Mobile Menu, Cat, Impressum & Darkmode
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  function darkmodeToggle() {
-    setDarkMode(!darkMode);
-  }
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const darkmodeToggle = () => setDarkMode(!darkMode);
 
   function gamemodeToggle() {
     setIsGameActive(!isGameActive);
@@ -41,15 +35,27 @@ export default function Home() {
     setIsCustomCursorActive(!isCustomCursorActive);
   }
 
-  const toggleImpressum = () => {
-    setIsImpressumOpen(!isImpressumOpen);
-  };
+  const toggleImpressum = () => setIsImpressumOpen(!isImpressumOpen);
 
   const defaultCursor = isCustomCursorActive ? "cursor-paw" : "";
 
-  function catToggle() {
-    setHasCatVanished(!hasCatVanished);
+  const catToggle = () => setHasCatVanished(!hasCatVanished);
+
+  // stop the game via escape button
+  function userStopsGame() {
+    setIsGameActive(false);
+    setIsCustomCursorActive(false);
   }
+
+  function handleKeyPress(event) {
+    if (event.keyCode === 27 || event.key === "Escape") {
+      userStopsGame();
+    }
+  }
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyPress);
+  }, []);
+
   // Darkmode
   useEffect(() => {
     // Save darkMode state to localStorage when it's changed
@@ -66,7 +72,6 @@ export default function Home() {
 
     // timeout for loading screen (formerly bc of FOUC, now for style)
     const timeout = setTimeout(() => {
-      setIsLoadingScreenFinished(true);
       setContentLoading(false);
     }, 1000);
 
@@ -75,7 +80,7 @@ export default function Home() {
 
   // scroll function when loading screen finished
   useEffect(() => {
-    if (!isLoadingScreenFinished) {
+    if (contentLoading) {
       const handleScroll = () => {
         document.body.classList.toggle(
           "scroll-lock",
@@ -88,7 +93,7 @@ export default function Home() {
         window.removeEventListener("scroll", handleScroll);
       };
     }
-  }, [isLoadingScreenFinished]);
+  }, [contentLoading]);
 
   useEffect(() => {
     if (!contentLoading) {
@@ -185,9 +190,9 @@ export default function Home() {
       } md:dark:bg-black `}
       >
         <div
-          className={` absolute -left-6 -bottom-24 w-20 h-16 z-0 rounded-r-full dark:bg-black  ${
-            activeSection !== "about" ? "md:bg-gray-800" : "md:bg-transparent"
-          }`}
+          className={`absolute -left-16 -bottom-24 hover:-left-6 hover:-bottom-24 w-20 h-20 z-0 
+          ${hasCatVanished === true ? "" : "cursor-paw2"}
+          rounded-r-full dark:bg-black bg-gray-800 `}
         >
           {hasCatVanished ? (
             isGameActive ? (
@@ -205,9 +210,7 @@ export default function Home() {
             <FaCat
               onClick={catToggle}
               className={`mt-6 ml-10 dark:ml-8
-               ${
-                 activeSection === "about" ? "" : "ml-8"
-               } text-2xl text-gray-400 cursor-paw2 hover:text-white`}
+              hover:text-white text-xl text-gray-400 `}
             />
           )}
         </div>
@@ -215,7 +218,7 @@ export default function Home() {
           <span className="flex items-center gap-4 ml-2 select-none">
             <IoMdInformationCircle
               onClick={toggleImpressum}
-              className="text-base hover:cursor-help hover:text-green-400"
+              className="text-base font-bolder hover:cursor-help hover:text-green-400"
             />
             Portfolio.
           </span>
@@ -251,27 +254,43 @@ export default function Home() {
                 {" "}
                 This is an private & non-commercial portfolio site. <br />{" "}
                 8bit-Avatar generated @{" "}
-                <a href="https://8bitpix.com/" target="_blank">
+                <a
+                  className="text-gray-500 hover:text-gray-800
+                  dark:text-teal-100 dark:hover:text-teal-500"
+                  href="https://8bitpix.com/"
+                  target="_blank"
+                >
                   8bitpix.com
                 </a>
-                .<br /> Background image, free for use under the Unsplash
-                License.
+                .<br />
+                <a
+                  className="text-gray-500 hover:text-gray-800 dark:text-teal-100 dark:hover:text-teal-500"
+                  href=" https://unsplash.com/de/fotos/blick-auf-eine-bergkette-bei-sonnenuntergang-MSoJwmGW5_oBackground"
+                  target="_blank"
+                >
+                  Background image{" "}
+                </a>
+                free for use under the Unsplash License.
                 <br /> CV automatically generated by LinkedIn. <br /> All icons
                 are part of the react-icons-Icon-Library. <br /> Custom cursor
-                icons from{" "}
-                <a href="https://8bitpix.com/" target="_blank">
-                  cursor.cc
-                </a>{" "}
-                (
-                <a href="https://8bitpix.com/" target="_blank">
-                  180359
+                icons from cursor.cc (
+                <a
+                  className="text-gray-500 hover:text-gray-800 dark:text-teal-100 dark:hover:text-teal-500"
+                  href="https://www.cursor.cc/?action=icon&file_id=189359"
+                  target="_blank"
+                >
+                  189359
                 </a>
                 ,{" "}
-                <a href="https://8bitpix.com/" target="_blank">
+                <a
+                  className="text-gray-500 hover:text-gray-800 dark:text-teal-100 dark:hover:text-teal-500"
+                  href="https://www.cursor.cc/?action=icon&file_id=183788"
+                  target="_blank"
+                >
                   183788
                 </a>
-                ) , free for use under the creative commons license with no
-                attribution.
+                ), <br /> free for use under the creative commons license with
+                no attribution.
               </span>
             </div>
           </div>
