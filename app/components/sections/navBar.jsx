@@ -42,7 +42,7 @@ const NavBar = ({
   // stop the game via escape button
   function userStopsGame() {
     setIsGameActive(false);
-    setIsCustomCursorActive(false);
+    setIsCustomCursor(false);
   }
 
   function handleKeyPress(event) {
