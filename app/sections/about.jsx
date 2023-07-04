@@ -45,7 +45,7 @@ const About = ({ darkMode }) => {
 
         <p
           className="break-words md:break-normal animate-fadeIn-Avatar select-none
-        text-md py-5 leading-8 text-bolder text-gray-200 md:text-xl max-w-lg mx-auto
+        text-md py-5 leading-8 font-bold text-white md:text-l max-w-lg mx-auto
         dark:text-amber-50 "
         >
           and I am currently in my final year of training to become an

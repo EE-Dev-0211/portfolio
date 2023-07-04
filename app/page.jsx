@@ -24,10 +24,12 @@ export default function Home() {
   const [hasCatVanished, setHasCatVanished] = useState(false);
   const [isCustomCursorActive, setIsCustomCursorActive] = useState(false);
   const [isImpressumOpen, setIsImpressumOpen] = useState(false);
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
-  // toggles for Mobile Menu, Cat, Impressum & Darkmode
+  // toggles for Mobile Menu, Tooltip, Cat, Impressum & Darkmode
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const darkmodeToggle = () => setDarkMode(!darkMode);
+  const toggleImpressum = () => setIsImpressumOpen(!isImpressumOpen);
 
   function gamemodeToggle() {
     setIsGameActive(!isGameActive);
@@ -35,11 +37,9 @@ export default function Home() {
     setIsCustomCursorActive(!isCustomCursorActive);
   }
 
-  const toggleImpressum = () => setIsImpressumOpen(!isImpressumOpen);
-
   const defaultCursor = isCustomCursorActive ? "cursor-paw" : "";
-
   const catToggle = () => setHasCatVanished(!hasCatVanished);
+  const toggleTooltip = () => setIsTooltipVisible(!isTooltipVisible);
 
   // stop the game via escape button
   function userStopsGame() {
@@ -208,12 +208,29 @@ export default function Home() {
             )
           ) : (
             <FaCat
-              onClick={catToggle}
-              className={`mt-7.5 ml-7.5 dark:ml-8
-              hover:text-white text-2xl text-gray-400 `}
+              onClick={() => {
+                catToggle();
+                toggleTooltip();
+              }}
+              className="mt-7.5 ml-7.5 dark:ml-8
+              hover:text-white text-2xl text-gray-400"
+              onMouseEnter={toggleTooltip}
+              onMouseLeave={toggleTooltip}
             />
           )}
+
+          <div
+            className={`  
+ ${
+   isTooltipVisible
+     ? "absolute top-20 left-full ml-2 mt-2 bg-gray-700 text-white w-36 px-4 py-2 rounded-md dark:bg-blue-600"
+     : "hidden"
+ } `}
+          >
+            <span>Digital wool for digital Cats. ESC to exit.</span>
+          </div>
         </div>
+
         <div className="flex flex-row">
           <span className="flex items-center gap-4 ml-2 select-none">
             <IoMdInformationCircle
