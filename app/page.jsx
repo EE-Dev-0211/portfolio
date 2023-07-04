@@ -3,14 +3,15 @@ import React, { useEffect, useRef, useState } from "react";
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import { CgPlayStopO } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { AiFillCloseCircle, AiFillPlayCircle } from "react-icons/ai";
+import { AiFillPlayCircle } from "react-icons/ai";
 import { FaCat } from "react-icons/fa";
-import About from "./sections/about";
-import Skills from "./sections/skills";
-import Resume from "./sections/resume";
-import Footer from "./sections/footer";
+import About from "./components/sections/about";
+import Skills from "./components/sections/skills";
+import Resume from "./components/sections/resume";
+import Footer from "./components/sections/footer";
+import PopupBox from "app/components/sharedComponents/popupBox";
 import { motion } from "framer-motion";
-import { useFollowPointer } from "app/use-follow-pointer.ts";
+import { useFollowPointer } from "app/components/use-follow-pointer.ts";
 import { IoMdInformationCircle } from "react-icons/io";
 
 export default function Home() {
@@ -23,14 +24,13 @@ export default function Home() {
   const { x, y } = useFollowPointer(ref, isGameActive);
   const [hasCatVanished, setHasCatVanished] = useState(false);
   const [isCustomCursorActive, setIsCustomCursorActive] = useState(false);
-  const [isImpressumOpen, setIsImpressumOpen] = useState(false);
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
+  const [isPopupBoxOpen, setIsPopupBoxOpen] = useState(false);
 
   // toggles for Mobile Menu, Tooltip, Cat, Impressum & Darkmode
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const darkmodeToggle = () => setDarkMode(!darkMode);
-  const toggleImpressum = () => setIsImpressumOpen(!isImpressumOpen);
-
+  const togglePopupBox = () => setIsPopupBoxOpen(!isPopupBoxOpen);
   function gamemodeToggle() {
     setIsGameActive(!isGameActive);
     // toggles custom cursor as default for whole page
@@ -228,7 +228,7 @@ export default function Home() {
  } `}
           >
             <span>
-              Digital wool for digital Cats. <br />
+              Digital wool for digital cats. <br />
               <br />
               ESC to exit.
             </span>
@@ -238,7 +238,7 @@ export default function Home() {
         <div className="flex flex-row">
           <span className="flex items-center gap-4 ml-2 select-none">
             <IoMdInformationCircle
-              onClick={toggleImpressum}
+              onClick={togglePopupBox}
               className="text-base font-bolder hover:cursor-help hover:text-green-400"
             />
             Portfolio.
@@ -257,65 +257,55 @@ export default function Home() {
             restDelta: 0.001,
           }}
         />
-        {/* Impressums Popup */}
-        {isImpressumOpen && (
-          <div
-            className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-70 flex justify-center items-center z-50"
-            onClick={toggleImpressum} //  close menu if click outside of it
-          >
-            <div
-              className="border-4 border-double border-gray-800 dark:border-gray-400 text-center bg-white text-black
-              font-bold dark:text-white dark:bg-gray-800 w-auto p-4 rounded-lg shadow
-             bg-gradient-to-b from-yellow-100 to-gray-300
-             dark:bg-gradient-to-b dark:from-teal-500 dark:to-gray-600"
-              // Prevent the menu from closing, stop the click event from propagating to the parent element
-              onClick={(e) => e.stopPropagation()}
-            >
-              <span className="leading-loose">
-                {" "}
-                This is an private & non-commercial portfolio site. <br />{" "}
-                8bit-Avatar generated @{" "}
-                <a
-                  className="text-gray-500 hover:text-gray-800
+        {/* Imprint Popup */}
+        <PopupBox
+          isPopupBoxOpen={isPopupBoxOpen}
+          togglePopupBox={togglePopupBox}
+          content={
+            <>
+              {" "}
+              This is an private & non-commercial portfolio site. <br />{" "}
+              8bit-Avatar generated @{" "}
+              <a
+                className="text-gray-500 hover:text-gray-800
                   dark:text-teal-100 dark:hover:text-teal-500"
-                  href="https://8bitpix.com/"
-                  target="_blank"
-                >
-                  8bitpix.com
-                </a>
-                .<br />
-                <a
-                  className="text-gray-500 hover:text-gray-800 dark:text-teal-100 dark:hover:text-teal-500"
-                  href=" https://unsplash.com/de/fotos/blick-auf-eine-bergkette-bei-sonnenuntergang-MSoJwmGW5_oBackground"
-                  target="_blank"
-                >
-                  Background image{" "}
-                </a>
-                free for use under the Unsplash License.
-                <br /> CV automatically generated by LinkedIn. <br /> All icons
-                are part of the react-icons-Icon-Library. <br /> Custom cursor
-                icons from cursor.cc (
-                <a
-                  className="text-gray-500 hover:text-gray-800 dark:text-teal-100 dark:hover:text-teal-500"
-                  href="https://www.cursor.cc/?action=icon&file_id=189359"
-                  target="_blank"
-                >
-                  189359
-                </a>
-                ,{" "}
-                <a
-                  className="text-gray-500 hover:text-gray-800 dark:text-teal-100 dark:hover:text-teal-500"
-                  href="https://www.cursor.cc/?action=icon&file_id=183788"
-                  target="_blank"
-                >
-                  183788
-                </a>
-                ), <br /> free for use under the creative commons license with
-                no attribution.
-              </span>
-            </div>
-          </div>
-        )}
+                href="https://8bitpix.com/"
+                target="_blank"
+              >
+                8bitpix.com
+              </a>
+              .<br />
+              <a
+                className="text-gray-500 hover:text-gray-800 dark:text-teal-100 dark:hover:text-teal-500"
+                href=" https://unsplash.com/de/fotos/blick-auf-eine-bergkette-bei-sonnenuntergang-MSoJwmGW5_oBackground"
+                target="_blank"
+              >
+                Background image{" "}
+              </a>
+              free for use under the Unsplash License.
+              <br /> CV automatically generated by LinkedIn. <br /> All icons
+              are part of the react-icons-Icon-Library. <br /> Custom cursor
+              icons from cursor.cc (
+              <a
+                className="text-gray-500 hover:text-gray-800 dark:text-teal-100 dark:hover:text-teal-500"
+                href="https://www.cursor.cc/?action=icon&file_id=189359"
+                target="_blank"
+              >
+                189359
+              </a>
+              ,{" "}
+              <a
+                className="text-gray-500 hover:text-gray-800 dark:text-teal-100 dark:hover:text-teal-500"
+                href="https://www.cursor.cc/?action=icon&file_id=183788"
+                target="_blank"
+              >
+                183788
+              </a>
+              ), <br /> free for use under the creative commons license with no
+              attribution.
+            </>
+          }
+        />
         {/*big menu*/}
         <ul className="flex items-center">
           <li key="about">

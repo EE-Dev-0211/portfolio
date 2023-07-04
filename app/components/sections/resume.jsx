@@ -1,5 +1,8 @@
 import React from "react";
-import { workSections, educationSections } from "./resumeData";
+import {
+  workSections,
+  educationSections,
+} from "app/components/data/resumeData.js";
 
 export default function Resume() {
   return (

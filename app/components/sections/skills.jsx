@@ -1,4 +1,4 @@
-import { framLibs, languages, software } from "./techData";
+import { framLibs, languages, software } from "app/components/data/techData.js";
 import React, { useState } from "react";
 
 export default function Skills() {
