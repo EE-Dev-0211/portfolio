@@ -227,7 +227,11 @@ export default function Home() {
      : "hidden"
  } `}
           >
-            <span>Digital wool for digital Cats. ESC to exit.</span>
+            <span>
+              Digital wool for digital Cats. <br />
+              <br />
+              ESC to exit.
+            </span>
           </div>
         </div>
 
