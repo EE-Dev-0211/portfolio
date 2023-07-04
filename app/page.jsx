@@ -1,60 +1,27 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
-import { CgPlayStopO } from "react-icons/cg";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { AiFillPlayCircle } from "react-icons/ai";
-import { FaCat } from "react-icons/fa";
 import About from "./components/sections/about";
 import Skills from "./components/sections/skills";
 import Resume from "./components/sections/resume";
 import Footer from "./components/sections/footer";
-import PopupBox from "app/components/sharedComponents/popupBox";
-import { motion } from "framer-motion";
 import { useFollowPointer } from "app/components/use-follow-pointer.ts";
-import { IoMdInformationCircle } from "react-icons/io";
+import NavBar from "app/components/sections/navBar";
+import NavBarMobile from "/app/components/sections/navBarMobile";
 
 export default function Home() {
   const [contentLoading, setContentLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isGameActive, setIsGameActive] = useState(false);
-  const ref = useRef(null);
-  const { x, y } = useFollowPointer(ref, isGameActive);
-  const [hasCatVanished, setHasCatVanished] = useState(false);
-  const [isCustomCursorActive, setIsCustomCursorActive] = useState(false);
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   const [isPopupBoxOpen, setIsPopupBoxOpen] = useState(false);
+  const [isCustomCursor, setIsCustomCursor] = useState(false);
 
-  // toggles for Mobile Menu, Tooltip, Cat, Impressum & Darkmode
+  // toggles for Mobile Menu, Tooltip, Impressum & Darkmode
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const darkmodeToggle = () => setDarkMode(!darkMode);
   const togglePopupBox = () => setIsPopupBoxOpen(!isPopupBoxOpen);
-  function gamemodeToggle() {
-    setIsGameActive(!isGameActive);
-    // toggles custom cursor as default for whole page
-    setIsCustomCursorActive(!isCustomCursorActive);
-  }
-
-  const defaultCursor = isCustomCursorActive ? "cursor-paw" : "";
-  const catToggle = () => setHasCatVanished(!hasCatVanished);
   const toggleTooltip = () => setIsTooltipVisible(!isTooltipVisible);
-
-  // stop the game via escape button
-  function userStopsGame() {
-    setIsGameActive(false);
-    setIsCustomCursorActive(false);
-  }
-
-  function handleKeyPress(event) {
-    if (event.keyCode === 27 || event.key === "Escape") {
-      userStopsGame();
-    }
-  }
-  useEffect(() => {
-    document.addEventListener("keydown", handleKeyPress);
-  }, []);
 
   // Darkmode
   useEffect(() => {
@@ -182,285 +149,32 @@ export default function Home() {
   }
 
   return (
-    <div className={` ${darkMode ? "dark" : ""} ${defaultCursor}`}>
-      <nav
-        className={` hidden md:py-6 md:fixed md:flex md:w-screen md:justify-between
-      md:top-0 md:z-50 md:mx-auto ${
-        activeSection !== "about" ? "md:bg-gray-800" : "md:bg-transparent"
-      } md:dark:bg-black `}
-      >
-        <div
-          className={`absolute -left-16 -bottom-24 hover:-left-4 hover:-bottom-24 w-20 h-20 z-0 
-          ${hasCatVanished === true ? "" : "cursor-paw2"}
-          rounded-r-full bg-gray-800 border-2 border-teal-100 `}
-        >
-          {hasCatVanished ? (
-            isGameActive ? (
-              <CgPlayStopO
-                onClick={gamemodeToggle}
-                className="mt-7.5 ml-7.5 cursor-pointer text-2xl text-red-400 hover:text-red-700"
-              />
-            ) : (
-              <AiFillPlayCircle
-                onClick={gamemodeToggle}
-                className="mt-7.5 ml-7.5 text-2xl text-green-800 hover:text-green-300"
-              />
-            )
-          ) : (
-            <FaCat
-              onClick={() => {
-                catToggle();
-                toggleTooltip();
-              }}
-              className="mt-7.5 ml-7.5 dark:ml-8
-              hover:text-white text-2xl text-gray-400"
-              onMouseEnter={toggleTooltip}
-              onMouseLeave={toggleTooltip}
-            />
-          )}
-
-          <div
-            className={`  
- ${
-   isTooltipVisible
-     ? "absolute top-20 left-full ml-2 mt-2 bg-gray-700 text-white w-36 px-4 py-2 rounded-md dark:bg-blue-600"
-     : "hidden"
- } `}
-          >
-            <span>
-              Digital wool for digital cats. <br />
-              <br />
-              ESC to exit.
-            </span>
-          </div>
-        </div>
-
-        <div className="flex flex-row">
-          <span className="flex items-center gap-4 ml-2 select-none">
-            <IoMdInformationCircle
-              onClick={togglePopupBox}
-              className="text-base font-bolder hover:cursor-help hover:text-green-400"
-            />
-            Portfolio.
-          </span>
-        </div>
-
-        {/*Cat Woolball Game*/}
-        <motion.div
-          ref={ref}
-          className={`${isGameActive === true ? "" : "hidden"} woolBall `}
-          animate={{ x, y }}
-          transition={{
-            type: "spring",
-            damping: 3,
-            stiffness: 50,
-            restDelta: 0.001,
-          }}
-        />
-        {/* Imprint Popup */}
-        <PopupBox
-          isPopupBoxOpen={isPopupBoxOpen}
-          togglePopupBox={togglePopupBox}
-          content={
-            <>
-              {" "}
-              This is an private & non-commercial portfolio site. <br />{" "}
-              8bit-Avatar generated @{" "}
-              <a
-                className="text-gray-500 hover:text-gray-800
-                  dark:text-teal-100 dark:hover:text-teal-500"
-                href="https://8bitpix.com/"
-                target="_blank"
-              >
-                8bitpix.com
-              </a>
-              .<br />
-              <a
-                className="text-gray-500 hover:text-gray-800 dark:text-teal-100 dark:hover:text-teal-500"
-                href=" https://unsplash.com/de/fotos/blick-auf-eine-bergkette-bei-sonnenuntergang-MSoJwmGW5_oBackground"
-                target="_blank"
-              >
-                Background image{" "}
-              </a>
-              free for use under the Unsplash License.
-              <br /> CV automatically generated by LinkedIn. <br /> All icons
-              are part of the react-icons-Icon-Library. <br /> Custom cursor
-              icons from cursor.cc (
-              <a
-                className="text-gray-500 hover:text-gray-800 dark:text-teal-100 dark:hover:text-teal-500"
-                href="https://www.cursor.cc/?action=icon&file_id=189359"
-                target="_blank"
-              >
-                189359
-              </a>
-              ,{" "}
-              <a
-                className="text-gray-500 hover:text-gray-800 dark:text-teal-100 dark:hover:text-teal-500"
-                href="https://www.cursor.cc/?action=icon&file_id=183788"
-                target="_blank"
-              >
-                183788
-              </a>
-              ), <br /> free for use under the creative commons license with no
-              attribution.
-            </>
-          }
-        />
-        {/*big menu*/}
-        <ul className="flex items-center">
-          <li key="about">
-            <a
-              className={`${
-                activeSection === "about"
-                  ? "font-bold dark:font-normal after:absolute after:inset-x-0 after:h-px after:bg-blue-500 after:bottom-[-10px] after:font-bold dark:text-teal-50"
-                  : "text-white dark:text-gray-400"
-              } tracking-wider select-none mx-6 relative
-              hover:after:absolute hover:after:inset-x-0 hover:after:h-px 
-              hover:after:bg-blue-700 hover:after:bottom-[-10px] hover:after:font-bold`}
-              href="#about"
-              onClick={() => scrollToSection("about")}
-            >
-              About
-            </a>
-          </li>
-          <li key="skills">
-            <a
-              className={`${
-                activeSection === "skills"
-                  ? "after:absolute after:inset-x-0 after:h-px after:bg-blue-500 after:bottom-[-10px] after:font-bold dark:text-teal-50 "
-                  : "text-white dark:text-gray-400"
-              }  tracking-wider select-none mx-6 relative 
-              hover:after:absolute hover:after:inset-x-0 hover:after:h-px hover:after:bg-blue-700 
-              hover:after:bottom-[-10px] hover:after:font-bold
-              ${
-                activeSection === "about" ? "font-bold dark:font-normal" : ""
-              } `}
-              href="#skills"
-              onClick={() => scrollToSection("skills")}
-            >
-              Skills
-            </a>
-          </li>
-          <li key="resume" className="mr-4">
-            <a
-              className={`${
-                activeSection === "resume"
-                  ? "after:absolute after:inset-x-0 after:h-px after:bg-blue-500 after:bottom-[-10px] after:font-bold dark:text-teal-50"
-                  : "text-white dark:text-gray-400"
-              } tracking-wider mx-6 select-none relative hover:after:absolute hover:after:inset-x-0 hover:after:h-px 
-                  hover:after:bg-blue-700 hover:after:bottom-[-10px] hover:after:font-bold
-                   ${
-                     activeSection === "about"
-                       ? "font-bold dark:font-normal"
-                       : ""
-                   }  `}
-              href="#resume"
-              onClick={() => scrollToSection("resume")}
-            >
-              Resumé
-            </a>
-          </li>
-          <li key="cv">
-            <a
-              className="tracking-wider select-none relative border-2 py-2.5
-                  px-5 font-medium uppercase transition-colors before:absolute
-                  before:left-0 before:top-0 before:-z-10 before:h-full before:w-full
-                  before:origin-top-left before:scale-x-0 before:transition-transform
-                  before:duration-300 before:content-[''] before:hover:scale-x-100
-                  bg-transparent text-teal-200 border-teal-200 before:border-green-500 hover:text-gray-800
-                  before:bg-teal-100 dark:bg-transparent dark:text-gray-500 dark:border-gray-600
-                  dark:hover:text-black dark:before:bg-gray-600"
-              href="/cv.pdf"
-              target="_blank"
-            >
-              CV
-            </a>
-          </li>
-          <li key="darkmodeToggle">
-            {darkMode ? (
-              <BsFillMoonStarsFill
-                onClick={darkmodeToggle}
-                className="mr-14 ml-10 cursor-pointer text-2xl
-                         }
-               text-amber-200 hover:text-gray-400 "
-              />
-            ) : (
-              <BsFillSunFill
-                onClick={darkmodeToggle}
-                className={`  ${
-                  activeSection === "about" ? "text-red-400" : "text-yellow-400"
-                }   mr-14 ml-10 cursor-pointer text-2xl  hover:text-red-800`}
-              />
-            )}
-          </li>
-        </ul>
-      </nav>
+    <div
+      className={` ${darkMode ? "dark" : ""} ${
+        isCustomCursor ? "cursor-paw" : ""
+      }`}
+    >
+      <NavBar
+        darkMode={darkMode}
+        darkmodeToggle={darkmodeToggle}
+        activeSection={activeSection}
+        toggleTooltip={toggleTooltip}
+        isTooltipVisible={isTooltipVisible}
+        scrollToSection={scrollToSection}
+        togglePopupBox={togglePopupBox}
+        isPopupBoxOpen={isPopupBoxOpen}
+        isCustomCursor={isCustomCursor}
+        setIsCustomCursor={setIsCustomCursor}
+      />
 
       {/*burger menu instead of navbar when width of screen is below 1130px*/}
-      <div className="md:hidden">
-        <button
-          className="fixed top-0 right-0 m-4 z-50 p-2 rounded-md bg-gray-800 text-white"
-          onClick={toggleMenu}
-        >
-          <GiHamburgerMenu />
-        </button>
-
-        {isMenuOpen && (
-          <div
-            className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-70 flex justify-center items-center z-50"
-            onClick={toggleMenu} //  close menu if click outside of it
-          >
-            <div
-              className="border-4 border-double border-gray-800 dark:border-gray-400 text-center bg-white text-black font-bold dark:text-white dark:bg-gray-800 w-auto p-4 rounded-lg shadow"
-              // Prevent the menu from closing, stop the click event from propagating to the parent element
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="p-2 border-b border-gray-300 mt-2">
-                <button onClick={() => scrollToSectionBurgerMenu("about")}>
-                  About
-                </button>
-              </div>
-              <div className="p-2 border-b border-gray-300 mt-2">
-                <button onClick={() => scrollToSectionBurgerMenu("skills")}>
-                  Skills
-                </button>
-              </div>
-              <div className="p-2 border-b border-gray-300 mt-2">
-                <button onClick={() => scrollToSectionBurgerMenu("resume")}>
-                  Resumé
-                </button>
-              </div>
-              <div className="flex items-center justify-center p-2 mt-2 gap-10">
-                {darkMode ? (
-                  <button
-                    className="flex items-center justify-center w-10 h-10 bg-black border-gray-400 border-2 text-gray-800 font-bold rounded"
-                    onClick={darkmodeToggle}
-                  >
-                    <BsFillMoonStarsFill className="text-2xl text-amber-200" />{" "}
-                  </button>
-                ) : (
-                  <button
-                    className="flex items-center justify-center w-10 h-10 dark:bg-black border-gray-400 border-2 text-gray-800 font-bold rounded"
-                    onClick={darkmodeToggle}
-                  >
-                    <BsFillSunFill className="text-2xl text-yellow-600" />{" "}
-                  </button>
-                )}
-
-                <a
-                  className=" flex items-center justify-center w-10 h-10
-                  dark:bg-black border-gray-400 border-2 text-gray-800 dark:text-teal-500 font-bold rounded"
-                  href="/cv.pdf"
-                  target="_blank"
-                >
-                  CV
-                </a>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-
+      <NavBarMobile
+        darkMode={darkMode}
+        darkmodeToggle={darkmodeToggle}
+        toggleMenu={toggleMenu}
+        isMenuOpen={isMenuOpen}
+        scrollToSectionBurgerMenu={scrollToSectionBurgerMenu}
+      />
       {/* Content */}
       <main className="bg-white dark:bg-gray-900 scroll-smooth overscroll-none">
         <div

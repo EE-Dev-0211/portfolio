@@ -1,16 +1,16 @@
 import { useState, RefObject, useEffect } from "react";
 
 export function useFollowPointer(
-  ref: RefObject<HTMLElement>,
+  myRef: RefObject<HTMLElement>,
   isGameActive: boolean
 ) {
   const [point, setPoint] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    if (!ref.current) return;
+    if (!myRef.current) return;
 
     const handlePointerMove = ({ clientX, clientY }: MouseEvent) => {
-      const element = ref.current!;
+      const element = myRef.current!;
 
       const x = clientX - element.offsetLeft - element.offsetWidth / 2;
       const y = clientY - element.offsetTop - element.offsetHeight / 2;
@@ -24,7 +24,7 @@ export function useFollowPointer(
     return () => {
       window.removeEventListener("pointermove", handlePointerMove);
     };
-  }, [isGameActive, ref]);
+  }, [isGameActive, myRef]);
 
   return point;
 }
