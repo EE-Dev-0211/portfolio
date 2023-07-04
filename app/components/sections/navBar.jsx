@@ -1,12 +1,6 @@
-import { TbBrandNextjs } from "react-icons/tb";
-import { SiReact, SiTailwindcss, SiWebstorm } from "react-icons/si";
 import React, { useEffect, useRef, useState } from "react";
-import {
-  BsFillArrowUpCircleFill,
-  BsFillMoonStarsFill,
-  BsFillSunFill,
-} from "react-icons/bs";
-import { AiFillPlayCircle, AiOutlineArrowUp } from "react-icons/ai";
+import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
+import { AiFillPlayCircle } from "react-icons/ai";
 import { CgPlayStopO } from "react-icons/cg";
 import { FaCat } from "react-icons/fa";
 import { IoMdInformationCircle } from "react-icons/io";

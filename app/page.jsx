@@ -1,10 +1,9 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import About from "./components/sections/about";
 import Skills from "./components/sections/skills";
 import Resume from "./components/sections/resume";
 import Footer from "./components/sections/footer";
-import { useFollowPointer } from "app/components/use-follow-pointer.ts";
 import NavBar from "app/components/sections/navBar";
 import NavBarMobile from "/app/components/sections/navBarMobile";
 
