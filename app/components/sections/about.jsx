@@ -14,7 +14,7 @@ const About = ({ darkMode }) => {
   return (
     <section
       id="about"
-      className="pt-20 pb-10 min-h-full bg-transparent dark:bg-darkGradient1 "
+      className="pt-20 min-h-full bg-transparent dark:bg-darkGradient1 "
       style={{
         backgroundImage: darkMode ? 'url("/dotgrid.svg")' : "",
         backgroundSize: "cover",
@@ -22,7 +22,7 @@ const About = ({ darkMode }) => {
         backgroundPosition: "top",
       }}
     >
-      <div className=" text-center p-10">
+      <div className="mt-8 md:mt-4 text-center p-10">
         <span
           className="animate-fadeIn-TopText select-none
         text-black font-extrabold dark:text-white text-xl py-2 md:text-2xl"

@@ -228,14 +228,19 @@ const NavBar = ({
           </li>
           <li key="cv">
             <a
-              className="tracking-wider select-none relative border-2 py-2.5
+              className={`tracking-wider select-none relative border-2 py-2.5
                   px-5 font-medium uppercase transition-colors before:absolute
                   before:left-0 before:top-0 before:-z-10 before:h-full before:w-full
                   before:origin-top-left before:scale-x-0 before:transition-transform
-                  before:duration-300 before:content-[''] before:hover:scale-x-100
-                  bg-transparent text-teal-200 border-teal-200 before:border-green-500 hover:text-gray-800
-                  before:bg-teal-100 dark:bg-transparent dark:text-gray-500 dark:border-gray-600
-                  dark:hover:text-black dark:before:bg-gray-600 mr-6"
+                  before:duration-300 before:content-[''] before:hover:scale-x-100     
+                  bg-transparent text-teal-200 border-teal-200 before:border-green-500 hover:text-gray-800 before:bg-teal-100        
+                  ${
+                    activeSection === "about"
+                      ? "text-teal-500 border-teal-500 before:border-green-800 hover:text-gray-800 before:bg-teal-500"
+                      : ""
+                  } dark:bg-transparent dark:text-gray-500 dark:border-gray-600
+                  dark:hover:text-black dark:before:bg-gray-600 mr-6
+                  `}
               href="/cv.pdf"
               target="_blank"
             >
@@ -246,7 +251,7 @@ const NavBar = ({
             <BsFillSunFill
               className={` mt-1 ${
                 activeSection === "about" ? "text-red-400" : "text-yellow-400"
-              }   mx-4  text-2xl  dark:text-gray-200`}
+              }   mr-4  text-2xl  dark:text-gray-200`}
             />
             <div
               className={` rounded-full p-1 w-14 h-8 bg-gray-300 ${
@@ -265,7 +270,7 @@ const NavBar = ({
               className={`mt-1 ${
                 activeSection === "about" ? "text-gray-400" : "text-gray-200"
               } 
-                mx-4  text-2xl dark:text-amber-200`}
+                ml-4 mr-6 text-2xl dark:text-amber-200`}
             />
           </li>
         </ul>

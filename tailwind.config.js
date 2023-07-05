@@ -10,7 +10,7 @@ module.exports = {
   // context fits into the screen -> scroll snapping
   theme: {
     screens: {
-      md: "1130px",
+      md: "1100px",
     },
     extend: {
       margin: {
