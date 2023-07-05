@@ -235,29 +235,38 @@ const NavBar = ({
                   before:duration-300 before:content-[''] before:hover:scale-x-100
                   bg-transparent text-teal-200 border-teal-200 before:border-green-500 hover:text-gray-800
                   before:bg-teal-100 dark:bg-transparent dark:text-gray-500 dark:border-gray-600
-                  dark:hover:text-black dark:before:bg-gray-600"
+                  dark:hover:text-black dark:before:bg-gray-600 mr-6"
               href="/cv.pdf"
               target="_blank"
             >
               CV
             </a>
           </li>
-          <li key="darkmodeToggle">
-            {darkMode ? (
-              <BsFillMoonStarsFill
-                onClick={darkmodeToggle}
-                className="mr-14 ml-10 cursor-pointer text-2xl
-                         }
-               text-amber-200 hover:text-gray-400 "
-              />
-            ) : (
-              <BsFillSunFill
-                onClick={darkmodeToggle}
-                className={`  ${
-                  activeSection === "about" ? "text-red-400" : "text-yellow-400"
-                }   mr-14 ml-10 cursor-pointer text-2xl  hover:text-red-800`}
-              />
-            )}
+          <li className="flex flex-row" key="darkmodeToggle">
+            <BsFillSunFill
+              className={` mt-1 ${
+                activeSection === "about" ? "text-red-400" : "text-yellow-400"
+              }   mx-4  text-2xl  dark:text-gray-200`}
+            />
+            <div
+              className={` rounded-full p-1 w-14 h-8 bg-gray-300 ${
+                darkMode ? "bg-gray-800" : "bg-white"
+              } hover:cursor-pointer`}
+              onClick={darkmodeToggle}
+            >
+              <div
+                className={`bg-white w-6 h-6 rounded-full shadow-md transform transition duration-300 ease-in-out ${
+                  darkMode ? "translate-x-6" : ""
+                } border-solid border-2 border-opacity-20 border-black bg-gray-500 bg-opacity-20
+                dark:border-opacity-70 dark:bg-opacity-70`}
+              ></div>
+            </div>{" "}
+            <BsFillMoonStarsFill
+              className={`mt-1 ${
+                activeSection === "about" ? "text-gray-400" : "text-gray-200"
+              } 
+                mx-4  text-2xl dark:text-amber-200`}
+            />
           </li>
         </ul>
       </nav>
