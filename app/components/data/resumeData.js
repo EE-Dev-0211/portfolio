@@ -12,7 +12,7 @@ export const workSections = [
     period: "10/2019 - 03/2021",
     position: "Commercial Employee",
     positionSL: "Department: Estate",
-    company: "Bankpower GmbH",
+    company: "Keba Gesellschaft für interne Services mbH",
     location: "Schkeuditz, Saxony, Germany",
   },
   {

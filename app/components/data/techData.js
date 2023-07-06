@@ -127,8 +127,8 @@ export const framLibs = [
   {
     id: 10,
     name: "React",
-    progressTwTag: "w-1/2",
-    progressText: "50%",
+    progressTwTag: "w-3/5",
+    progressText: "60%",
     icon: SiReact,
     iconColor: "md:text-blue-600",
     bgColor: "bg-blue-600",

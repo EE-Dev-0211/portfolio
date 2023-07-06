@@ -10,7 +10,7 @@ const PopupBox = ({ isPopupBoxOpen, togglePopupBox, content }) => {
           onClick={togglePopupBox} //  close menu if click outside of it
         >
           <div
-            className="border-4 border-double border-gray-800 dark:border-gray-400 text-center bg-white text-black
+            className="border-4 border-solid border-black dark:border-white text-center bg-white text-black
               font-bold dark:text-white dark:bg-gray-800 w-auto p-4 rounded-lg shadow
              bg-gradient-to-b from-yellow-100 to-gray-300
              dark:bg-gradient-to-b dark:from-teal-500 dark:to-gray-600"
