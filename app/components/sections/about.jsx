@@ -61,7 +61,7 @@ const About = ({ darkMode }) => {
           href="https://www.linkedin.com/in/eric-e-720431201/"
           target="_blank"
         >
-          <AiFillLinkedin className="text-white dark:text-amber-50" />
+          <AiFillLinkedin className="text-white hover:text-teal-200 dark:text-amber-50 dark:hover:text-teal-100" />
         </a>
       </div>
 

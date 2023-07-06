@@ -186,13 +186,10 @@ export default function Home() {
           }}
         >
           <About darkMode={darkMode} />
-
           <div className="tbWaves">
             <Skills />
           </div>
-
           <Resume />
-
           <Footer darkMode={darkMode} />
         </div>
       </main>

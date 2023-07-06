@@ -1,5 +1,7 @@
 import { framLibs, languages, software } from "app/components/data/techData.js";
 import React, { useState } from "react";
+import HeadingBox from "app/components/sharedComponents/headingBox";
+import { RiComputerFill } from "react-icons/ri";
 
 export default function Skills() {
   const [tooltipContent, setTooltipContent] = useState(null);
@@ -10,15 +12,11 @@ export default function Skills() {
       className="py-16  min-h-full text-center dark:bg-darkGradient2"
     >
       <div>
-        <h3 className="text-3xl  pt-4 text-white font-extrabold">
-          Technologies
-        </h3>
-
-        <p className="text-md pt-6 px-6 leading-8 text-white font-semibold md:text-lg mx-auto">
-          Here you will find various technologies that I have had the pleasure
-          of getting to know. I have worked with some of them more intensively,
-          with others only superficially.
-        </p>
+        <HeadingBox
+          icon={<RiComputerFill className="dark:text-blue-600  mr-6" />}
+          title={"Technologies"}
+          additive={"Languages, Frameworks & Software"}
+        />
       </div>
 
       <div className="flex flex-col items-center md:flex md:justify-center md:gap-16 md:flex-row md:items-start md:mx-10">

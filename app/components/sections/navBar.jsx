@@ -79,7 +79,7 @@ const NavBar = ({
                 catToggle();
                 toggleTooltip();
               }}
-              className="mt-7.5 ml-7.5 dark:ml-8
+              className="mt-7.5 ml-7.5 dark:ml-7.5
               hover:text-white text-2xl text-gray-400"
               onMouseEnter={toggleTooltip}
               onMouseLeave={toggleTooltip}
