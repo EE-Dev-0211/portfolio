@@ -12,37 +12,49 @@ export default function Resume() {
   return (
     <section
       id="resume"
-      className="flex flex-col items-center justify-center md:pt-14 md:min-h-full text-center  dark:bg-darkGradient1"
+      className="flex flex-col items-center justify-center md:pt-16 md:min-h-full text-center  dark:bg-darkGradient1"
     >
-      <div className="w-4/5 md:w-full mb-4">
+      <div className="w-4/5 md:w-full mb-4 ">
         <HeadingBox
           icon={<BsFileTextFill className="dark:text-blue-600 mr-6" />}
           title={"Resumé"}
           additive={"Education & Work Experience"}
         />
-        <div className="flex flex-col items-center md:justify-evenly md:items-start md:flex-row ">
-          <div className="pb-10 w-4/5 md:w-1/3 md:flex md:flex-col md:items-center ">
+        <div
+          className="flex flex-col items-center md:justify-evenly md:items-start md:flex-row
+        "
+        >
+          <div className="pb-10 w-4/5 md:w-1/3 flex flex-col items-center ">
             {/*mapping the education entries*/}
-            {educationSections.map((educationSection) => (
-              <div
-                key={educationSection.id}
-                className={`rounded-lg md:w-full items-center text-black dark:text-white flex flex-col p-4 text-center bg-gray-100 dark:bg-black ${
-                  educationSection.id === 1 ? "mt-4" : ""
-                }`}
-              >
+            <div
+              className="  mt-4 bg-gray-100 dark:bg-black border-solid rounded-lg
+            dark:border-double border-2 dark:border-teal-200 border-gray-800
+            w-3/5 md:w-full"
+            >
+              {educationSections.map((educationSection) => (
                 <div
-                  className="w-2 h-2 rounded-full bg-gradient-to-tr from-rose-950 to-orange-300
+                  key={educationSection.id}
+                  className={`flex flex-col items-center text-black dark:text-white  p-4 
+                  text-center bg-transparent `}
+                >
+                  <div
+                    className="w-2 h-2 rounded-full bg-gradient-to-tr from-rose-950 to-orange-300
             dark:from-teal-100 dark:to-blue-600 mb-2"
-                ></div>
-                <span className="">{educationSection.period}</span>
-                <span className="font-bold">{educationSection.position}</span>
-                <span className="font-bold">{educationSection.positionSL}</span>
-                <span className="font-medium">{educationSection.company}</span>
-                <span className="italic dark:not-italic dark:font-thin">
-                  {educationSection.location}
-                </span>
-              </div>
-            ))}{" "}
+                  ></div>
+                  <span className="">{educationSection.period}</span>
+                  <span className="font-bold">{educationSection.position}</span>
+                  <span className="font-bold">
+                    {educationSection.positionSL}
+                  </span>
+                  <span className="font-medium">
+                    {educationSection.company}
+                  </span>
+                  <span className="italic dark:not-italic dark:font-thin">
+                    {educationSection.location}
+                  </span>
+                </div>
+              ))}
+            </div>
             {/*personal information box*/}
             <ExpandableTextBox
               content={
@@ -76,28 +88,33 @@ export default function Resume() {
             />
           </div>
 
-          <div className="w-4/5 md:w-1/3 md:flex md:flex-col md:items-center">
+          <div className="w-4/5 md:w-1/3 flex flex-col items-center">
             {/*mapping the work experience entries*/}
-            {workSections.map((workSection) => (
-              <div
-                key={workSection.id}
-                className={`rounded-lg md:w-full items-center text-black dark:text-white flex flex-col p-4 text-center bg-gray-100 dark:bg-black ${
-                  workSection.id === 2 ? "mt-4" : ""
-                }`}
-              >
+            <div
+              className="mt-4 bg-gray-100 dark:bg-black border-solid rounded-lg
+            dark:border-double border-2 dark:border-teal-200 border-gray-800
+            w-3/5 md:w-full "
+            >
+              {workSections.map((workSection) => (
                 <div
-                  className="w-2 h-2 rounded-full bg-gradient-to-tr from-rose-950 to-orange-300
+                  key={workSection.id}
+                  className={` items-center text-black
+                   dark:text-white flex flex-col p-4 text-center bg-transparent `}
+                >
+                  <div
+                    className="w-2 h-2 rounded-full bg-gradient-to-tr from-rose-950 to-orange-300
             dark:from-teal-100 dark:to-blue-600 mb-2"
-                ></div>
-                <span className="">{workSection.period}</span>
-                <span className="font-bold">{workSection.position} </span>
-                <span className="font-bold">{workSection.positionSL} </span>
-                <span className="font-medium">{workSection.company} </span>
-                <span className="italic dark:not-italic dark:font-thin dark:text-white">
-                  {workSection.location}
-                </span>
-              </div>
-            ))}
+                  ></div>
+                  <span className="">{workSection.period}</span>
+                  <span className="font-bold">{workSection.position} </span>
+                  <span className="font-bold">{workSection.positionSL} </span>
+                  <span className="font-medium">{workSection.company} </span>
+                  <span className="italic dark:not-italic dark:font-thin dark:text-white">
+                    {workSection.location}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

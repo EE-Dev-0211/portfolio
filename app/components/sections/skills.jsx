@@ -9,7 +9,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-16  min-h-full text-center dark:bg-darkGradient2"
+      className="py-16 min-h-full text-center dark:bg-darkGradient2"
     >
       <div>
         <HeadingBox
@@ -19,8 +19,15 @@ export default function Skills() {
         />
       </div>
 
-      <div className="flex flex-col items-center md:flex md:justify-center md:gap-16 md:flex-row md:items-start md:mx-10">
-        <div className="w-60 items-center bg-gray-100 dark:bg-black text-center shadow-lg p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 md:w-1/4 flex flex-col">
+      <div
+        className="flex flex-col items-center md:flex md:justify-center
+       md:gap-16 md:flex-row md:items-start md:mx-10"
+      >
+        <div
+          className="w-60 items-center bg-gray-100 dark:bg-black text-center
+        shadow-lg p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 md:w-1/4 flex flex-col
+        border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800"
+        >
           <h3 className="text-lg text-black font-medium pb-6 dark:text-white">
             Languages
           </h3>
@@ -79,8 +86,8 @@ export default function Skills() {
           ))}
         </div>
 
-        <div className="w-60 items-center bg-gray-100 dark:bg-black text-center shadow-lg p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 flex flex-col md:w-1/4">
-          <h3 className="text-lg text-black font-medium pb-6 dark:text-white">
+        <div className="border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800 w-60 items-center bg-gray-100 dark:bg-black text-center shadow-lg p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 flex flex-col md:w-1/4">
+          <h3 className="text-lg text-black font-medium pb-6 dark:text-white ">
             Frameworks & Libraries
           </h3>
           {/*iterating over frameworks & libraries*/}
@@ -135,7 +142,10 @@ export default function Skills() {
           ))}
         </div>
 
-        <div className="w-4/5 bg-gray-100 dark:bg-black text-center shadow-lg  p-10  rounded-xl mt-6 mb-10   flex flex-col md:w-1/4">
+        <div
+          className="border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800 w-3/5 md:w-1/4
+        bg-gray-100 dark:bg-black text-center shadow-lg  p-10  rounded-xl mt-6 mb-10   flex flex-col "
+        >
           <h3 className="text-lg text-black font-medium pb-6 dark:text-white">
             Software
           </h3>
