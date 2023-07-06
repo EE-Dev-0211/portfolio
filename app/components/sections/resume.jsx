@@ -21,10 +21,10 @@ export default function Resume() {
           additive={"Education & Work Experience"}
         />
         <div
-          className="flex flex-col items-center md:justify-evenly md:items-start md:flex-row
+          className="flex flex-col items-center md:justify-center md:gap-x-24 md:items-start md:flex-row
         "
         >
-          <div className="pb-10 w-4/5 md:w-1/3 flex flex-col items-center ">
+          <div className="pb-10 w-4/5 md:w-1/4 flex flex-col items-center ">
             {/*mapping the education entries*/}
             <div
               className="  mt-4 bg-gray-100 dark:bg-black border-solid rounded-lg
@@ -34,7 +34,7 @@ export default function Resume() {
               {educationSections.map((educationSection) => (
                 <div
                   key={educationSection.id}
-                  className={`flex flex-col items-center text-black dark:text-white  p-4 
+                  className={`flex flex-col items-center text-black dark:text-white p-4 
                   text-center bg-transparent `}
                 >
                   <div
@@ -88,7 +88,7 @@ export default function Resume() {
             />
           </div>
 
-          <div className="w-4/5 md:w-1/3 flex flex-col items-center">
+          <div className="w-4/5 md:w-1/4 flex flex-col items-center">
             {/*mapping the work experience entries*/}
             <div
               className="mt-4 bg-gray-100 dark:bg-black border-solid rounded-lg
