@@ -1,5 +1,4 @@
 import React from "react";
-import { BsFileTextFill } from "react-icons/bs";
 
 const HeadingBox = ({ title, additive, icon }) => {
   return (

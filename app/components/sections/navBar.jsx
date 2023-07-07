@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
-import { AiFillPlayCircle } from "react-icons/ai";
+import { AiFillMail, AiFillPlayCircle } from "react-icons/ai";
 import { CgPlayStopO } from "react-icons/cg";
 import { FaCat } from "react-icons/fa";
 import { IoMdInformationCircle } from "react-icons/io";
@@ -47,6 +47,10 @@ const NavBar = ({
   useEffect(() => {
     document.addEventListener("keydown", handleKeyPress);
   }, []);
+
+  const handleEmailClick = () => {
+    window.location.href = `mailto:eiselt.eric@proton.me`;
+  };
 
   return (
     <>
@@ -109,6 +113,10 @@ const NavBar = ({
             <IoMdInformationCircle
               onClick={togglePopupBox}
               className="text-base font-bolder hover:cursor-help hover:text-green-400"
+            />
+            <AiFillMail
+              className="text-base font-bolder hover:cursor-pointer hover:text-blue-400"
+              onClick={handleEmailClick}
             />
             Portfolio.
           </span>

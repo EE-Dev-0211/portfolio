@@ -4,7 +4,6 @@ import {
   educationSections,
 } from "app/components/data/resumeData.js";
 import ExpandableTextBox from "app/components/sharedComponents/expandableTextbox";
-
 import HeadingBox from "app/components/sharedComponents/headingBox";
 import { BsFileTextFill } from "react-icons/bs";
 
