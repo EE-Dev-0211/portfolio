@@ -12,9 +12,10 @@ export default function Resume() {
   return (
     <section
       id="resume"
-      className="flex flex-col items-center justify-center md:pt-16 md:min-h-full text-center  dark:bg-darkGradient1"
+      className="flex flex-col items-center justify-center md:pt-16 md:min-h-full text-center
+      bg-gradient-to-b from-transparent to-gray-900"
     >
-      <div className="w-4/5 md:w-full mb-4 ">
+      <div className="w-4/5 md:w-full mb-4">
         <HeadingBox
           icon={<BsFileTextFill className="dark:text-blue-600 mr-6" />}
           title={"Resumé"}

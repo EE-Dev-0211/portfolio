@@ -2,7 +2,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 import Image from "next/image";
 import React, { useState } from "react";
 
-const About = ({ darkMode }) => {
+const About = () => {
   // state for the Avatarcoin
   const [isFlipped, setIsFlipped] = useState(true);
 
@@ -12,16 +12,7 @@ const About = ({ darkMode }) => {
   };
 
   return (
-    <section
-      id="about"
-      className="pt-20 min-h-full bg-transparent dark:bg-darkGradient1 "
-      style={{
-        backgroundImage: darkMode ? 'url("/dotgrid.svg")' : "",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "top",
-      }}
-    >
+    <section id="about" className="pt-20 min-h-full bg-transparent ">
       <div className="mt-8 md:mt-4 text-center p-10">
         <span
           className="animate-fadeIn-TopText select-none

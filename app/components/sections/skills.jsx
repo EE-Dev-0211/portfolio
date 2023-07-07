@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import HeadingBox from "app/components/sharedComponents/headingBox";
 import { RiComputerFill } from "react-icons/ri";
 
-export default function Skills() {
+export default function Skills({ darkMode }) {
   const [tooltipContent, setTooltipContent] = useState(null);
 
   return (
     <section
       id="skills"
-      className="py-16 min-h-full text-center dark:bg-darkGradient2"
+      className="py-16 min-h-full text-center bg-transparent"
     >
       <div>
         <HeadingBox

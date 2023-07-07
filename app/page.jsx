@@ -175,19 +175,21 @@ export default function Home() {
         scrollToSectionBurgerMenu={scrollToSectionBurgerMenu}
       />
       {/* Content */}
-      <main className="bg-white dark:bg-gray-900 scroll-smooth overscroll-none">
+      <main className="scroll-smooth overscroll-none">
         <div
           className="hw-md:snap-y hw-md:snap-mandatory h-screen overflow-scroll scrollbar-hide"
           style={{
-            backgroundImage: darkMode ? "" : 'url("/mountains-unsplash.jpg")',
+            backgroundImage: darkMode
+              ? 'url("/space-unsplash.jpg")'
+              : 'url("/mountains-unsplash.jpg")',
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
           }}
         >
-          <About darkMode={darkMode} />
+          <About />
           <div className="tbWaves">
-            <Skills />
+            <Skills darkMode={darkMode} />
           </div>
           <Resume />
           <Footer darkMode={darkMode} />
