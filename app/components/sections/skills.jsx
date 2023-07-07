@@ -14,6 +14,7 @@ export default function Skills({ darkMode }) {
       {" "}
       <Reveal
         slide={"hidden"}
+        duration={0.6}
         content={
           <div>
             <HeadingBox
@@ -28,14 +29,22 @@ export default function Skills({ darkMode }) {
         className="flex flex-col items-center md:flex md:justify-center
        md:gap-16 md:flex-row md:items-start md:mx-10"
       >
+        {/*dddddddddddddddddd*/}
+
         <div
           className="w-60 items-center bg-gray-100 dark:bg-black text-center
         shadow-lg p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 md:w-1/4 flex flex-col
         border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800"
         >
-          <h3 className="text-lg text-black font-medium pb-6 dark:text-white">
-            Languages
-          </h3>
+          <Reveal
+            duration={0.75}
+            slide={"hidden"}
+            content={
+              <h3 className="text-lg text-black font-medium pb-6 dark:text-white">
+                Languages
+              </h3>
+            }
+          />
           {/*iterating over the languages*/}
           {languages.map((language) => (
             <div key={language.id} className="md:grid md:grid-cols-3 md:h-20">
@@ -91,10 +100,18 @@ export default function Skills({ darkMode }) {
           ))}
         </div>
 
+        {/*dddddddddddddddddd*/}
+
         <div className="border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800 w-60 items-center bg-gray-100 dark:bg-black text-center shadow-lg p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 flex flex-col md:w-1/4">
-          <h3 className="text-lg text-black font-medium pb-6 dark:text-white ">
-            Frameworks & Libraries
-          </h3>
+          <Reveal
+            slide={"hidden"}
+            duration={0.9}
+            content={
+              <h3 className="text-lg text-black font-medium pb-6 dark:text-white ">
+                Frameworks & Libraries
+              </h3>
+            }
+          />
           {/*iterating over frameworks & libraries*/}
           {framLibs.map((framLib) => (
             <div key={framLib.id} className="md:grid md:grid-cols-3 md:h-20">
@@ -151,9 +168,15 @@ export default function Skills({ darkMode }) {
           className="border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800 w-3/5 md:w-1/4
         bg-gray-100 dark:bg-black text-center shadow-lg  p-10  rounded-xl mt-6 mb-10   flex flex-col "
         >
-          <h3 className="text-lg text-black font-medium pb-6 dark:text-white">
-            Software
-          </h3>
+          <Reveal
+            slide={"hidden"}
+            duration={1.1}
+            content={
+              <h3 className="text-lg text-black font-medium pb-6 dark:text-white">
+                Software
+              </h3>
+            }
+          />
 
           <div className="grid grid-cols-3 text-black dark:text-white">
             {/*iterating over the software entries*/}
