@@ -15,7 +15,7 @@ const About = () => {
     <section id="about" className="pt-20 min-h-full bg-transparent ">
       <div className="mt-8 md:mt-4 text-center p-10">
         <span
-          className="animate-fadeIn-TopText select-none
+          className="animate-fadeInTopText select-none
         text-black font-extrabold dark:text-white text-xl py-2 md:text-2xl"
         >
           Hi, I am
@@ -35,7 +35,7 @@ const About = () => {
         </h3>
 
         <p
-          className="break-words md:break-normal animate-fadeIn-Avatar select-none
+          className="break-words md:break-normal animate-fadeInAvatar select-none
         text-md py-5 leading-8 font-bold text-white md:text-l max-w-lg mx-auto
         dark:text-amber-50 "
         >
@@ -46,7 +46,7 @@ const About = () => {
         </p>
       </div>
 
-      <div className="animate-fadeIn-Avatar select-none text-5xl flex justify-center gap-16 text-gray-600">
+      <div className="animate-fadeInAvatar select-none text-5xl flex justify-center gap-16 text-gray-600">
         <a
           className="z-10"
           href="https://www.linkedin.com/in/eric-e-720431201/"
@@ -67,7 +67,7 @@ const About = () => {
         >
           <div>
             <Image
-              className="animate-fadeIn-Avatar"
+              className="animate-fadeInAvatar"
               src={isFlipped ? "/8bitpix.png" : "/portrait.png"}
               alt="Front of coin"
               width={500}

@@ -28,6 +28,24 @@ module.exports = {
             transform: "rotate(-1deg)",
           },
         },
+        fadeInLeft: {
+          "0%": {
+            opacity: 0,
+            transform: "translateX(-100%)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translateX(0)",
+          },
+        },
+        fadeIn: {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
       },
       margin: {
         7.5: "1.6rem",
@@ -60,6 +78,11 @@ module.exports = {
       backgroundImage: {
         darkGradient1: "linear-gradient(180deg, #111827, #273759, #111827)",
       },
+    },
+  },
+  variants: {
+    extend: {
+      animation: ["motion-safe"],
     },
   },
   plugins: [require("tailwind-scrollbar-hide"), require("tailwind-scrollbar")],

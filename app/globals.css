@@ -20,34 +20,6 @@
   opacity: 0;
 }
 
-.animate-fadeInLeftLoading1 {
-  animation-name: fadeInLeft;
-  animation-duration:.2s;
-  animation-delay: .1s;
-  opacity: 0;
-}
-
-.animate-fadeInLeftLoading2 {
-  animation-name: fadeInLeft;
-  animation-duration: .4s;
-  animation-delay: .2s;
-  opacity: 0;
-}
-
-.animate-fadeInLeftLoading3 {
-  animation-name: fadeInLeft;
-  animation-duration: .6s;
-  animation-delay: .3s;
-  opacity: 0;
-}
-
-.animate-fadeInLeftLoading4 {
-  animation-name: fadeInLeft;
-  animation-duration: .8s;
-  animation-delay: .5s;
-  opacity: 0;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -64,14 +36,14 @@
   opacity: 0;
 }
 
-.animate-fadeIn-Avatar {
+.animate-fadeInAvatar {
   animation-name: fadeIn;
   animation-duration: 7s;
   animation-delay: 1s;
   opacity: 0;
 }
 
-.animate-fadeIn-TopText {
+.animate-fadeInTopText {
   animation-name: fadeIn;
   animation-duration: 1s;
   animation-delay: 0.5s;
@@ -84,7 +56,7 @@ body {
   /*overflow: hidden;*/
 }
 
-.animate-fadeIn, .animate-fadeIn-Avatar, .animate-fadeIn-TopText, .animate-fadeInLeft {
+.animate-fadeIn, .animate-fadeInAvatar, .animate-fadeInTopText, .animate-fadeInLeft {
   animation-delay: 0s;
   opacity: 1;
 }
