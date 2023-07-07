@@ -6,6 +6,7 @@ import {
 import ExpandableTextBox from "app/components/sharedComponents/expandableTextbox";
 import HeadingBox from "app/components/sharedComponents/headingBox";
 import { BsFileTextFill } from "react-icons/bs";
+import { Reveal } from "app/components/sharedComponents/reveal";
 
 export default function Resume() {
   return (
@@ -15,10 +16,15 @@ export default function Resume() {
       bg-gradient-to-b from-transparent to-gray-900"
     >
       <div className="w-4/5 md:w-full mb-4">
-        <HeadingBox
-          icon={<BsFileTextFill className="dark:text-blue-600 mr-6" />}
-          title={"Resumé"}
-          additive={"Education & Work Experience"}
+        <Reveal
+          slide={"hidden"}
+          content={
+            <HeadingBox
+              icon={<BsFileTextFill className="dark:text-blue-600 mr-6" />}
+              title={"Resumé"}
+              additive={"Education & Work Experience"}
+            />
+          }
         />
         <div
           className="flex flex-col items-center md:justify-center md:gap-x-24 md:items-start md:flex-row

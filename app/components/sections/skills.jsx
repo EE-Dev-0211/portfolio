@@ -2,7 +2,7 @@ import { framLibs, languages, software } from "app/components/data/techData.js";
 import React, { useState } from "react";
 import HeadingBox from "app/components/sharedComponents/headingBox";
 import { RiComputerFill } from "react-icons/ri";
-
+import { Reveal } from "app/components/sharedComponents/reveal";
 export default function Skills({ darkMode }) {
   const [tooltipContent, setTooltipContent] = useState(null);
 
@@ -11,14 +11,19 @@ export default function Skills({ darkMode }) {
       id="skills"
       className="py-16 min-h-full text-center bg-transparent"
     >
-      <div>
-        <HeadingBox
-          icon={<RiComputerFill className="dark:text-blue-600 mr-6" />}
-          title={"Technologies"}
-          additive={"Languages, Frameworks & Software"}
-        />
-      </div>
-
+      {" "}
+      <Reveal
+        slide={"hidden"}
+        content={
+          <div>
+            <HeadingBox
+              icon={<RiComputerFill className="dark:text-blue-600 mr-6" />}
+              title={"Technologies"}
+              additive={"Languages, Frameworks & Software"}
+            />
+          </div>
+        }
+      />
       <div
         className="flex flex-col items-center md:flex md:justify-center
        md:gap-16 md:flex-row md:items-start md:mx-10"
