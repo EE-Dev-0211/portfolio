@@ -28,9 +28,9 @@ export default function Resume() {
           <div className="pb-10 w-4/5 md:w-1/4 flex flex-col items-center ">
             {/*mapping the education entries*/}
             <div
-              className="  mt-4 bg-gray-100 dark:bg-black border-solid rounded-lg
+              className="mt-4 bg-gray-100 dark:bg-black border-solid rounded-lg
             dark:border-double border-2 dark:border-teal-200 border-gray-800
-            w-3/5 md:w-full"
+            w-60 md:w-full"
             >
               {educationSections.map((educationSection) => (
                 <div
@@ -94,7 +94,7 @@ export default function Resume() {
             <div
               className="mt-4 bg-gray-100 dark:bg-black border-solid rounded-lg
             dark:border-double border-2 dark:border-teal-200 border-gray-800
-            w-3/5 md:w-full "
+            w-60 md:w-full "
             >
               {workSections.map((workSection) => (
                 <div

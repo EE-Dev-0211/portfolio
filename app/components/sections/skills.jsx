@@ -13,7 +13,7 @@ export default function Skills({ darkMode }) {
     >
       <div>
         <HeadingBox
-          icon={<RiComputerFill className="dark:text-blue-600  mr-6" />}
+          icon={<RiComputerFill className="dark:text-blue-600 mr-6" />}
           title={"Technologies"}
           additive={"Languages, Frameworks & Software"}
         />
