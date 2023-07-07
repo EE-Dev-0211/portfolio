@@ -9,7 +9,7 @@ import NavBarMobile from "/app/components/sections/navBarMobile";
 
 export default function Home() {
   const [contentLoading, setContentLoading] = useState(true);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [activeSection, setActiveSection] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
