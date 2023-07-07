@@ -21,12 +21,17 @@ const About = () => {
           Hi, I am
         </span>
 
-        <h2
-          className=" text-5xl py-2
+        <Reveal
+          slide={"hidden"}
+          content={
+            <h2
+              className=" text-5xl py-2
         text-teal-400 font-extrabold select-none md:text-6xl"
-        >
-          Eric Eiselt
-        </h2>
+            >
+              Eric Eiselt
+            </h2>
+          }
+        />
 
         <h3
           className="animate-fadeInLeft select-none font-extrabold

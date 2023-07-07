@@ -43,7 +43,7 @@ export const Reveal = ({ content, slide }) => {
           bottom: 4,
           left: 0,
           right: 0,
-          background: "green",
+          background: "#2DD4BF",
           zIndex: 20,
         }}
       ></motion.div>

@@ -22,27 +22,30 @@ export default function Home() {
   const togglePopupBox = () => setIsPopupBoxOpen(!isPopupBoxOpen);
   const toggleTooltip = () => setIsTooltipVisible(!isTooltipVisible);
 
-  // Darkmode
   useEffect(() => {
-    // Save darkMode state to localStorage when it's changed
-    localStorage.setItem("darkMode", darkMode.toString());
-  }, [darkMode]);
-
-  useEffect(() => {
-    //get DarkModeState from LS
+    // Get darkMode state from localStorage
     const storedDarkMode = localStorage.getItem("darkMode");
-    // set Darkmode
+    console.log("darkMode is: " + storedDarkMode);
+
+    // Set darkMode
     if (storedDarkMode !== null) {
       setDarkMode(storedDarkMode === "true");
     }
 
-    // timeout for loading screen (formerly bc of FOUC, now for style)
+    // Timeout for loading screen (formerly for FOUC, now for style)
     const timeout = setTimeout(() => {
       setContentLoading(false);
     }, 1000);
 
     return () => clearTimeout(timeout);
   }, []);
+
+  // DarkMode
+  useEffect(() => {
+    // Save darkMode state to localStorage when it's changed
+    localStorage.setItem("darkMode", darkMode.toString());
+    console.log("darkMode has been set to: " + darkMode);
+  }, [darkMode]);
 
   // scroll function when loading screen finished
   useEffect(() => {
