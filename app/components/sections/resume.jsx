@@ -32,35 +32,45 @@ export default function Resume() {
         >
           <div className="pb-10 w-4/5 md:w-1/4 flex flex-col items-center ">
             {/*mapping the education entries*/}
+
             <div
               className="mt-4 bg-gray-100 dark:bg-black border-solid rounded-lg
             dark:border-double border-2 dark:border-teal-200 border-gray-800
             w-60 md:w-full"
             >
               {educationSections.map((educationSection) => (
-                <div
+                <Reveal
                   key={educationSection.id}
-                  className={`flex flex-col items-center text-black dark:text-white p-4 
+                  revealDuration={1}
+                  content={
+                    <div
+                      key={educationSection.id}
+                      className={`flex flex-col items-center text-black dark:text-white p-4 
                   text-center bg-transparent `}
-                >
-                  <div
-                    className="w-2 h-2 rounded-full bg-gradient-to-tr from-rose-950 to-orange-300
+                    >
+                      <div
+                        className="w-2 h-2 rounded-full bg-gradient-to-tr from-rose-950 to-orange-300
             dark:from-teal-100 dark:to-blue-600 mb-2"
-                  ></div>
-                  <span className="">{educationSection.period}</span>
-                  <span className="font-bold">{educationSection.position}</span>
-                  <span className="font-bold">
-                    {educationSection.positionSL}
-                  </span>
-                  <span className="font-medium">
-                    {educationSection.company}
-                  </span>
-                  <span className="italic dark:not-italic dark:font-thin">
-                    {educationSection.location}
-                  </span>
-                </div>
+                      ></div>
+                      <span className="">{educationSection.period}</span>
+                      <span className="font-bold">
+                        {educationSection.position}
+                      </span>
+                      <span className="font-bold">
+                        {educationSection.positionSL}
+                      </span>
+                      <span className="font-medium">
+                        {educationSection.company}
+                      </span>
+                      <span className="italic dark:not-italic dark:font-thin">
+                        {educationSection.location}
+                      </span>
+                    </div>
+                  }
+                />
               ))}
             </div>
+
             {/*personal information box*/}
             <ExpandableTextBox
               content={
@@ -102,23 +112,33 @@ export default function Resume() {
             w-60 md:w-full "
             >
               {workSections.map((workSection) => (
-                <div
+                <Reveal
                   key={workSection.id}
-                  className={` items-center text-black
+                  revealDuration={1.2}
+                  content={
+                    <div
+                      key={workSection.id}
+                      className={` items-center text-black
                    dark:text-white flex flex-col p-4 text-center bg-transparent `}
-                >
-                  <div
-                    className="w-2 h-2 rounded-full bg-gradient-to-tr from-rose-950 to-orange-300
+                    >
+                      <div
+                        className="w-2 h-2 rounded-full bg-gradient-to-tr from-rose-950 to-orange-300
             dark:from-teal-100 dark:to-blue-600 mb-2"
-                  ></div>
-                  <span className="">{workSection.period}</span>
-                  <span className="font-bold">{workSection.position} </span>
-                  <span className="font-bold">{workSection.positionSL} </span>
-                  <span className="font-medium">{workSection.company} </span>
-                  <span className="italic dark:not-italic dark:font-thin dark:text-white">
-                    {workSection.location}
-                  </span>
-                </div>
+                      ></div>
+                      <span className="">{workSection.period}</span>
+                      <span className="font-bold">{workSection.position} </span>
+                      <span className="font-bold">
+                        {workSection.positionSL}{" "}
+                      </span>
+                      <span className="font-medium">
+                        {workSection.company}{" "}
+                      </span>
+                      <span className="italic dark:not-italic dark:font-thin dark:text-white">
+                        {workSection.location}
+                      </span>
+                    </div>
+                  }
+                />
               ))}
             </div>
           </div>

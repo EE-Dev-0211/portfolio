@@ -1,7 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
-export const Reveal = ({ content, slide, duration }) => {
+export const Reveal = ({
+  content,
+  slide,
+  popInDuration,
+  revealDuration,
+  ignoreInnerStyleTags,
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -24,7 +30,7 @@ export const Reveal = ({ content, slide, duration }) => {
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: duration, delay: 0.25 }}
+        transition={{ duration: popInDuration, delay: 0.25 }}
       >
         {content}
       </motion.div>
@@ -36,7 +42,7 @@ export const Reveal = ({ content, slide, duration }) => {
         }}
         initial="hidden"
         animate={slideControls}
-        transition={{ duration: 1, ease: "easeIn" }}
+        transition={{ duration: revealDuration, ease: "easeIn" }}
         style={{
           position: "absolute",
           top: 4,
