@@ -23,7 +23,7 @@ const About = () => {
 
         <Reveal
           slide={"hidden"}
-          duration={0.6}
+          popInDuration={0.6}
           content={
             <h2
               className=" text-5xl py-2
@@ -47,8 +47,7 @@ const About = () => {
         dark:text-amber-50 "
         >
           <Reveal
-            duration={0.5}
-            revealFrequence={"JKhkj"}
+            revealDuration={0.5}
             slide={""}
             content={
               <span>
