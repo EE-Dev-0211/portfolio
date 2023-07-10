@@ -27,7 +27,7 @@ const About = () => {
           content={
             <h2
               className=" text-5xl py-2
-        text-teal-400 font-extrabold select-none md:text-6xl"
+        text-cobaltBlue dark:text-teal-400 font-extrabold select-none md:text-6xl"
             >
               Eric Eiselt
             </h2>

@@ -52,6 +52,7 @@ module.exports = {
       },
       colors: {
         navColor: "#FED17E",
+        cobaltBlue: "#2c3868",
       },
       cursor: {
         // cursor form cursor.cc with cc license
