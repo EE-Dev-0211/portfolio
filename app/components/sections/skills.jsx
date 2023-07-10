@@ -212,7 +212,7 @@ export default function Skills({ darkMode }) {
                       {React.createElement(software.icon)}
                     </div>
 
-                    <div className="text-center text-xs pt-4">
+                    <div className="text-center text-xxs md:text-xs pt-4">
                       {software.name}
                     </div>
                   </div>

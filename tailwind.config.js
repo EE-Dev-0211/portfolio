@@ -50,6 +50,9 @@ module.exports = {
       margin: {
         7.5: "1.6rem",
       },
+      fontSize: {
+        xxs: "0.5rem",
+      },
       colors: {
         navColor: "#FED17E",
         cobaltBlue: "#2c3868",
