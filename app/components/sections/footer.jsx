@@ -18,7 +18,7 @@ const Footer = ({ darkMode }) => {
       {/* Footer */}
       <div className="text-md text-white text-center leading-8 dark:text-gray-600">
         Coded in Webstorm. Built with Next.js and Tailwind CSS, deployed with
-        Applify.
+        Netlify.
         <div className="flex flex-row px-10 gap-6 justify-center mx-auto text-white my-4 pb-10 text-m dark:text-gray-600">
           <TbBrandNextjs />
           <SiWebstorm />
