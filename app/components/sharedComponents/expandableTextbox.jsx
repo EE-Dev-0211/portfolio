@@ -41,7 +41,9 @@ const ExpandableTextBox = ({ content }) => {
       {expanded && (
         <div
           className="leading-4 mt-4 p-4 text-black bg-gray-100 dark:text-white dark:bg-black
-        rounded-lg border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800"
+        rounded-lg border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800
+         bg-opacity-10  backdrop-filter backdrop-blur-sm
+                dark:bg-opacity-10 text-white"
         >
           {content}
         </div>
