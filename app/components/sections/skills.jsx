@@ -31,14 +31,16 @@ export default function Skills({ darkMode }) {
       >
         <div
           className="w-60 items-center bg-gray-100 dark:bg-black text-center
-        shadow-lg p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 md:w-1/4 flex flex-col
-        border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800"
+    p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 md:w-1/4 flex flex-col
+    shadow-lg border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800
+    bg-opacity-10 backdrop-filter backdrop-blur-sm
+    dark:bg-opacity-10"
         >
           <Reveal
             popInDuration={1}
             slide={"hidden"}
             content={
-              <h3 className="text-lg text-black font-medium pb-6 dark:text-white">
+              <h3 className="text-lg  font-medium pb-6 text-white">
                 Languages
               </h3>
             }
@@ -108,12 +110,19 @@ export default function Skills({ darkMode }) {
           ))}
         </div>
 
-        <div className="border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800 w-60 items-center bg-gray-100 dark:bg-black text-center shadow-lg p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 flex flex-col md:w-1/4">
+        <div
+          className="border-solid dark:border-double border-2 dark:border-teal-200
+        border-gray-800 w-60 items-center
+        bg-gray-100 dark:bg-black text-center
+        shadow-lg p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 flex flex-col md:w-1/4
+          bg-opacity-10 backdrop-filter backdrop-blur-sm
+ dark:bg-opacity-10 "
+        >
           <Reveal
             slide={"hidden"}
             duration={1.1}
             content={
-              <h3 className="text-lg text-black font-medium pb-6 dark:text-white ">
+              <h3 className="text-lg font-medium pb-6 text-white ">
                 Frameworks & Libraries
               </h3>
             }
@@ -126,7 +135,8 @@ export default function Skills({ darkMode }) {
               content={
                 <div
                   key={framLib.id}
-                  className="md:grid md:grid-cols-3 md:h-20"
+                  className="md:grid md:grid-cols-3 md:h-20
+                  "
                 >
                   <div className="md:col-span-1 md:flex md:justify-start">
                     <div className="relative">
@@ -181,15 +191,15 @@ export default function Skills({ darkMode }) {
 
         <div
           className="border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800 w-3/5 md:w-1/4
-        bg-gray-100 dark:bg-black text-center shadow-lg  p-10  rounded-xl mt-6 mb-10   flex flex-col "
+        bg-gray-100 dark:bg-black text-center p-10  rounded-xl mt-6 mb-10   flex flex-col
+         bg-opacity-10 shadow-lg backdrop-filter backdrop-blur-sm
+         dark:bg-opacity-10 "
         >
           <Reveal
             slide={"hidden"}
             duration={1.2}
             content={
-              <h3 className="text-lg text-black font-medium pb-6 dark:text-white">
-                Software
-              </h3>
+              <h3 className="text-lg font-medium pb-6 text-white">Software</h3>
             }
           />
 
@@ -212,7 +222,7 @@ export default function Skills({ darkMode }) {
                       {React.createElement(software.icon)}
                     </div>
 
-                    <div className="text-center text-xxs md:text-xs pt-4">
+                    <div className="text-center text-xxs md:text-xs text-black dark:text-white pt-4">
                       {software.name}
                     </div>
                   </div>

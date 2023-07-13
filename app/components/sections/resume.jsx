@@ -13,7 +13,7 @@ export default function Resume() {
     <section
       id="resume"
       className="flex flex-col items-center justify-center md:pt-16 md:min-h-full text-center
-      bg-gradient-to-b from-transparent to-gray-900"
+      bg-gradient-to-b from-transparent to-gray-900 "
     >
       <div className="w-4/5 md:w-full mb-4">
         <Reveal
@@ -35,8 +35,10 @@ export default function Resume() {
 
             <div
               className="mt-4 bg-gray-100 dark:bg-black border-solid rounded-lg
-            dark:border-double border-2 dark:border-teal-200 border-gray-800
-            w-60 md:w-full"
+    dark:border-double border-2 dark:border-teal-200 border-gray-800
+    w-60 md:w-full
+    bg-opacity-10 backdrop-filter backdrop-blur-sm
+      dark:bg-opacity-10 "
             >
               {educationSections.map((educationSection) => (
                 <Reveal
@@ -45,7 +47,7 @@ export default function Resume() {
                   content={
                     <div
                       key={educationSection.id}
-                      className={`flex flex-col items-center text-black dark:text-white p-4 
+                      className={`flex flex-col items-center text-white p-4 
                   text-center bg-transparent `}
                     >
                       <div
@@ -109,7 +111,9 @@ export default function Resume() {
             <div
               className="mt-4 bg-gray-100 dark:bg-black border-solid rounded-lg
             dark:border-double border-2 dark:border-teal-200 border-gray-800
-            w-60 md:w-full "
+            w-60 md:w-full
+               bg-opacity-10  backdrop-filter backdrop-blur-sm
+                dark:bg-opacity-10"
             >
               {workSections.map((workSection) => (
                 <Reveal
@@ -118,8 +122,8 @@ export default function Resume() {
                   content={
                     <div
                       key={workSection.id}
-                      className={` items-center text-black
-                   dark:text-white flex flex-col p-4 text-center bg-transparent `}
+                      className={` items-center text-white
+                flex flex-col p-4 text-center bg-transparent `}
                     >
                       <div
                         className="w-2 h-2 rounded-full bg-gradient-to-tr from-rose-950 to-orange-300
