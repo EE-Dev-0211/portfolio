@@ -30,7 +30,7 @@ export default function Skills({ darkMode }) {
       >
         <div
           className=" items-center bg-gray-100 dark:bg-black text-center
-    p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 md:w-1/4 flex flex-col
+    p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 w-60 md:w-1/4 flex flex-col
     shadow-lg border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800
     bg-opacity-10 backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm
   "
@@ -176,7 +176,8 @@ export default function Skills({ darkMode }) {
                 md:border-2 md:border-gray-500 md:dark:bg-white md:dark:border-white"
                     >
                       <div
-                        className={`${framLib.progressTwTag} bg-amber-400 text-s text-white font-semibold text-center p-0.5 leading-none rounded-full dark:bg-blue-700 dark:text-white`}
+                        className={`${framLib.progressTwTag} bg-amber-400 text-s text-white font-semibold text-center 
+                        p-0.5 leading-none rounded-full dark:bg-blue-700 dark:text-white`}
                       >
                         {framLib.progressText}
                       </div>
@@ -190,14 +191,14 @@ export default function Skills({ darkMode }) {
 
         <div
           className="border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800 w-60 md:w-1/4
-        bg-gray-100 dark:bg-black text-center p-10  rounded-xl mt-6 mb-10 flex flex-col
+        bg-gray-100 dark:bg-black text-center md:p-10 rounded-xl mt-6 mb-10 flex flex-col
          bg-opacity-10 shadow-lg backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm"
         >
           <Reveal
             slide={"hidden"}
             duration={1.2}
             content={
-              <h3 className="text-lg font-medium pb-6 text-white">Software</h3>
+              <h3 className="text-lg font-medium py-6 text-white">Software</h3>
             }
           />
 

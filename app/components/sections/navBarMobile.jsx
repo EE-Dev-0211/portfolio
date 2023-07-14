@@ -61,34 +61,6 @@ const NavBarMobile = ({
                 Resumé
               </button>
             </div>
-            <div className="flex items-center justify-center p-2 mt-2 gap-6">
-              {darkMode ? (
-                <button
-                  className="flex items-center justify-center w-10 h-10 bg-black
-                  border-gray-400 border-2 text-gray-800 font-bold rounded-full"
-                  onClick={darkmodeToggle}
-                >
-                  <BsFillSunFill className="text-2xl text-yellow-600" />{" "}
-                </button>
-              ) : (
-                <button
-                  className="flex items-center justify-center w-10 h-10 bg-transparent
-                  border-black border-2 font-bold rounded-full"
-                  onClick={darkmodeToggle}
-                >
-                  <BsFillMoonStarsFill className="text-2xl text-black" />{" "}
-                </button>
-              )}
-
-              <a
-                className=" flex items-center justify-center w-10 h-10
-                  dark:bg-black border-black dark:border-gray-400 border-2 text-gray-800 dark:text-teal-500 font-bold rounded-full"
-                href="/cv.pdf"
-                target="_blank"
-              >
-                CV
-              </a>
-            </div>
             <div className="flex items-center justify-center p-2 mt-2 gap-6 ">
               <IoMdInformationCircle
                 onClick={toggleImprintOnMobile}
@@ -98,6 +70,34 @@ const NavBarMobile = ({
                 className="text-xl font-bolder hover:cursor-pointer "
                 onClick={handleEmailClick}
               />
+              <a
+                className="text-base font-bolder hover:cursor-pointer "
+                href="/cv.pdf"
+                target="_blank"
+              >
+                CV
+              </a>
+            </div>
+            <div className="flex items-center justify-center p-2 mt-2 gap-6">
+              {darkMode ? (
+                <button
+                  className="flex items-center justify-center w-10 h-10 bg-black
+                  border-gray-400 border-2 text-gray-800 font-bold rounded-full
+                  bg-gradient-to-b from-yellow-300 to-red-700
+                  "
+                  onClick={darkmodeToggle}
+                >
+                  <BsFillSunFill className="text-2xl text-yellow-50 p-0.5" />{" "}
+                </button>
+              ) : (
+                <button
+                  className="flex items-center justify-center w-10 h-10 bg-gradient-to-b from-blue-700 to-blue-950
+                  border-gray-500 border-2 font-bold rounded-full"
+                  onClick={darkmodeToggle}
+                >
+                  <BsFillMoonStarsFill className="text-2xl text-amber-200 p-0.5" />{" "}
+                </button>
+              )}
             </div>
           </div>
         </div>
