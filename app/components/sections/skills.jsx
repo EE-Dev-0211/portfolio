@@ -9,7 +9,7 @@ export default function Skills({ darkMode }) {
   return (
     <section
       id="skills"
-      className="py-16 min-h-full text-center bg-transparent"
+      className="py-16 min-h-full text-center bg-transparent select-none"
     >
       <Reveal
         slide={"hidden"}

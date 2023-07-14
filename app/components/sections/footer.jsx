@@ -13,7 +13,7 @@ const Footer = ({ darkMode }) => {
   return (
     <section
       id="footer"
-      className="pl-2 pt-20 flex justify-center bg-gray-900 h-fit"
+      className="pl-2 pt-20 flex justify-center bg-gray-900 h-fit select-none"
     >
       {/* Footer */}
       <div className="text-md text-white text-center leading-8 dark:text-gray-600">

@@ -12,10 +12,10 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="pt-20 min-h-full bg-transparent ">
+    <section id="about" className="pt-20 min-h-full bg-transparent select-none">
       <div className="mt-8 md:mt-4 text-center p-10">
         <span
-          className="font-custom animate-fadeInTopText select-none
+          className="font-custom animate-fadeInTopText
         text-black font-extrabold dark:text-white text-xl py-2 md:text-2xl"
         >
           Hi, I am
@@ -27,7 +27,7 @@ const About = () => {
           content={
             <h2
               className=" text-5xl py-2
-        text-cobaltBlue dark:text-teal-400 font-extrabold select-none md:text-6xl"
+        text-cobaltBlue dark:text-teal-400 font-extrabold  md:text-6xl"
             >
               Eric Eiselt
             </h2>
@@ -35,14 +35,14 @@ const About = () => {
         />
 
         <h3
-          className="animate-fadeInLeft select-none font-extrabold
+          className="animate-fadeInLeft  font-extrabold
         text-white dark:text-white text-2xl py-2 md:text-3xl"
         >
           Aspiring Frontend Developer
         </h3>
 
         <div
-          className="break-words md:break-normal animate-fadeInAvatar select-none
+          className="break-words md:break-normal animate-fadeInAvatar
         text-md py-5 leading-8 font-bold text-white md:text-l max-w-lg mx-auto
         dark:text-amber-50 "
         >
@@ -61,7 +61,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="animate-fadeInAvatar select-none text-5xl flex justify-center gap-16 text-gray-600">
+      <div className="animate-fadeInAvatar  text-5xl flex justify-center gap-16 text-gray-600">
         <a
           className="z-10"
           href="https://www.linkedin.com/in/eric-e-720431201/"
@@ -72,7 +72,7 @@ const About = () => {
       </div>
 
       {/*Avatar Coin*/}
-      <div className="select-none relative mx-auto w-60 h-60 mt-20">
+      <div className="relative mx-auto w-60 h-60 mt-20">
         <div
           className={`
           shadow-glow bg-gradient-to-b from-teal-600 to bg-teal-400

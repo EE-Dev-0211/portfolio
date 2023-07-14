@@ -14,7 +14,7 @@ export default function Resume() {
       id="resume"
       className="flex flex-col items-center
       justify-center md:pt-16 md:min-h-full text-center
-      bg-gradient-to-b from-transparent to-gray-900 "
+      bg-gradient-to-b from-transparent to-gray-900 select-none"
     >
       <div className="w-4/5 md:w-full mb-4">
         <Reveal
