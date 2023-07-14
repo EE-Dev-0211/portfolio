@@ -19,6 +19,7 @@ const NavBar = ({
   isPopupBoxOpen,
   setIsCustomCursor,
   isCustomCursor,
+  handleEmailClick,
 }) => {
   const [isGameActive, setIsGameActive] = useState(false);
   const myRef = useRef(null);
@@ -47,10 +48,6 @@ const NavBar = ({
   useEffect(() => {
     document.addEventListener("keydown", handleKeyPress);
   }, []);
-
-  const handleEmailClick = () => {
-    window.location.href = `mailto:eiselt.eric@proton.me`;
-  };
 
   return (
     <>

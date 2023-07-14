@@ -15,7 +15,7 @@ const About = () => {
     <section id="about" className="pt-20 min-h-full bg-transparent ">
       <div className="mt-8 md:mt-4 text-center p-10">
         <span
-          className="animate-fadeInTopText select-none
+          className="font-custom animate-fadeInTopText select-none
         text-black font-extrabold dark:text-white text-xl py-2 md:text-2xl"
         >
           Hi, I am

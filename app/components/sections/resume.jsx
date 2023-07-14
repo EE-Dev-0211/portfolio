@@ -12,7 +12,8 @@ export default function Resume() {
   return (
     <section
       id="resume"
-      className="flex flex-col items-center justify-center md:pt-16 md:min-h-full text-center
+      className="flex flex-col items-center
+      justify-center md:pt-16 md:min-h-full text-center
       bg-gradient-to-b from-transparent to-gray-900 "
     >
       <div className="w-4/5 md:w-full mb-4">
@@ -37,8 +38,8 @@ export default function Resume() {
               className="mt-4 bg-gray-100 dark:bg-black border-solid rounded-lg
     dark:border-double border-2 dark:border-teal-200 border-gray-800
     w-60 md:w-full
-    bg-opacity-10 backdrop-filter backdrop-blur-sm
-      dark:bg-opacity-10 "
+    bg-opacity-10 backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm
+       "
             >
               {educationSections.map((educationSection) => (
                 <Reveal
@@ -112,8 +113,8 @@ export default function Resume() {
               className="mt-4 bg-gray-100 dark:bg-black border-solid rounded-lg
             dark:border-double border-2 dark:border-teal-200 border-gray-800
             w-60 md:w-full
-               bg-opacity-10  backdrop-filter backdrop-blur-sm
-                dark:bg-opacity-10"
+               bg-opacity-10  backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm
+             "
             >
               {workSections.map((workSection) => (
                 <Reveal

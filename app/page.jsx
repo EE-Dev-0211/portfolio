@@ -110,6 +110,10 @@ export default function Home() {
     }, 300);
   }
 
+  const handleEmailClick = () => {
+    window.location.href = `mailto:eiselt.eric@proton.me`;
+  };
+
   // Loadingscreen for 1 second with animated text and spinner
   if (contentLoading) {
     return (
@@ -167,6 +171,7 @@ export default function Home() {
         isPopupBoxOpen={isPopupBoxOpen}
         isCustomCursor={isCustomCursor}
         setIsCustomCursor={setIsCustomCursor}
+        handleEmailClick={handleEmailClick}
       />
 
       {/*burger menu instead of navbar when width of screen is below 1130px*/}
@@ -176,6 +181,9 @@ export default function Home() {
         toggleMenu={toggleMenu}
         isMenuOpen={isMenuOpen}
         scrollToSectionBurgerMenu={scrollToSectionBurgerMenu}
+        handleEmailClick={handleEmailClick}
+        togglePopupBox={togglePopupBox}
+        isPopupBoxOpen={isPopupBoxOpen}
       />
       {/* Content */}
       <main className="scroll-smooth overscroll-none">
@@ -191,9 +199,9 @@ export default function Home() {
           }}
         >
           <About />
-          <div className="tbWaves">
-            <Skills darkMode={darkMode} />
-          </div>
+
+          <Skills darkMode={darkMode} />
+
           <Resume />
           <Footer darkMode={darkMode} />
         </div>

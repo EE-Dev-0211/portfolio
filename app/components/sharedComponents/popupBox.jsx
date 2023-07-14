@@ -11,7 +11,7 @@ const PopupBox = ({ isPopupBoxOpen, togglePopupBox, content, darkMode }) => {
         >
           <div
             className="border-4 border-solid border-black dark:border-white text-center bg-white text-black
-              font-bold dark:text-white dark:bg-gray-800 w-auto p-4 rounded-lg shadow
+              font-bold dark:text-white dark:bg-gray-800 text-xs md:text-xl w-3/4 md:w-auto p-4 rounded-lg shadow
              bg-gradient-to-b from-yellow-100 to-gray-300"
             // Prevent the menu from closing, stop the click event from propagating to the parent element
             onClick={(e) => e.stopPropagation()}

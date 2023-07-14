@@ -11,7 +11,6 @@ export default function Skills({ darkMode }) {
       id="skills"
       className="py-16 min-h-full text-center bg-transparent"
     >
-      {" "}
       <Reveal
         slide={"hidden"}
         popInDuration={0.8}
@@ -30,11 +29,11 @@ export default function Skills({ darkMode }) {
        md:gap-16 md:flex-row md:items-start md:mx-10"
       >
         <div
-          className="w-60 items-center bg-gray-100 dark:bg-black text-center
+          className=" items-center bg-gray-100 dark:bg-black text-center
     p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 md:w-1/4 flex flex-col
     shadow-lg border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800
-    bg-opacity-10 backdrop-filter backdrop-blur-sm
-    dark:bg-opacity-10"
+    bg-opacity-10 backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm
+  "
         >
           <Reveal
             popInDuration={1}
@@ -115,8 +114,8 @@ export default function Skills({ darkMode }) {
         border-gray-800 w-60 items-center
         bg-gray-100 dark:bg-black text-center
         shadow-lg p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 flex flex-col md:w-1/4
-          bg-opacity-10 backdrop-filter backdrop-blur-sm
- dark:bg-opacity-10 "
+          bg-opacity-10 backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm
+ "
         >
           <Reveal
             slide={"hidden"}
@@ -190,10 +189,9 @@ export default function Skills({ darkMode }) {
         </div>
 
         <div
-          className="border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800 w-3/5 md:w-1/4
-        bg-gray-100 dark:bg-black text-center p-10  rounded-xl mt-6 mb-10   flex flex-col
-         bg-opacity-10 shadow-lg backdrop-filter backdrop-blur-sm
-         dark:bg-opacity-10 "
+          className="border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800 w-60 md:w-1/4
+        bg-gray-100 dark:bg-black text-center p-10  rounded-xl mt-6 mb-10 flex flex-col
+         bg-opacity-10 shadow-lg backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm"
         >
           <Reveal
             slide={"hidden"}
