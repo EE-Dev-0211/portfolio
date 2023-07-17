@@ -5,8 +5,11 @@ import { CgPlayStopO } from "react-icons/cg";
 import { FaCat } from "react-icons/fa";
 import { IoMdInformationCircle } from "react-icons/io";
 import { motion } from "framer-motion";
-import PopupBox from "app/components/sharedComponents/popupBox";
-import { useFollowPointer } from "app/components/use-follow-pointer";
+import PopupBox from "app/[lng]/components/sharedComponents/popupBox.jsx";
+import { useFollowPointer } from "app/[lng]/components/use-follow-pointer.ts";
+import { Trans } from "react-i18next/TransWithoutContext";
+import { languages } from "../../../i18n/settings";
+import Link from "next/link";
 
 const NavBar = ({
   darkMode,
@@ -20,17 +23,24 @@ const NavBar = ({
   setIsCustomCursor,
   isCustomCursor,
   handleEmailClick,
+  lng,
+  t,
 }) => {
   const [isGameActive, setIsGameActive] = useState(false);
   const myRef = useRef(null);
   const { x, y } = useFollowPointer(myRef, isGameActive);
   const [hasCatVanished, setHasCatVanished] = useState(false);
   const [isCustomCursorActive, setIsCustomCursorActive] = useState(false);
+  const [isDropDownLangOpen, setIsDropDownLangOpen] = useState(false);
 
   const gamemodeToggle = () => {
     setIsGameActive(!isGameActive);
     setIsCustomCursorActive(!isCustomCursorActive);
     setIsCustomCursor(!isCustomCursor);
+  };
+
+  const LangDropdownToggle = () => {
+    setIsDropDownLangOpen(!isDropDownLangOpen);
   };
 
   const catToggle = () => setHasCatVanished(!hasCatVanished);
@@ -107,6 +117,23 @@ const NavBar = ({
 
         <div className="flex flex-row">
           <span className="flex items-center gap-4 ml-2 select-none">
+            <Trans i18nKey="languageSwitcher" t={t}>
+              <button onClick={LangDropdownToggle}>
+                <strong>{{ lng }}</strong>
+              </button>
+            </Trans>
+            <ul className={`${isDropDownLangOpen ? "block" : "hidden"}`}>
+              {languages
+                .filter((l) => lng !== l)
+                .map((l, index) => {
+                  return (
+                    <span key={l}>
+                      {index > 0 && " or "}
+                      <Link href={`/${l}/home`}>{l}</Link>
+                    </span>
+                  );
+                })}
+            </ul>
             <IoMdInformationCircle
               onClick={togglePopupBox}
               className="text-base font-bolder hover:cursor-help hover:text-green-400"

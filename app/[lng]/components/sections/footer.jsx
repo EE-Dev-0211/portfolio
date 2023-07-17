@@ -9,7 +9,7 @@ function scrollToTop() {
   aboutSection.scrollIntoView({ behavior: "smooth" });
 }
 
-const Footer = ({ darkMode }) => {
+const Footer = ({ darkMode, lng }) => {
   return (
     <section
       id="footer"

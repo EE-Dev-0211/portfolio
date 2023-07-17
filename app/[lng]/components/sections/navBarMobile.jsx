@@ -3,7 +3,7 @@ import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import React from "react";
 import { IoMdInformationCircle } from "react-icons/io";
 import { AiFillMail } from "react-icons/ai";
-import PopupBox from "app/components/sharedComponents/popupBox";
+import PopupBox from "app/[lng]/components/sharedComponents/popupBox.jsx";
 
 const NavBarMobile = ({
   darkMode,
@@ -14,6 +14,7 @@ const NavBarMobile = ({
   handleEmailClick,
   togglePopupBox,
   isPopupBoxOpen,
+  lng,
 }) => {
   function toggleImprintOnMobile() {
     toggleMenu();

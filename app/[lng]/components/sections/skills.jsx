@@ -1,9 +1,13 @@
-import { framLibs, languages, software } from "app/components/data/techData.js";
+import {
+  framLibs,
+  languages,
+  software,
+} from "app/[lng]/components/data/techData.js";
 import React, { useState } from "react";
-import HeadingBox from "app/components/sharedComponents/headingBox";
+import HeadingBox from "app/[lng]/components/sharedComponents/headingBox.jsx";
 import { RiComputerFill } from "react-icons/ri";
-import { Reveal } from "app/components/sharedComponents/reveal";
-export default function Skills({ darkMode }) {
+import { Reveal } from "app/[lng]/components/sharedComponents/reveal.jsx";
+export default function Skills({ lng }) {
   const [tooltipContent, setTooltipContent] = useState(null);
 
   return (

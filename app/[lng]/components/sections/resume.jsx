@@ -2,13 +2,13 @@ import React from "react";
 import {
   workSections,
   educationSections,
-} from "app/components/data/resumeData.js";
-import ExpandableTextBox from "app/components/sharedComponents/expandableTextbox";
-import HeadingBox from "app/components/sharedComponents/headingBox";
+} from "app/[lng]/components/data/resumeData.js";
+import ExpandableTextBox from "app/[lng]/components/sharedComponents/expandableTextbox.jsx";
+import HeadingBox from "app/[lng]/components/sharedComponents/headingBox.jsx";
 import { BsFileTextFill } from "react-icons/bs";
-import { Reveal } from "app/components/sharedComponents/reveal";
+import { Reveal } from "app/[lng]/components/sharedComponents/reveal.jsx";
 
-export default function Resume() {
+export default function Resume({ lng }) {
   return (
     <section
       id="resume"

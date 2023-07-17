@@ -1,8 +1,9 @@
 import { AiFillLinkedin } from "react-icons/ai";
 import Image from "next/image";
 import React, { useState } from "react";
-import { Reveal } from "app/components/sharedComponents/reveal";
-const About = () => {
+import { Reveal } from "app/[lng]/components/sharedComponents/reveal.jsx";
+import { Trans } from "react-i18next/TransWithoutContext";
+const About = ({ lng, t }) => {
   // state for the Avatarcoin
   const [isFlipped, setIsFlipped] = useState(true);
 
@@ -18,7 +19,7 @@ const About = () => {
           className="font-custom animate-fadeInTopText
         text-black font-extrabold dark:text-white text-xl py-2 md:text-2xl"
         >
-          Hi, I am
+          Hi, I am [[[[{t("counter_one")}]]]]
         </span>
 
         <Reveal
@@ -105,7 +106,7 @@ const About = () => {
         <div
           className={`
           shadow-glow bg-gradient-to-b from-teal-600 to bg-teal-400
-          w-60 h-60 rounded-full flex items-center justify-center 
+          w-60 h-60 rounded-full flex items-center justify-center
           overflow-hidden cursor-pointer flip ${isFlipped ? "flipped" : ""}`}
           onClick={handleFlip}
         >
