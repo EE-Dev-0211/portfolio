@@ -19,7 +19,7 @@ const About = ({ lng, t }) => {
           className="font-custom animate-fadeInTopText
         text-black font-extrabold dark:text-white text-xl py-2 md:text-2xl"
         >
-          Hi, I am [[[[{t("counter_one")}]]]]
+          {t("about.top-text1")}
         </span>
 
         <Reveal
@@ -40,53 +40,41 @@ const About = ({ lng, t }) => {
           className="animate-fadeInLeft  font-extrabold
         text-white dark:text-white text-2xl py-2 md:text-3xl"
         >
-          Aspiring Frontend Developer
+          {t("about.top-text2")}
         </h3>
 
         <div
           className="break-words md:break-normal animate-fadeInAvatar
-        text-md py-5 leading-8 font-bold text-white md:text-l max-w-lg mx-auto
-        dark:text-amber-50 "
+        text-md py-5 leading-8 font-bold text-white max-w-lg mx-auto
+        dark:text-amber-50"
         >
           <Reveal
             revealDuration={2}
             revealDelay={0.65}
             popInDelay={0.65}
             slide={""}
-            content={
-              <span>
-                and I am currently in my final year of training to become an{" "}
-              </span>
-            }
+            content={<span>{t("about.top-text3")} </span>}
           />
           <Reveal
             revealDuration={2}
             revealDelay={0.75}
             popInDelay={0.75}
             slide={""}
-            content={
-              <span>
-                application developer. During my apprenticeship, I had many
-              </span>
-            }
+            content={<span>{t("about.top-text4")}</span>}
           />
           <Reveal
             revealDuration={2}
             revealDelay={0.85}
             popInDelay={0.85}
             slide={""}
-            content={
-              <span>
-                different insights into different areas, but I was most taken
-              </span>
-            }
+            content={<span>{t("about.top-text5")}</span>}
           />
           <Reveal
             revealDuration={2}
             revealDelay={1}
             popInDelay={1}
             slide={""}
-            content={<span>with frontend development. </span>}
+            content={<span>{t("about.top-text6")} </span>}
           />
         </div>
       </div>

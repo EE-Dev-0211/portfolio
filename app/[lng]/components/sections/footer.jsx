@@ -9,7 +9,7 @@ function scrollToTop() {
   aboutSection.scrollIntoView({ behavior: "smooth" });
 }
 
-const Footer = ({ darkMode, lng }) => {
+const Footer = ({ darkMode, lng, t }) => {
   return (
     <section
       id="footer"
@@ -17,8 +17,7 @@ const Footer = ({ darkMode, lng }) => {
     >
       {/* Footer */}
       <div className="text-md text-white text-center leading-8 dark:text-gray-600">
-        Coded in Webstorm. Built with Next.js and Tailwind CSS, deployed with
-        Netlify.
+        {t("footer.text1")}
         <div className="flex flex-row px-10 gap-6 justify-center mx-auto text-white my-4 pb-10 text-m dark:text-gray-600">
           <TbBrandNextjs />
           <SiWebstorm />

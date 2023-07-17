@@ -8,7 +8,7 @@ import HeadingBox from "app/[lng]/components/sharedComponents/headingBox.jsx";
 import { BsFileTextFill } from "react-icons/bs";
 import { Reveal } from "app/[lng]/components/sharedComponents/reveal.jsx";
 
-export default function Resume({ lng }) {
+export default function Resume({ lng, t }) {
   return (
     <section
       id="resume"
@@ -59,16 +59,28 @@ export default function Resume({ lng }) {
                       ></div>
                       <span className="">{educationSection.period}</span>
                       <span className="font-bold">
-                        {educationSection.position}
+                        {lng == "DE"
+                          ? educationSection.positionDE
+                          : lng == "CH"
+                          ? educationSection.positionCH
+                          : educationSection.position}
                       </span>
                       <span className="font-bold">
-                        {educationSection.positionSL}
+                        {lng == "DE"
+                          ? educationSection.positionSLDE
+                          : lng == "CH"
+                          ? educationSection.positionSLCH
+                          : educationSection.positionSL}
                       </span>
                       <span className="font-medium">
-                        {educationSection.company}
+                        {lng == "DE"
+                          ? educationSection.companyDE
+                          : educationSection.company}
                       </span>
                       <span className="italic dark:not-italic dark:font-thin">
-                        {educationSection.location}
+                        {lng == "DE"
+                          ? educationSection.locationDE
+                          : educationSection.location}
                       </span>
                     </div>
                   }
@@ -78,32 +90,16 @@ export default function Resume({ lng }) {
 
             {/*personal information box*/}
             <ExpandableTextBox
+              buttonText={t("personal.buttonText")}
               content={
                 <>
-                  <p>
-                    Raised in provincial Thuringia I love nature and being in
-                    nature. But I have also been interested in all kinds of
-                    technology and electronics since early childhood. I am also
-                    passionate about cinema, writing and culture.
-                  </p>
+                  <p> {t("personal.text1")}</p>
                   <br />
-                  <p>
-                    I listen to a lot of dark and atmospheric music, from
-                    extreme metal to dark wave to neofolk and post punk. I also
-                    like various rock music and electronic music.
-                  </p>
+                  <p>{t("personal.text2")}</p>
                   <br />
-                  <p>
-                    I am still interested in philosophy (Cioran, Nietzsche,
-                    Camus, Schopenhauer, Hobbes, Sartre, Zizek) after my studies
-                    and a little bit (more and more) in visual arts (Grimshaw,
-                    Kittelsen, Corot, Bierstadt, Doré, Beksinski, Friedrich,
-                    Lessing, Giger) as well.
-                  </p>
+                  <p>{t("personal.text3")}</p>
                   <br />
-                  <p>
-                    Fitness and weight training are also essential to my life.
-                  </p>
+                  <p>{t("personal.text4")}</p>
                 </>
               }
             />
@@ -134,15 +130,27 @@ export default function Resume({ lng }) {
             dark:from-teal-100 dark:to-blue-600 mb-2"
                       ></div>
                       <span className="">{workSection.period}</span>
-                      <span className="font-bold">{workSection.position} </span>
                       <span className="font-bold">
-                        {workSection.positionSL}{" "}
+                        {lng == "DE"
+                          ? workSection.positionDE
+                          : lng == "CH"
+                          ? workSection.positionCH
+                          : workSection.position}
+                      </span>
+                      <span className="font-bold">
+                        {lng == "DE"
+                          ? workSection.positionSLDE
+                          : lng == "CH"
+                          ? workSection.positionSLCH
+                          : workSection.positionSL}
                       </span>
                       <span className="font-medium">
                         {workSection.company}{" "}
                       </span>
                       <span className="italic dark:not-italic dark:font-thin dark:text-white">
-                        {workSection.location}
+                        {lng == "DE"
+                          ? workSection.locationDE
+                          : workSection.location}
                       </span>
                     </div>
                   }

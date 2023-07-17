@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaBook, FaBookOpen } from "react-icons/fa";
 
-const ExpandableTextBox = ({ content }) => {
+const ExpandableTextBox = ({ content, buttonText }) => {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpand = () => {
@@ -25,7 +25,7 @@ const ExpandableTextBox = ({ content }) => {
             dark:group-hover:text-teal-500 dark:transition dark:duration-1000
                 group-hover:text-yellow-300 transition duration-1000"
             >
-              Personal Info
+              {buttonText}
             </span>
             <span
               className="text-white
@@ -44,7 +44,7 @@ const ExpandableTextBox = ({ content }) => {
         rounded-lg border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800
          bg-opacity-10  backdrop-filter backdrop-blur-sm
                   dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm
-            text-white"
+            text-white leading-snug"
         >
           {content}
         </div>

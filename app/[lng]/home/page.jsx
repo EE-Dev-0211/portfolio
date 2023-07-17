@@ -211,7 +211,7 @@ export default function Home({ params: { lng } }) {
 
           <Skills darkMode={darkMode} lng={lng} t={t} />
 
-          <Resume lng={lng} />
+          <Resume lng={lng} t={t} />
           <Footer darkMode={darkMode} lng={lng} t={t} />
         </div>
       </main>

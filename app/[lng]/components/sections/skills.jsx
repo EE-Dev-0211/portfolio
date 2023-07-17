@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import HeadingBox from "app/[lng]/components/sharedComponents/headingBox.jsx";
 import { RiComputerFill } from "react-icons/ri";
 import { Reveal } from "app/[lng]/components/sharedComponents/reveal.jsx";
-export default function Skills({ lng }) {
+export default function Skills({ lng, t }) {
   const [tooltipContent, setTooltipContent] = useState(null);
 
   return (
@@ -23,8 +23,8 @@ export default function Skills({ lng }) {
           <div>
             <HeadingBox
               icon={<RiComputerFill className="dark:text-blue-600 mr-6" />}
-              title={"Technologies"}
-              additive={"Languages, Frameworks & Software"}
+              title={t("skills.languages")}
+              additive={t("skills.additive")}
             />
           </div>
         }
@@ -46,7 +46,7 @@ export default function Skills({ lng }) {
             slide={"hidden"}
             content={
               <h3 className="text-lg  font-medium pb-6 text-white">
-                Languages
+                {t("skills.languages")}
               </h3>
             }
           />
@@ -130,7 +130,7 @@ export default function Skills({ lng }) {
             popInDelay={0.7}
             content={
               <h3 className="text-lg font-medium pb-6 text-white ">
-                Frameworks & Libraries
+                {t("skills.fw-lib")}
               </h3>
             }
           />
