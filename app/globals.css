@@ -15,7 +15,7 @@
 
 .animate-fadeInLeft {
   animation-name: fadeInLeft;
-  animation-duration: 3s;
+  animation-duration: 1.4s;
   animation-delay: 1s;
   opacity: 0;
 }
@@ -38,14 +38,14 @@
 
 .animate-fadeInAvatar {
   animation-name: fadeIn;
-  animation-duration: 7s;
-  animation-delay: 1s;
+  animation-duration: 5s;
+  animation-delay: 5s;
   opacity: 0;
 }
 
 .animate-fadeInTopText {
   animation-name: fadeIn;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-delay: 0.5s;
   opacity: 0;
 }

@@ -23,7 +23,8 @@ const About = () => {
 
         <Reveal
           slide={"hidden"}
-          popInDuration={0.8}
+          popInDuration={0.5}
+          popInDelay={0.4}
           content={
             <h2
               className=" text-5xl py-2
@@ -47,16 +48,44 @@ const About = () => {
         dark:text-amber-50 "
         >
           <Reveal
-            revealDuration={1}
+            revealDuration={2}
+            revealDelay={0.65}
+            popInDelay={0.65}
             slide={""}
             content={
               <span>
                 and I am currently in my final year of training to become an{" "}
-                application developer. During my apprenticeship, I had many
-                different insights into different areas, but I was most taken
-                with frontend development.{" "}
               </span>
             }
+          />
+          <Reveal
+            revealDuration={2}
+            revealDelay={0.75}
+            popInDelay={0.75}
+            slide={""}
+            content={
+              <span>
+                application developer. During my apprenticeship, I had many
+              </span>
+            }
+          />
+          <Reveal
+            revealDuration={2}
+            revealDelay={0.85}
+            popInDelay={0.85}
+            slide={""}
+            content={
+              <span>
+                different insights into different areas, but I was most taken
+              </span>
+            }
+          />
+          <Reveal
+            revealDuration={2}
+            revealDelay={1}
+            popInDelay={1}
+            slide={""}
+            content={<span>with frontend development. </span>}
           />
         </div>
       </div>

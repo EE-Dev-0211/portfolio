@@ -19,6 +19,7 @@ export default function Resume() {
       <div className="w-4/5 md:w-full mb-4">
         <Reveal
           slide={"hidden"}
+          popInDelay={0.5}
           content={
             <HeadingBox
               icon={<BsFileTextFill className="dark:text-blue-600 mr-6" />}
@@ -45,6 +46,7 @@ export default function Resume() {
                 <Reveal
                   key={educationSection.id}
                   revealDuration={1}
+                  revealDelay={0.3}
                   content={
                     <div
                       key={educationSection.id}
@@ -120,6 +122,7 @@ export default function Resume() {
                 <Reveal
                   key={workSection.id}
                   revealDuration={1.2}
+                  revealDelay={0.3}
                   content={
                     <div
                       key={workSection.id}

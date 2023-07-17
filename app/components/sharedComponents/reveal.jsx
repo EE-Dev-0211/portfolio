@@ -6,7 +6,8 @@ export const Reveal = ({
   slide,
   popInDuration,
   revealDuration,
-  ignoreInnerStyleTags,
+  revealDelay,
+  popInDelay,
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -30,7 +31,7 @@ export const Reveal = ({
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: popInDuration, delay: 0.25 }}
+        transition={{ duration: popInDuration, delay: popInDelay }}
       >
         {content}
       </motion.div>
@@ -42,7 +43,11 @@ export const Reveal = ({
         }}
         initial="hidden"
         animate={slideControls}
-        transition={{ duration: revealDuration, ease: "easeIn" }}
+        transition={{
+          duration: revealDuration,
+          delay: revealDelay,
+          ease: "easeIn",
+        }}
         style={{
           position: "absolute",
           top: 4,

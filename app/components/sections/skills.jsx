@@ -14,6 +14,7 @@ export default function Skills({ darkMode }) {
       <Reveal
         slide={"hidden"}
         popInDuration={0.8}
+        popInDelay={0.5}
         content={
           <div>
             <HeadingBox
@@ -37,6 +38,7 @@ export default function Skills({ darkMode }) {
         >
           <Reveal
             popInDuration={1}
+            popInDelay={0.7}
             slide={"hidden"}
             content={
               <h3 className="text-lg  font-medium pb-6 text-white">
@@ -49,6 +51,7 @@ export default function Skills({ darkMode }) {
             <Reveal
               key={language.id}
               revealDuration={1}
+              revealDelay={0.2}
               content={
                 <div
                   key={language.id}
@@ -120,6 +123,7 @@ export default function Skills({ darkMode }) {
           <Reveal
             slide={"hidden"}
             duration={1.1}
+            popInDelay={0.7}
             content={
               <h3 className="text-lg font-medium pb-6 text-white ">
                 Frameworks & Libraries
@@ -131,6 +135,7 @@ export default function Skills({ darkMode }) {
             <Reveal
               key={framLib.id}
               revealDuration={1.1}
+              revealDelay={0.2}
               content={
                 <div
                   key={framLib.id}
@@ -197,6 +202,7 @@ export default function Skills({ darkMode }) {
           <Reveal
             slide={"hidden"}
             duration={1.2}
+            popInDelay={0.7}
             content={
               <h3 className="text-lg font-medium py-6 text-white">Software</h3>
             }
@@ -208,6 +214,7 @@ export default function Skills({ darkMode }) {
               <Reveal
                 key={software.id}
                 revealDuration={1.2}
+                revealDelay={0.2}
                 content={
                   <div
                     key={software.id}
