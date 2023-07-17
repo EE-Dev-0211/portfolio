@@ -16,7 +16,7 @@ export default function Resume() {
       justify-center md:pt-16 md:min-h-full text-center
       bg-gradient-to-b from-transparent to-gray-900 select-none"
     >
-      <div className="w-4/5 md:w-full mb-4">
+      <div className="w-full mb-4">
         <Reveal
           slide={"hidden"}
           popInDelay={0.5}
