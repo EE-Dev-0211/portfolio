@@ -25,22 +25,19 @@ const NavBar = ({
   handleEmailClick,
   lng,
   t,
+  isDropDownLangOpen,
+  LangDropdownToggle,
 }) => {
   const [isGameActive, setIsGameActive] = useState(false);
   const myRef = useRef(null);
   const { x, y } = useFollowPointer(myRef, isGameActive);
   const [hasCatVanished, setHasCatVanished] = useState(false);
   const [isCustomCursorActive, setIsCustomCursorActive] = useState(false);
-  const [isDropDownLangOpen, setIsDropDownLangOpen] = useState(false);
 
   const gamemodeToggle = () => {
     setIsGameActive(!isGameActive);
     setIsCustomCursorActive(!isCustomCursorActive);
     setIsCustomCursor(!isCustomCursor);
-  };
-
-  const LangDropdownToggle = () => {
-    setIsDropDownLangOpen(!isDropDownLangOpen);
   };
 
   const catToggle = () => setHasCatVanished(!hasCatVanished);

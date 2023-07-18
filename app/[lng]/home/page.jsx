@@ -17,9 +17,12 @@ export default function Home({ params: { lng } }) {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   const [isPopupBoxOpen, setIsPopupBoxOpen] = useState(false);
   const [isCustomCursor, setIsCustomCursor] = useState(false);
+  const [isDropDownLangOpen, setIsDropDownLangOpen] = useState(false);
 
   const { t } = useTranslation(lng, "home");
-  const [counter, setCounter] = useState(0);
+  const LangDropdownToggle = () => {
+    setIsDropDownLangOpen(!isDropDownLangOpen);
+  };
 
   // toggles for Mobile Menu, Tooltip, Impressum & Darkmode
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -179,6 +182,8 @@ export default function Home({ params: { lng } }) {
         handleEmailClick={handleEmailClick}
         lng={lng}
         t={t}
+        isDropDownLangOpen={isDropDownLangOpen}
+        LangDropdownToggle={LangDropdownToggle}
       />
 
       {/*burger menu instead of navbar when width of screen is below 1130px*/}
@@ -193,6 +198,8 @@ export default function Home({ params: { lng } }) {
         isPopupBoxOpen={isPopupBoxOpen}
         lng={lng}
         t={t}
+        isDropDownLangOpen={isDropDownLangOpen}
+        LangDropdownToggle={LangDropdownToggle}
       />
       {/* Content */}
       <main className="scroll-smooth overscroll-none">
