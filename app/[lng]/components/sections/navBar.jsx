@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
+import { BsFillMoonStarsFill, BsFillSunFill, BsFlagFill } from "react-icons/bs";
 import { AiFillMail, AiFillPlayCircle } from "react-icons/ai";
 import { CgPlayStopO } from "react-icons/cg";
 import { FaCat } from "react-icons/fa";
@@ -119,17 +119,82 @@ const NavBar = ({
           <span className="flex items-center gap-4 ml-2 select-none">
             <Trans i18nKey="languageSwitcher" t={t}>
               <button onClick={LangDropdownToggle}>
-                <strong>{{ lng }}</strong>
+                {lng === "de" ? (
+                  <div
+                    className="rounded-full border-solid border-2 border-white w-6 h-6"
+                    style={{
+                      backgroundImage: 'url("/germany.svg")',
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "top",
+                    }}
+                  ></div>
+                ) : lng === "ch" ? (
+                  <div
+                    className="rounded-full border-solid border-2 border-white w-6 h-6"
+                    style={{
+                      backgroundImage: 'url("/switzerland.svg")',
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "top",
+                    }}
+                  ></div>
+                ) : (
+                  <div
+                    className="rounded-full border-solid border-2 border-white w-6 h-6"
+                    style={{
+                      backgroundImage: 'url("/usa.svg")',
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "top",
+                    }}
+                  ></div>
+                )}
               </button>
             </Trans>
-            <ul className={`${isDropDownLangOpen ? "block" : "hidden"}`}>
+            <ul
+              className={`${
+                isDropDownLangOpen ? "block" : "hidden"
+              } flex flex-row gap-2`}
+            >
               {languages
                 .filter((l) => lng !== l)
                 .map((l, index) => {
                   return (
                     <span key={l}>
-                      {index > 0 && " or "}
-                      <Link href={`/${l}/home`}>{l}</Link>
+                      <Link href={`/${l}/home`}>
+                        {l === "de" ? (
+                          <div
+                            className="rounded-full border-solid border-2 border-white w-6 h-6"
+                            style={{
+                              backgroundImage: 'url("/germany.svg")',
+                              backgroundSize: "cover",
+                              backgroundRepeat: "no-repeat",
+                              backgroundPosition: "top",
+                            }}
+                          ></div>
+                        ) : l === "ch" ? (
+                          <div
+                            className="rounded-full border-solid border-2 border-white w-6 h-6"
+                            style={{
+                              backgroundImage: 'url("/switzerland.svg")',
+                              backgroundSize: "cover",
+                              backgroundRepeat: "no-repeat",
+                              backgroundPosition: "top",
+                            }}
+                          ></div>
+                        ) : (
+                          <div
+                            className="rounded-full border-solid border-2 border-white w-6 h-6"
+                            style={{
+                              backgroundImage: 'url("/usa.svg")',
+                              backgroundSize: "cover",
+                              backgroundRepeat: "no-repeat",
+                              backgroundPosition: "top",
+                            }}
+                          ></div>
+                        )}
+                      </Link>
                     </span>
                   );
                 })}

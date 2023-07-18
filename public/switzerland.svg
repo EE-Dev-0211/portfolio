@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 496.06298 496.06298" xmlns="http://www.w3.org/2000/svg">
+ <path d="m0 9e-6h496.06v496.06h-496.06z" fill="#fa000b" fill-rule="evenodd"/>
+ <g transform="matrix(.7 0 0 .7 -124.02 .00063324)" fill="#fff" fill-rule="evenodd">
+  <path d="m310.04 287.89h442.91v132.87h-442.91z"/>
+  <path d="m465.06 132.87h132.87v442.91h-132.87z"/>
+ </g>
+</svg>

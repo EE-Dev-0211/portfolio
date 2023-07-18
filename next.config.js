@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // i18n: {
-  //   locales: ["EN", "DE-DE", "DE-CH", "fr", "it"],
-  //   defaultLocale: "EN",
+  //   locales: ["en", "de-de", "de-ch", "fr", "it"],
+  //   defaultLocale: "en",
   // },
   // fallbackLng: {
-  //   default: ["EN"],
+  //   default: ["en"],
   // },
 };
 

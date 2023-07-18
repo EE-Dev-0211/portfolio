@@ -1,0 +1,43 @@
+{
+  "navbar": {
+    "menu-item1": "Über",
+    "menu-item2": "Kenntnisse",
+    "menu-item3": "Resumé"
+  },
+  "imprint": {
+    "part1": "Dies ist eine private und nicht-kommerzielle Portfolioseite.",
+    "part2": "8bit-Avatar generiert @",
+    "part3": "Hintergrundbild ",
+    "part4": "frei zur Verwendung im Rahmen der",
+    "part5": "Von LinkedIn automatisch generierter Lebenslauf.",
+    "part6": "Alle Icons sind Teil der react-icons-Icon-Library.",
+    "Teil7": "Benutzerdefinierte Cursor-Symbole aus cursor.cc",
+    "part8": "frei zur Verwendung unter der Creative Commons Lizenz ohne Attribute."
+  },
+  "about": {
+    "top-text1": "Grüezi, ich bi dr",
+    "top-text2": "Frontendentwickler in Usbildig",
+    "top-text3": "Aktuell befind ich mi im letschte Joor vo minere Usbildig zum ",
+    "top-text4": "Ahwändigsentwickler. In minere Usbildig hani villi verschiedeni ",
+    "top-text5": "Ihblick in verschideni Beriich dörfe becho, bi aber am ",
+    "top-text6": "meischte vo dr SFrontend-Entwicklich begeischteret gse."
+  },
+  "skills": {
+    "technologies": "Technologien",
+    "additive": "Sproche, Frameworks & Software",
+    "languages": "Sproche",
+    "fw-lib": "Frameworks & Bibliotheken"
+  },
+  "personal": {
+    "buttonText": "Persönlichs",
+    "text1": "Ufgwachse in dr thüringischi Provinz lieb ich d Natur und Aktivitäte im Freie. Aber ich interessier mi au sit miner Chindheit für alli Arte vo Technik und Elektronik. Usserdäm sind witer Liideschafte s Kino, s Schriibe und generell Kulturells.",
+    "text2": "Ich hör gärn düschteri und atmosphärischi Musig, vom Extrem Metal über Dark Wave bis zu Neofolk und Post Punk. Mir gfalle aber au Verschiednigs us dr Rock Musig und elektronischi Musig.",
+    "text3": "Auch noch mim Studium interessier ich mi noch wie vor für d Philosophie (Cioran, Nietzsche, Camus, Schopenhauer, Hobbes, Sartre, Zizek) und es bitzeli für bildendi Kunscht (Grimshaw, Kittelsen, Corot, Bierstadt, Doré, Beksinski, Friedrich, Lessing, Giger).",
+    "text4": "Fitness und Krafttraining sind i mim Läbe witeri wichtigi Pünkt."
+  },
+  "footer": {
+    "text1":"Geschrieben in Webstorm. Mit Next.js and Tailwind CSS gebaut, deployed durch Netlify."
+  }
+
+
+}
