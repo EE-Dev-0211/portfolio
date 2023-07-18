@@ -62,9 +62,9 @@ const NavBar = ({
         className={` hidden md:py-6 md:fixed md:flex md:w-screen md:justify-between
       md:top-0 md:z-50 md:mx-auto ${
         activeSection !== "about"
-          ? "md:bg-gray-800 md:dark:bg-black"
-          : "md:bg-transparent"
-      }  `}
+          ? "md:bg-gray-800 md:dark:bg-black md:text-white"
+          : "md:bg-transparent md:text-black md:dark:text-white"
+      } `}
       >
         <div
           className={`absolute -left-16 -bottom-24 hover:-left-4 hover:-bottom-24 w-20 h-20 z-0 
@@ -285,10 +285,11 @@ const NavBar = ({
         <ul className="flex items-center">
           <li key="about">
             <a
-              className={`${
+              className={` ${
                 activeSection === "about"
-                  ? "font-bold after:absolute after:inset-x-0 after:h-px after:bg-blue-500 after:bottom-[-10px] after:font-bold dark:text-teal-50"
-                  : "text-white dark:text-gray-400"
+                  ? "font-bold text-black dark:text-teal-50 after:absolute after:inset-x-0 after:h-px " +
+                    "after:bg-blue-500 after:bottom-[-10px] after:font-bold "
+                  : "text-white"
               } tracking-wider select-none mx-6 relative
               hover:after:absolute hover:after:inset-x-0 hover:after:h-px 
               hover:after:bg-blue-700 hover:after:bottom-[-10px] hover:after:font-bold`}
@@ -300,14 +301,19 @@ const NavBar = ({
           </li>
           <li key="skills">
             <a
-              className={`${
+              className={` ${
                 activeSection === "skills"
-                  ? "after:absolute after:inset-x-0 after:h-px after:bg-blue-500 after:bottom-[-10px] after:font-bold dark:text-teal-50 "
-                  : "text-white dark:text-gray-400"
+                  ? "font-bold after:absolute after:inset-x-0 after:h-px after:bg-blue-500 after:bottom-[-10px] " +
+                    "after:font-bold dark:text-white"
+                  : ""
               }  tracking-wider select-none mx-6 relative 
               hover:after:absolute hover:after:inset-x-0 hover:after:h-px hover:after:bg-blue-700 
-              hover:after:bottom-[-10px] hover:after:font-bold
-              ${activeSection === "about" ? "font-bold" : ""} `}
+              hover:after:bottom-[-10px] hover:after:font-bold 
+              ${
+                activeSection === "about"
+                  ? "font-bold text-black dark:text-gray-200"
+                  : ""
+              } `}
               href="#skills"
               onClick={() => scrollToSection("skills")}
             >
@@ -316,13 +322,17 @@ const NavBar = ({
           </li>
           <li key="resume" className="mr-4">
             <a
-              className={`${
+              className={` ${
                 activeSection === "resume"
-                  ? "after:absolute after:inset-x-0 after:h-px after:bg-blue-500 after:bottom-[-10px] after:font-bold dark:text-teal-50"
-                  : "text-white dark:text-gray-400"
+                  ? "font-bold after:absolute after:inset-x-0 after:h-px after:bg-blue-500 after:bottom-[-10px] after:font-bold dark:text-teal-50"
+                  : ""
               } tracking-wider mx-6 select-none relative hover:after:absolute hover:after:inset-x-0 hover:after:h-px 
                   hover:after:bg-blue-700 hover:after:bottom-[-10px] hover:after:font-bold
-                   ${activeSection === "about" ? "font-bold" : ""}  `}
+               ${
+                 activeSection === "about"
+                   ? "font-bold text-black dark:text-gray-200"
+                   : "text-white"
+               } `}
               href="#resume"
               onClick={() => scrollToSection("resume")}
             >
