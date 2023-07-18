@@ -59,26 +59,26 @@ export default function Resume({ lng, t }) {
                       ></div>
                       <span className="">{educationSection.period}</span>
                       <span className="font-bold">
-                        {lng == "de"
+                        {lng === "de"
                           ? educationSection.positionDE
-                          : lng == "ch"
+                          : lng === "ch"
                           ? educationSection.positionCH
                           : educationSection.position}
                       </span>
                       <span className="font-bold">
-                        {lng == "de"
+                        {lng === "de"
                           ? educationSection.positionSLDE
-                          : lng == "ch"
+                          : lng === "ch"
                           ? educationSection.positionSLCH
                           : educationSection.positionSL}
                       </span>
                       <span className="font-medium">
-                        {lng == "de"
+                        {lng === "de"
                           ? educationSection.companyDE
                           : educationSection.company}
                       </span>
                       <span className="italic dark:not-italic dark:font-thin">
-                        {lng == "de"
+                        {lng === "de"
                           ? educationSection.locationDE
                           : educationSection.location}
                       </span>
@@ -131,16 +131,16 @@ export default function Resume({ lng, t }) {
                       ></div>
                       <span className="">{workSection.period}</span>
                       <span className="font-bold">
-                        {lng == "de"
+                        {lng === "de"
                           ? workSection.positionDE
-                          : lng == "ch"
+                          : lng === "ch"
                           ? workSection.positionCH
                           : workSection.position}
                       </span>
                       <span className="font-bold">
-                        {lng == "de"
+                        {lng === "de"
                           ? workSection.positionSLDE
-                          : lng == "ch"
+                          : lng === "ch"
                           ? workSection.positionSLCH
                           : workSection.positionSL}
                       </span>
@@ -148,7 +148,7 @@ export default function Resume({ lng, t }) {
                         {workSection.company}{" "}
                       </span>
                       <span className="italic dark:not-italic dark:font-thin dark:text-white">
-                        {lng == "de"
+                        {lng === "de"
                           ? workSection.locationDE
                           : workSection.location}
                       </span>

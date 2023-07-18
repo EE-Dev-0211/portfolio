@@ -138,6 +138,7 @@ export default function Home({ params: { lng } }) {
             </span>
           ))}
         </div>
+
         <div>
           <div role="status pt-60">
             <svg

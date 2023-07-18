@@ -105,16 +105,16 @@ const NavBar = ({
  } `}
           >
             <span>
-              Digital wool for digital cats. <br />
+              {t("navbar.cat-tooltip1")} <br />
               <br />
-              ESC to exit.
+              {t("navbar.cat-tooltip2")}
             </span>
           </div>
         </div>
 
         <div className="flex flex-row">
           <span className="flex items-center gap-4 ml-2 select-none">
-            <Trans i18nKey="languageSwitcher" t={t}>
+            <Trans i18nKey="languageSwitcher">
               <button onClick={LangDropdownToggle}>
                 {lng === "de" ? (
                   <div
