@@ -77,7 +77,7 @@ export const educationSections = [
     periodDE: "09/2021 - jetzt",
     position: "Apprentice",
     positionDE: "Auszubildender",
-    positionCH: "Auszubildender",
+    positionCH: "Lernender",
     positionSL: "Application Developer",
     positionSLDE: "Anwendungsentwickler",
     positionSLCH: "Ahwändigsentwickler",
