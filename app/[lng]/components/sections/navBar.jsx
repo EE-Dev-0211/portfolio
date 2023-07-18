@@ -7,9 +7,7 @@ import { IoMdInformationCircle } from "react-icons/io";
 import { motion } from "framer-motion";
 import PopupBox from "app/[lng]/components/sharedComponents/popupBox.jsx";
 import { useFollowPointer } from "app/[lng]/components/use-follow-pointer.ts";
-import { Trans } from "react-i18next/TransWithoutContext";
-import { languages } from "/app/i18n/settings";
-import Link from "next/link";
+import LanguageToggler from "/app/[lng]/components/sharedComponents/languageToggler";
 
 const NavBar = ({
   darkMode,
@@ -114,88 +112,11 @@ const NavBar = ({
 
         <div className="flex flex-row">
           <span className="flex items-center gap-4 ml-2 select-none">
-            <Trans i18nKey="languageSwitcher">
-              <button onClick={LangDropdownToggle}>
-                {lng === "de" ? (
-                  <div
-                    className="rounded-full border-solid border-2 border-white w-6 h-6"
-                    style={{
-                      backgroundImage: 'url("/germany.svg")',
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "top",
-                    }}
-                  ></div>
-                ) : lng === "ch" ? (
-                  <div
-                    className="rounded-full border-solid border-2 border-white w-6 h-6"
-                    style={{
-                      backgroundImage: 'url("/switzerland.svg")',
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "top",
-                    }}
-                  ></div>
-                ) : (
-                  <div
-                    className="rounded-full border-solid border-2 border-white w-6 h-6"
-                    style={{
-                      backgroundImage: 'url("/usa.svg")',
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "top",
-                    }}
-                  ></div>
-                )}
-              </button>
-            </Trans>
-            <ul
-              className={`${
-                isDropDownLangOpen ? "block" : "hidden"
-              } flex flex-row gap-2`}
-            >
-              {languages
-                .filter((l) => lng !== l)
-                .map((l, index) => {
-                  return (
-                    <span key={l}>
-                      <Link href={`/${l}/home`}>
-                        {l === "de" ? (
-                          <div
-                            className="rounded-full border-solid border-2 border-white w-6 h-6"
-                            style={{
-                              backgroundImage: 'url("/germany.svg")',
-                              backgroundSize: "cover",
-                              backgroundRepeat: "no-repeat",
-                              backgroundPosition: "top",
-                            }}
-                          ></div>
-                        ) : l === "ch" ? (
-                          <div
-                            className="rounded-full border-solid border-2 border-white w-6 h-6"
-                            style={{
-                              backgroundImage: 'url("/switzerland.svg")',
-                              backgroundSize: "cover",
-                              backgroundRepeat: "no-repeat",
-                              backgroundPosition: "top",
-                            }}
-                          ></div>
-                        ) : (
-                          <div
-                            className="rounded-full border-solid border-2 border-white w-6 h-6"
-                            style={{
-                              backgroundImage: 'url("/usa.svg")',
-                              backgroundSize: "cover",
-                              backgroundRepeat: "no-repeat",
-                              backgroundPosition: "top",
-                            }}
-                          ></div>
-                        )}
-                      </Link>
-                    </span>
-                  );
-                })}
-            </ul>
+            <LanguageToggler
+              lng={lng}
+              isDropDownLangOpen={isDropDownLangOpen}
+              LangDropdownToggle={LangDropdownToggle}
+            />
             <IoMdInformationCircle
               onClick={togglePopupBox}
               className="text-base font-bolder hover:cursor-help hover:text-green-400"
