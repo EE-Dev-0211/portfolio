@@ -96,12 +96,12 @@ export default function Skills({ t }) {
                           },
                         })}
                         {/*show Tooltip only when != Null (on Hover) [mobile & desktop] */}
-                        {tooltipContent === language.name && (
-                          <Tooltip
-                            tooltipKey={tooltipContent}
-                            tooltipContent={language.name}
-                          />
-                        )}
+                        {/*{tooltipContent === language.name && (*/}
+                        {/*  <Tooltip*/}
+                        {/*    tooltipKey={tooltipContent}*/}
+                        {/*    tooltipContent={language.name}*/}
+                        {/*  />*/}
+                        {/*)}*/}
                       </div>
                     </div>
                     <div className="col-span-2">
@@ -119,7 +119,13 @@ export default function Skills({ t }) {
                     </div>
                   </div>
                 }
-              />
+              />{" "}
+              {tooltipContent === language.name && (
+                <Tooltip
+                  tooltipKey={tooltipContent}
+                  tooltipContent={language.name}
+                />
+              )}
             </div>
           ))}
         </div>
@@ -182,12 +188,12 @@ export default function Skills({ t }) {
                           onMouseEnter: () => setTooltipContent(framLib.name),
                           onMouseLeave: () => setTooltipContent(null),
                         })}
-                        {tooltipContent === framLib.name && (
-                          <Tooltip
-                            tooltipKey={tooltipContent}
-                            tooltipContent={framLib.name}
-                          />
-                        )}
+                        {/*{tooltipContent === framLib.name && (*/}
+                        {/*  <Tooltip*/}
+                        {/*    tooltipKey={tooltipContent}*/}
+                        {/*    tooltipContent={framLib.name}*/}
+                        {/*  />*/}
+                        {/*)}*/}
                       </div>
                     </div>
                     <div className="col-span-2">
@@ -206,6 +212,12 @@ export default function Skills({ t }) {
                   </div>
                 }
               />
+              {tooltipContent === framLib.name && (
+                <Tooltip
+                  tooltipKey={tooltipContent}
+                  tooltipContent={framLib.name}
+                />
+              )}
             </div>
           ))}
         </div>

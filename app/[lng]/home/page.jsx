@@ -76,7 +76,7 @@ export default function Home({ params: { lng } }) {
     if (!contentLoading) {
       //monitor the viewed sections after the loading screen has disappeared
       const observer = new IntersectionObserver(getSectionIDs, {
-        rootMargin: "-50% 0% -50% 0%",
+        rootMargin: "-65% 0% -35% 0%",
       });
 
       const sections = document.querySelectorAll("section");
