@@ -77,9 +77,9 @@ export default function Skills({ lng, t }) {
                         <div className="md:hidden absolute top-0 left-0 w-full h-full flex items-center justify-center">
                           {React.createElement(language.icon, {
                             className: `md:hidden text-4xl dark:text-white hover:cursor-help`,
-                            onMouseEnter: () =>
+                            onTouchStart: () =>
                               setTooltipContent(language.name),
-                            onMouseLeave: () => setTooltipContent(null),
+                            onTouchEnd: () => setTooltipContent(null),
                           })}
                         </div>
                       </div>
@@ -148,7 +148,7 @@ export default function Skills({ lng, t }) {
                 >
                   <div className="md:col-span-1 md:flex md:justify-start">
                     <div className="relative">
-                      {/*----*/}
+                      {/*--Mobile--*/}
                       <div className="my-2 md:hidden relative w-16 h-16">
                         <div className="absolute top-0 left-0 w-full h-full overflow-hidden rounded-full">
                           <div
@@ -161,12 +161,12 @@ export default function Skills({ lng, t }) {
                         <div className="md:hidden absolute top-0 left-0 w-full h-full flex items-center justify-center">
                           {React.createElement(framLib.icon, {
                             className: `md:hidden text-4xl dark:text-white hover:cursor-help`,
-                            onMouseEnter: () => setTooltipContent(framLib.name),
-                            onMouseLeave: () => setTooltipContent(null),
+                            onTouchStart: () => setTooltipContent(framLib.name),
+                            onTouchEnd: () => setTooltipContent(null),
                           })}
                         </div>
                       </div>
-                      {/*---*/}
+                      {/*-Desktop--*/}
                       {React.createElement(framLib.icon, {
                         className: `hidden md:block ${framLib.iconColor} md:text-5xl md:dark:text-white md:hover:cursor-help md:mr-16`,
                         onMouseEnter: () => setTooltipContent(framLib.name),
