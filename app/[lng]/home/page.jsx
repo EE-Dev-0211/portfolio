@@ -7,7 +7,6 @@ import Footer from "/app/[lng]/components/sections/footer";
 import NavBar from "/app/[lng]/components/sections/navBar";
 import NavBarMobile from "/app/[lng]/components/sections/navBarMobile";
 import { useTranslation } from "../../i18n/client";
-import Link from "next/link";
 
 export default function Home({ params: { lng } }) {
   const [contentLoading, setContentLoading] = useState(true);
@@ -185,6 +184,7 @@ export default function Home({ params: { lng } }) {
         t={t}
         isDropDownLangOpen={isDropDownLangOpen}
         LangDropdownToggle={LangDropdownToggle}
+        setIsTooltipVisible={setIsTooltipVisible}
       />
 
       {/*burger menu instead of navbar when width of screen is below 1130px*/}

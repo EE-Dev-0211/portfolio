@@ -3,7 +3,7 @@ import {
   languages,
   software,
 } from "app/[lng]/components/data/techData.js";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import HeadingBox from "app/[lng]/components/sharedComponents/headingBox.jsx";
 import { RiComputerFill } from "react-icons/ri";
 import { Reveal } from "app/[lng]/components/sharedComponents/reveal.jsx";

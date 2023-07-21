@@ -25,6 +25,7 @@ const NavBar = ({
   t,
   isDropDownLangOpen,
   LangDropdownToggle,
+  setIsTooltipVisible,
 }) => {
   const [isGameActive, setIsGameActive] = useState(false);
   const myRef = useRef(null);
@@ -43,6 +44,7 @@ const NavBar = ({
   function userStopsGame() {
     setIsGameActive(false);
     setIsCustomCursor(false);
+    setIsTooltipVisible(false);
   }
 
   function handleKeyPress(event) {
@@ -72,12 +74,18 @@ const NavBar = ({
           {hasCatVanished ? (
             isGameActive ? (
               <CgPlayStopO
-                onClick={gamemodeToggle}
+                onClick={() => {
+                  gamemodeToggle();
+                  toggleTooltip();
+                }}
                 className="mt-7.5 ml-7.5 cursor-pointer text-2xl text-red-400 hover:text-red-700"
               />
             ) : (
               <AiFillPlayCircle
-                onClick={gamemodeToggle}
+                onClick={() => {
+                  gamemodeToggle();
+                  toggleTooltip();
+                }}
                 className="mt-7.5 ml-7.5 text-2xl text-green-800 hover:text-green-300"
               />
             )
