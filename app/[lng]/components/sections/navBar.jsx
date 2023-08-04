@@ -9,6 +9,7 @@ import PopupBox from "app/[lng]/components/sharedComponents/popupBox.jsx";
 import { useFollowPointer } from "app/[lng]/components/use-follow-pointer.ts";
 import LanguageToggler from "/app/[lng]/components/sharedComponents/languageToggler";
 
+
 const NavBar = ({
   darkMode,
   darkmodeToggle,
@@ -32,6 +33,9 @@ const NavBar = ({
   const { x, y } = useFollowPointer(myRef, isGameActive);
   const [hasCatVanished, setHasCatVanished] = useState(false);
   const [isCustomCursorActive, setIsCustomCursorActive] = useState(false);
+
+  const isAboutActive = activeSection === 'about';
+  const isAboutInactive = !isAboutActive;
 
   const gamemodeToggle = () => {
     setIsGameActive(!isGameActive);
@@ -61,7 +65,7 @@ const NavBar = ({
       <nav
         className={` hidden md:py-6 md:fixed md:flex md:w-screen md:justify-between
       md:top-0 md:z-50 md:mx-auto ${
-        activeSection !== "about"
+            isAboutInactive
           ? "md:bg-gray-800 md:dark:bg-black md:text-white"
           : "md:bg-transparent md:text-black md:dark:text-white"
       } `}
@@ -119,12 +123,17 @@ const NavBar = ({
         </div>
 
         <div className="flex flex-row">
-          <span className="flex items-center gap-4 ml-2 select-none">
-            <LanguageToggler
-              lng={lng}
-              isDropDownLangOpen={isDropDownLangOpen}
-              LangDropdownToggle={LangDropdownToggle}
-            />
+          <span className="flex items-center gap-4 ml-4 select-none">
+             <div
+                 className="w-8 h-8"
+                 style={{
+                   backgroundImage: darkMode ?  'url("/logo-white.svg")' : isAboutInactive ?  'url("/logo-white.svg")' : 'url("/logo-black.svg")',
+                   backgroundSize: "cover",
+                   backgroundRepeat: "no-repeat",
+                   backgroundPosition: "top",
+                 }}
+             ></div>
+
             <IoMdInformationCircle
               onClick={togglePopupBox}
               className="text-base font-bolder hover:cursor-help hover:text-green-400"
@@ -133,7 +142,12 @@ const NavBar = ({
               className="text-base font-bolder hover:cursor-pointer hover:text-blue-400"
               onClick={handleEmailClick}
             />
-            Portfolio.
+             <LanguageToggler
+                 lng={lng}
+                 isDropDownLangOpen={isDropDownLangOpen}
+                 LangDropdownToggle={LangDropdownToggle}
+             />
+
           </span>
         </div>
         {/*Cat Woolball Game*/}
