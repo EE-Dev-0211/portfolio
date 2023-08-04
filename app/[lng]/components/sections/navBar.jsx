@@ -33,9 +33,8 @@ const NavBar = ({
   const { x, y } = useFollowPointer(myRef, isGameActive);
   const [hasCatVanished, setHasCatVanished] = useState(false);
   const [isCustomCursorActive, setIsCustomCursorActive] = useState(false);
+  const [isAboutInactive, isAboutActive] = [activeSection !== 'about', activeSection === 'about'];
 
-  const isAboutActive = activeSection === 'about';
-  const isAboutInactive = !isAboutActive;
 
   const gamemodeToggle = () => {
     setIsGameActive(!isGameActive);
