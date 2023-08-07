@@ -38,7 +38,10 @@
     "text4": "Fitness and weight training are also essential to my life."
   },  "footer": {
   "text1":"Coded in Webstorm. Built with Next.js and Tailwind CSS, deployed with Netlify."
-}
-
+},
+  "resumeHeader": {
+    "additive": "Education & Work Experience",
+    "title": "Resume"
+  }
 
 }

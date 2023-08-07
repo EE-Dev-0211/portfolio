@@ -23,8 +23,8 @@ export default function Resume({ lng, t }) {
           content={
             <HeadingBox
               icon={<BsFileTextFill className="dark:text-blue-600 mr-6" />}
-              title={"Resumé"}
-              additive={"Education & Work Experience"}
+              title={t("resumeHeader.text1")}
+              additive={t("resumeHeader.additive")}
             />
           }
         />

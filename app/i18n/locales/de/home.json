@@ -2,7 +2,7 @@
   "navbar": {
   "menu-item1": "Über",
     "menu-item2": "Kenntnisse",
-    "menu-item3": "Resümee",
+    "menu-item3": "Lebenslauf",
     "cat-tooltip1": "Digitale Wolle für digitale Katzen.",
     "cat-tooltip2":  "ESC zum abbrechen."
   },
@@ -13,7 +13,7 @@
     "part4": "frei zur Verwendung im Rahmen der",
     "part5": "Von LinkedIn automatisch generierter Lebenslauf.",
     "part6": "Alle Icons sind Teil der react-icons-Icon-Library.",
-    "Teil7": "Benutzerdefinierte Cursor-Symbole aus cursor.cc",
+    "part7": "Benutzerdefinierte Cursor-Symbole aus cursor.cc",
     "part8": "frei zur Verwendung unter der Creative Commons Lizenz ohne Attribute."
   },
   "about": {
@@ -39,7 +39,11 @@
   },
   "footer": {
     "text1":"Geschrieben in Webstorm. Mit Next.js and Tailwind CSS gebaut, deployed durch Netlify."
-  }
+  },
+  "resumeHeader": {
+  "additive": "Ausbildung & Berufserfahrung",
+  "title": "Lebenslauf"
+}
 
 
 }
