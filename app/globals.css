@@ -90,9 +90,8 @@ body {
 }
 
 .woolBall {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border-radius: 50% 50%;
-  background: blue;
   border: 1px solid white;
 }
