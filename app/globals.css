@@ -93,5 +93,6 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 50% 50%;
+  background: blue;
   border: 1px solid white;
 }

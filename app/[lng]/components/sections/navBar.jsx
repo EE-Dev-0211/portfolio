@@ -151,12 +151,6 @@ const NavBar = ({
         </div>
         {/*Cat Woolball Game*/}
         <motion.div
-            style={{
-                backgroundImage: url("/knitted-wool.svg"),
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "top",
-            }}
           ref={myRef}
           className={`${isGameActive === true ? "" : "hidden"} woolBall `}
           animate={{ x, y }}
