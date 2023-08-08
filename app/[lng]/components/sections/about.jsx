@@ -81,7 +81,7 @@ const About = ({ lng, t }) => {
       <div className="animate-fadeInAvatar  text-5xl flex justify-center gap-16 text-gray-600">
         <a
           className="z-10"
-          href="https://www.linkedin.com/in/eric-e-720431201/"
+          href="www.linkedin.com/in/eric-e-11x88"
           target="_blank"
         >
           <AiFillLinkedin className="text-white hover:text-teal-200 dark:text-amber-50 dark:hover:text-teal-100" />
