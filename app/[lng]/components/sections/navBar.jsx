@@ -152,7 +152,7 @@ const NavBar = ({
         {/*Cat Woolball Game*/}
         <motion.div
             style={{
-                backgroundImage: "url('/knitted-wool.svg')",
+                backgroundImage: "url('/knitted-wool.jpg')",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "top",
