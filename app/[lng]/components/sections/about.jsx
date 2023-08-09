@@ -85,8 +85,7 @@ const About = ({ lng, t }) => {
           target="_blank"
         >
           <AiFillLinkedin className="text-white hover:text-teal-200 dark:text-amber-50 dark:hover:text-teal-100" />
-        </a>
-      </div>
+        </a>      </div>
 
       {/*Avatar Coin*/}
       <div className="relative mx-auto w-60 h-60 mt-20">
