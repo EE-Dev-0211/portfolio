@@ -17,7 +17,9 @@ import {
   SiVisualstudio,
   SiVisualstudiocode,
   SiWebstorm,
+
 } from "react-icons/si";
+import { DiDotnet } from "react-icons/di";
 import { TbSql } from "react-icons/tb";
 
 export const languages = [
@@ -168,6 +170,18 @@ export const framLibs = [
     filled: "h-30",
     notFilled: "h-70",
   },
+  {
+    id: 14,
+    name: "ASP.NET (Core)",
+    progressTwTag: "w-30",
+    progressText: "30%",
+    icon: DiDotnet,
+    iconColor: "md:text-blue-800",
+    bgColor: "bg-blue-400",
+    filled: "h-30",
+    notFilled: "h-70",
+  },
+
 ];
 
 export const software = [
