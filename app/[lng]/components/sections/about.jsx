@@ -2,7 +2,8 @@ import { AiFillLinkedin } from "react-icons/ai";
 import Image from "next/image";
 import React, { useState } from "react";
 import { Reveal } from "app/[lng]/components/sharedComponents/reveal.jsx";
-const About = ({ lng, t }) => {
+
+const About = ({ t }) => {
   // state for the Avatarcoin
   const [isFlipped, setIsFlipped] = useState(true);
 

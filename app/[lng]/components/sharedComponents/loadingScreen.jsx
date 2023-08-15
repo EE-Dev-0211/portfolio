@@ -1,15 +1,21 @@
 import React from "react";
 
-const LoadingScreen = () => {
+const LoadingScreen = ({ t }) => {
+  const words = [
+    t("loadingScreen.word1"),
+    t("loadingScreen.word2"),
+    t("loadingScreen.word3"),
+    t("loadingScreen.word4"),
+  ];
+
   return (
     <div className="flex justify-center flex-col items-center h-screen bg-black">
       <div className="pb-36">
-        {["WELCOME", "TO", "MY", "PORTFOLIO"].map((word, index) => (
+        {words.map((word, index) => (
           <span
             key={index}
-            className={`ml-4 animate-fadeInLeftLoading${
-              index + 1
-            } md:text-5xl text-xl font-semibold py-2 text-teal-500 select-none`}
+            className={`ml-4 animate-flyInLeft md:text-5xl text-xl font-semibold py-2 text-teal-500 select-none`}
+            style={{ animationDelay: `${index * 0.2}s` }} // Adjust the delay here
           >
             {word}
           </span>

@@ -115,7 +115,7 @@ export default function Home({ params: { lng } }) {
 
   // Loadingscreen for 1 second with animated text and spinner
   if (contentLoading) {
-    return <LoadingScreen lng={lng} darkMode={darkMode} />;
+    return <LoadingScreen t={t} />;
   }
 
   return (

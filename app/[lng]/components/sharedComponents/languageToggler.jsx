@@ -11,7 +11,6 @@ const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
         <button onClick={LangDropdownToggle}>
           {lng === "de" ? (
             <div
-              animate={{ x: -100 }}
               className="rounded-full border-solid border-2 border-white w-6 h-6"
               style={{
                 backgroundImage: 'url("/germany.svg")',

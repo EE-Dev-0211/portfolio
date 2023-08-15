@@ -43,7 +43,13 @@
   "resumeHeader": {
   "additive": "Ausbildung & Berufserfahrung",
   "title": "Lebenslauf"
-}
+},
+  "loadingScreen": {
+    "word1": "WILLKOMMEN",
+    "word2": "AUF",
+    "word3": "MEINEM",
+    "word4": "PORTFOLIO"
+  }
 
 
 }

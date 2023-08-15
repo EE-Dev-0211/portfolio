@@ -43,7 +43,12 @@
   "resumeHeader": {
     "additive": "Usbildig & Berufserfahrig",
     "title": "Résumé"
+  },
+  "loadingScreen": {
+    "word1": "WILLKOMMEN",
+    "word2": "AUF",
+    "word3": "MEINEM",
+    "word4": "PORTFOLIO"
   }
-
 
 }
