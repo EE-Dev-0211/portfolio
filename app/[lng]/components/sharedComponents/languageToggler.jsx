@@ -2,6 +2,7 @@ import { Trans } from "react-i18next/TransWithoutContext";
 import { languages } from "/app/i18n/settings";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
 const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
   return (
@@ -10,6 +11,7 @@ const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
         <button onClick={LangDropdownToggle}>
           {lng === "de" ? (
             <div
+              animate={{ x: -100 }}
               className="rounded-full border-solid border-2 border-white w-6 h-6"
               style={{
                 backgroundImage: 'url("/germany.svg")',
@@ -53,7 +55,8 @@ const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
               <span key={l}>
                 <Link href={`/${l}/home`}>
                   {l === "de" ? (
-                    <div
+                    <motion.div
+                      animate={{ x: isDropDownLangOpen ? 0 : 15 }}
                       className="rounded-full border-solid border-2 border-white w-6 h-6"
                       style={{
                         backgroundImage: 'url("/germany.svg")',
@@ -61,9 +64,10 @@ const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "top",
                       }}
-                    ></div>
+                    ></motion.div>
                   ) : l === "ch" ? (
-                    <div
+                    <motion.div
+                      animate={{ x: isDropDownLangOpen ? 0 : 15 }}
                       className="rounded-full border-solid border-2 border-white w-6 h-6"
                       style={{
                         backgroundImage: 'url("/switzerland.svg")',
@@ -71,9 +75,10 @@ const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "top",
                       }}
-                    ></div>
+                    ></motion.div>
                   ) : (
-                    <div
+                    <motion.div
+                      animate={{ x: isDropDownLangOpen ? 0 : 15 }}
                       className="rounded-full border-solid border-2 border-white w-6 h-6"
                       style={{
                         backgroundImage: 'url("/usa.svg")',
@@ -81,7 +86,7 @@ const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "top",
                       }}
-                    ></div>
+                    ></motion.div>
                   )}
                 </Link>
               </span>
