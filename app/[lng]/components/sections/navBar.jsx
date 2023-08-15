@@ -175,10 +175,10 @@ const NavBar = ({
 
             <IoMdInformationCircle
               onClick={togglePopupBox}
-              className="text-base font-bolder hover:cursor-help hover:text-green-400"
+              className="hidden md:block text-base font-bolder hover:cursor-help hover:text-green-400"
             />
             <AiFillMail
-              className="text-base font-bolder hover:cursor-pointer hover:text-blue-400"
+              className="hidden md:block text-base font-bolder hover:cursor-pointer hover:text-blue-400"
               onClick={handleEmailClick}
             />
             <LanguageToggler
@@ -384,8 +384,22 @@ const NavBar = ({
         </ul>
         {/*    big Menu ends*/}
         {/*mobile menu starts */}
-        {/*light dark mode button for mobile */}
+
         <div className="md:hidden flex flex-row gap-6 justify-center items-center">
+          {/*mobile CV Button*/}
+          <a
+            href="/cv.pdf"
+            target="_blank"
+            className="flex items-center justify-center w-6 h-6
+                  border-gray-400 border-2 text-xxs text-gray-800 font-bold rounded-full
+                  bg-gradient-to-b from-yellow-200 to-red-300 text-black dark:text-white
+                  dark:bg-gradient-to-b dark:from-teal-200 dark:to-gray-700
+                  "
+          >
+            CV
+          </a>
+
+          {/*light dark mode button for mobile */}
           {darkMode ? (
             <button
               className="flex items-center justify-center w-6 h-6 bg-black
@@ -394,7 +408,7 @@ const NavBar = ({
                   "
               onClick={darkmodeToggle}
             >
-              <BsFillSunFill className="text-2xl text-yellow-50 p-0.5" />{" "}
+              <BsFillSunFill className="text-l text-yellow-50 p-0.5" />{" "}
             </button>
           ) : (
             <button
@@ -402,7 +416,7 @@ const NavBar = ({
                   border-gray-500 border-2 font-bold rounded-full"
               onClick={darkmodeToggle}
             >
-              <BsFillMoonStarsFill className="text-2xl text-amber-200 p-0.5" />{" "}
+              <BsFillMoonStarsFill className="text-l text-amber-200 p-0.5" />{" "}
             </button>
           )}
 
@@ -465,6 +479,20 @@ const NavBar = ({
               >
                 {t("navbar.menu-item3")}
               </motion.button>
+
+              <motion.div
+                variants={itemMotion}
+                className="flex justify-center items-center pt-10 gap-16"
+              >
+                <IoMdInformationCircle
+                  onClick={togglePopupBox}
+                  className="text-black dark:text-white text-3xl  font-bolder hover:cursor-help hover:text-green-400"
+                />
+                <AiFillMail
+                  className="text-black dark:text-white text-3xl  font-bolder hover:cursor-pointer hover:text-blue-400"
+                  onClick={handleEmailClick}
+                />
+              </motion.div>
             </motion.div>
           </motion.div>
         )}

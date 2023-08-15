@@ -2,32 +2,22 @@ import { Trans } from "react-i18next/TransWithoutContext";
 import { languages } from "/app/i18n/settings";
 import Link from "next/link";
 import React from "react";
-import { motion } from "framer-motion";
 
-const LanguageToggler = ({
-  lng,
-  isDropDownLangOpen,
-  LangDropdownToggle,
-  navMotion,
-  itemMotion,
-}) => {
+const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
   return (
     <>
       <Trans i18nKey="languageSwitcher">
         <button onClick={LangDropdownToggle}>
           {lng === "de" ? (
-            <motion.div variants={navMotion} animate="visible" initial="hidden">
-              <motion.div
-                variants={itemMotion}
-                className="rounded-full border-solid border-2 border-white w-6 h-6"
-                style={{
-                  backgroundImage: 'url("/germany.svg")',
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "top",
-                }}
-              ></motion.div>{" "}
-            </motion.div>
+            <div
+              className="rounded-full border-solid border-2 border-white w-6 h-6"
+              style={{
+                backgroundImage: 'url("/germany.svg")',
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "top",
+              }}
+            ></div>
           ) : lng === "ch" ? (
             <div
               className="rounded-full border-solid border-2 border-white w-6 h-6"
