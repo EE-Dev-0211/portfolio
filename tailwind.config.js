@@ -61,6 +61,7 @@ module.exports = {
         // cursor form cursor.cc with cc license
         paw: "url(/cursor.cur), default",
         paw2: "url(/cursor2.cur), default",
+        paw3: "url(/cursorClick.cur), default",
       },
       boxShadow: {
         glow: "0 0 15px 7px rgba(107, 114, 128, 0.5)",

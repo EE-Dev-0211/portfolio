@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BsFillMoonStarsFill, BsFillSunFill, BsFlagFill } from "react-icons/bs";
-import { AiFillMail, AiFillPlayCircle } from "react-icons/ai";
-import { CgPlayStopO } from "react-icons/cg";
-import { FaCat } from "react-icons/fa";
+import { AiFillMail } from "react-icons/ai";
 import { IoMdInformationCircle } from "react-icons/io";
 import { motion } from "framer-motion";
 import PopupBox from "app/[lng]/components/sharedComponents/popupBox.jsx";
 import { useFollowPointer } from "app/[lng]/components/use-follow-pointer.ts";
 import LanguageToggler from "/app/[lng]/components/sharedComponents/languageToggler";
 import { useMediaQuery } from "usehooks-ts";
+import CatGameClip from "/app/[lng]/components/sharedComponents/catGameClip";
+import CatWool from "/app/[lng]/components/sharedComponents/catWool";
 
 const navMotion = {
   visible: {
@@ -108,58 +108,17 @@ const NavBar = ({
           : "md:bg-transparent md:text-black md:dark:text-white"
       } `}
       >
-        <div
-          className={`hidden md:block md:absolute md:-left-16 md:-bottom-24 md:hover:-left-4 md:hover:-bottom-24 md:w-20 md:h-20 md:z-0 
-          ${hasCatVanished === true ? "" : "md:cursor-paw2"}
-          md:rounded-r-full md:bg-gray-800 md:border-2 md:border-teal-100 `}
-        >
-          {hasCatVanished ? (
-            isGameActive ? (
-              <CgPlayStopO
-                onClick={() => {
-                  gamemodeToggle();
-                  toggleTooltip();
-                }}
-                className="mt-7.5 ml-7.5 cursor-pointer text-2xl text-red-400 hover:text-red-700"
-              />
-            ) : (
-              <AiFillPlayCircle
-                onClick={() => {
-                  gamemodeToggle();
-                  toggleTooltip();
-                }}
-                className="mt-7.5 ml-7.5 text-2xl text-green-800 hover:text-green-300"
-              />
-            )
-          ) : (
-            <FaCat
-              onClick={() => {
-                catToggle();
-                toggleTooltip();
-              }}
-              className="mt-7.5 ml-7.5 dark:ml-7.5
-              hover:text-white text-2xl text-gray-400"
-              onMouseEnter={toggleTooltip}
-              onMouseLeave={toggleTooltip}
-            />
-          )}
-
-          <div
-            className={`  
- ${
-   isTooltipVisible
-     ? "absolute top-20 left-full ml-2 mt-2 bg-gray-700 text-white w-36 px-4 py-2 rounded-md dark:bg-blue-600"
-     : "hidden"
- } `}
-          >
-            <span>
-              {t("navbar.cat-tooltip1")} <br />
-              <br />
-              {t("navbar.cat-tooltip2")}
-            </span>
-          </div>
-        </div>
-
+        {/*Catgameclip*/}
+        <CatGameClip
+          hasCatVanished={hasCatVanished}
+          isGameActive={isGameActive}
+          gamemodeToggle={gamemodeToggle}
+          toggleTooltip={toggleTooltip}
+          catToggle={catToggle}
+          t={t}
+          isTooltipVisible={isTooltipVisible}
+        />
+        {/*Logo*/}
         <div className="flex flex-row">
           <span className="flex items-center gap-4 ml-4 select-none">
             <div
@@ -196,23 +155,7 @@ const NavBar = ({
           </span>
         </div>
         {/*Cat Woolball Game*/}
-        <motion.div
-          style={{
-            backgroundImage: "url('/knitted-wool.jpg')",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "top",
-          }}
-          ref={myRef}
-          className={`${isGameActive ? "" : "hidden"} woolBall `}
-          animate={{ x, y }}
-          transition={{
-            type: "spring",
-            damping: 3,
-            stiffness: 50,
-            restDelta: 0.001,
-          }}
-        />
+        <CatWool myRef={myRef} isGameActive={isGameActive} x={x} y={y} />
         {/* Imprint Popup */}
         <PopupBox
           itemMotion={itemMotion}

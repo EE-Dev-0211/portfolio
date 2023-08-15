@@ -156,9 +156,7 @@ export default function Home({ params: { lng } }) {
           }}
         >
           <About lng={lng} t={t} />
-
           <Skills darkMode={darkMode} lng={lng} t={t} />
-
           <Resume lng={lng} t={t} />
           <Footer darkMode={darkMode} lng={lng} t={t} />
         </div>
