@@ -8,7 +8,25 @@ import { motion } from "framer-motion";
 import PopupBox from "app/[lng]/components/sharedComponents/popupBox.jsx";
 import { useFollowPointer } from "app/[lng]/components/use-follow-pointer.ts";
 import LanguageToggler from "/app/[lng]/components/sharedComponents/languageToggler";
+import { useMediaQuery } from "../useMediaQuery";
 
+const navMotion = {
+  visible: {
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.15,
+    },
+  },
+  hidden: {
+    opacity: 0,
+  },
+};
+
+const itemMotion = {
+  visible: { opacity: 1, x: 0 },
+  hidden: { opacity: 0, x: -100 },
+};
 
 const NavBar = ({
   darkMode,
@@ -33,9 +51,22 @@ const NavBar = ({
   const { x, y } = useFollowPointer(myRef, isGameActive);
   const [hasCatVanished, setHasCatVanished] = useState(false);
   const [isCustomCursorActive, setIsCustomCursorActive] = useState(false);
-  const [isAboutInactive, isAboutActive] = [activeSection !== 'about', activeSection === 'about'];
+  const [isAboutInactive, isAboutActive] = [
+    activeSection !== "about",
+    activeSection === "about",
+  ];
 
+  // from nav
+  const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
+  const matches = useMediaQuery("(min-width: 1100px)");
 
+  // scroll to sections on click in mobile version, after a delay of closing the mobile menu
+  function scrollToSectionBurgerMenu(sectionId) {
+    setIsMobileMenuToggled(false);
+    setTimeout(() => {
+      scrollToSection(sectionId);
+    }, 300);
+  }
   const gamemodeToggle = () => {
     setIsGameActive(!isGameActive);
     setIsCustomCursorActive(!isCustomCursorActive);
@@ -59,20 +90,27 @@ const NavBar = ({
     document.addEventListener("keydown", handleKeyPress);
   }, []);
 
+  function toggleImprintOnMobile() {
+    toggleMenu();
+    setTimeout(() => {
+      togglePopupBox();
+    }, 300);
+  }
+
   return (
     <>
       <nav
-        className={` hidden md:py-6 md:fixed md:flex md:w-screen md:justify-between
-      md:top-0 md:z-50 md:mx-auto ${
-            isAboutInactive
+        className={` py-6 fixed flex w-screen justify-between
+      top-0 z-50 mx-auto ${
+        isAboutInactive
           ? "md:bg-gray-800 md:dark:bg-black md:text-white"
           : "md:bg-transparent md:text-black md:dark:text-white"
       } `}
       >
         <div
-          className={`absolute -left-16 -bottom-24 hover:-left-4 hover:-bottom-24 w-20 h-20 z-0 
-          ${hasCatVanished === true ? "" : "cursor-paw2"}
-          rounded-r-full bg-gray-800 border-2 border-teal-100 `}
+          className={`hidden md:block md:absolute md:-left-16 md:-bottom-24 md:hover:-left-4 md:hover:-bottom-24 md:w-20 md:h-20 md:z-0 
+          ${hasCatVanished === true ? "" : "md:cursor-paw2"}
+          md:rounded-r-full md:bg-gray-800 md:border-2 md:border-teal-100 `}
         >
           {hasCatVanished ? (
             isGameActive ? (
@@ -123,15 +161,19 @@ const NavBar = ({
 
         <div className="flex flex-row">
           <span className="flex items-center gap-4 ml-4 select-none">
-             <div
-                 className="w-8 h-8"
-                 style={{
-                   backgroundImage: darkMode ?  'url("/logo-white.svg")' : isAboutInactive ?  'url("/logo-white.svg")' : 'url("/logo-black.svg")',
-                   backgroundSize: "cover",
-                   backgroundRepeat: "no-repeat",
-                   backgroundPosition: "top",
-                 }}
-             ></div>
+            <div
+              className="w-8 h-8"
+              style={{
+                backgroundImage: darkMode
+                  ? 'url("/logo-white.svg")'
+                  : isAboutInactive
+                  ? 'url("/logo-white.svg")'
+                  : 'url("/logo-black.svg")',
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "top",
+              }}
+            ></div>
 
             <IoMdInformationCircle
               onClick={togglePopupBox}
@@ -141,24 +183,23 @@ const NavBar = ({
               className="text-base font-bolder hover:cursor-pointer hover:text-blue-400"
               onClick={handleEmailClick}
             />
-             <LanguageToggler
-                 lng={lng}
-                 isDropDownLangOpen={isDropDownLangOpen}
-                 LangDropdownToggle={LangDropdownToggle}
-             />
-
+            <LanguageToggler
+              lng={lng}
+              isDropDownLangOpen={isDropDownLangOpen}
+              LangDropdownToggle={LangDropdownToggle}
+            />
           </span>
         </div>
         {/*Cat Woolball Game*/}
         <motion.div
-            style={{
-                backgroundImage: "url('/knitted-wool.jpg')",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "top",
-            }}
+          style={{
+            backgroundImage: "url('/knitted-wool.jpg')",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "top",
+          }}
           ref={myRef}
-          className={`${isGameActive === true ? "" : "hidden"} woolBall `}
+          className={`${isGameActive ? "" : "hidden"} woolBall `}
           animate={{ x, y }}
           transition={{
             type: "spring",
@@ -230,7 +271,10 @@ const NavBar = ({
           }
         />
         {/*big menu*/}
-        <ul className="flex items-center">
+
+        {/* check if mobile or not */}
+
+        <ul className="hidden md:flex md:items-center">
           <li key="about">
             <a
               className={` ${
@@ -308,6 +352,7 @@ const NavBar = ({
               CV
             </a>
           </li>
+          {/*light/dark mode switch */}
           <li className="flex flex-row" key="darkmodeToggle">
             <BsFillSunFill
               className={` mt-1 ${
@@ -335,6 +380,92 @@ const NavBar = ({
             />
           </li>
         </ul>
+        {/*    big Menu ends*/}
+        {/*mobile menu starts */}
+        {/*light dark mode button for mobile */}
+        <div className="md:hidden flex flex-row gap-6 justify-center items-center">
+          {darkMode ? (
+            <button
+              className="flex items-center justify-center w-6 h-6 bg-black
+                  border-gray-400 border-2 text-gray-800 font-bold rounded-full
+                  bg-gradient-to-b from-yellow-300 to-red-700
+                  "
+              onClick={darkmodeToggle}
+            >
+              <BsFillSunFill className="text-2xl text-yellow-50 p-0.5" />{" "}
+            </button>
+          ) : (
+            <button
+              className="flex items-center justify-center w-6 h-6 bg-gradient-to-b from-blue-700 to-blue-950
+                  border-gray-500 border-2 font-bold rounded-full"
+              onClick={darkmodeToggle}
+            >
+              <BsFillMoonStarsFill className="text-2xl text-amber-200 p-0.5" />{" "}
+            </button>
+          )}
+
+          {/*  light dark switch button ends*/}
+          {/*burger menu button animated */}
+          <div
+            onClick={() => setIsMobileMenuToggled((prevToggle) => !prevToggle)}
+            className="space-y-1.5 cursor-pointer z-50 mr-6"
+          >
+            <motion.span
+              animate={{
+                rotateZ: isMobileMenuToggled ? 45 : 0,
+                y: isMobileMenuToggled ? 8 : 0,
+              }}
+              className="block h-0.5 w-8 bg-black dark:bg-white"
+            ></motion.span>
+            <motion.span
+              animate={{ width: isMobileMenuToggled ? 0 : 24 }}
+              className="block h-0.5 w-6 bg-black dark:bg-white"
+            ></motion.span>
+            <motion.span
+              animate={{
+                rotateZ: isMobileMenuToggled ? -45 : 0,
+                y: isMobileMenuToggled ? -8 : 0,
+                width: isMobileMenuToggled ? 32 : 16,
+              }}
+              className="block h-0.5 w-4 bg-black dark:bg-white"
+            ></motion.span>
+          </div>
+        </div>
+        {/*mobile popup-Menu*/}
+        {isMobileMenuToggled && (
+          <motion.div className="md:hidden fixed flex bg-white dark:bg-black bottom-0 left-0 w-full h-screen items-center justify-center">
+            <motion.div
+              variants={navMotion}
+              animate="visible"
+              initial="hidden"
+              className="flex flex-col gap-12 text-l "
+            >
+              <motion.button
+                className="text-black dark:text-white text-2xl"
+                variants={itemMotion}
+                onClick={() => scrollToSectionBurgerMenu("about")}
+              >
+                About
+              </motion.button>
+
+              <motion.button
+                className="text-black dark:text-white  text-2xl"
+                variants={itemMotion}
+                onClick={() => scrollToSectionBurgerMenu("skills")}
+              >
+                Skills
+              </motion.button>
+
+              <motion.button
+                className="text-black dark:text-white  text-2xl"
+                variants={itemMotion}
+                onClick={() => scrollToSectionBurgerMenu("resume")}
+              >
+                Resumé
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        )}
       </nav>
     </>
   );

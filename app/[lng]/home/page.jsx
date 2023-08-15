@@ -5,7 +5,6 @@ import Skills from "/app/[lng]/components/sections/skills";
 import Resume from "/app/[lng]/components/sections/resume";
 import Footer from "/app/[lng]/components/sections/footer";
 import NavBar from "/app/[lng]/components/sections/navBar";
-import NavBarMobile from "/app/[lng]/components/sections/navBarMobile";
 import LoadingScreen from "/app/[lng]/components/sharedComponents/loadingScreen";
 import { useTranslation } from "../../i18n/client";
 
@@ -110,14 +109,6 @@ export default function Home({ params: { lng } }) {
     }
   }
 
-  // scroll to sections on click in mobile version, after a delay of closing the mobile menu
-  function scrollToSectionBurgerMenu(sectionId) {
-    toggleMenu();
-    setTimeout(() => {
-      scrollToSection(sectionId);
-    }, 300);
-  }
-
   const handleEmailClick = () => {
     window.location.href = `mailto:eiselt.eric@proton.me`;
   };
@@ -150,22 +141,6 @@ export default function Home({ params: { lng } }) {
         isDropDownLangOpen={isDropDownLangOpen}
         LangDropdownToggle={LangDropdownToggle}
         setIsTooltipVisible={setIsTooltipVisible}
-      />
-
-      {/*burger menu instead of navbar when width of screen is below 1130px*/}
-      <NavBarMobile
-        darkMode={darkMode}
-        darkmodeToggle={darkmodeToggle}
-        toggleMenu={toggleMenu}
-        isMenuOpen={isMenuOpen}
-        scrollToSectionBurgerMenu={scrollToSectionBurgerMenu}
-        handleEmailClick={handleEmailClick}
-        togglePopupBox={togglePopupBox}
-        isPopupBoxOpen={isPopupBoxOpen}
-        lng={lng}
-        t={t}
-        isDropDownLangOpen={isDropDownLangOpen}
-        LangDropdownToggle={LangDropdownToggle}
       />
       {/* Content */}
       <main className="scroll-smooth overscroll-none">
