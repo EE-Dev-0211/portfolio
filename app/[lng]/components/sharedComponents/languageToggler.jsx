@@ -56,7 +56,9 @@ const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
                 <Link href={`/${l}/home`}>
                   {l === "de" ? (
                     <motion.div
-                      animate={{ x: isDropDownLangOpen ? 0 : 15 }}
+                      animate={{
+                        scale: isDropDownLangOpen ? 1 : 0,
+                      }}
                       className="rounded-full border-solid border-2 border-white w-6 h-6"
                       style={{
                         backgroundImage: 'url("/germany.svg")',
@@ -67,7 +69,9 @@ const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
                     ></motion.div>
                   ) : l === "ch" ? (
                     <motion.div
-                      animate={{ x: isDropDownLangOpen ? 0 : 15 }}
+                      animate={{
+                        scale: isDropDownLangOpen ? 1 : 0,
+                      }}
                       className="rounded-full border-solid border-2 border-white w-6 h-6"
                       style={{
                         backgroundImage: 'url("/switzerland.svg")',
@@ -78,7 +82,9 @@ const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
                     ></motion.div>
                   ) : (
                     <motion.div
-                      animate={{ x: isDropDownLangOpen ? 0 : 15 }}
+                      animate={{
+                        scale: isDropDownLangOpen ? 1 : 0,
+                      }}
                       className="rounded-full border-solid border-2 border-white w-6 h-6"
                       style={{
                         backgroundImage: 'url("/usa.svg")',
