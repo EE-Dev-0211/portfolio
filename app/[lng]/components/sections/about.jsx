@@ -2,6 +2,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 import Image from "next/image";
 import React, { useState } from "react";
 import { Reveal } from "app/[lng]/components/sharedComponents/reveal.jsx";
+import { motion } from "framer-motion";
 
 const About = ({ t }) => {
   // state for the Avatarcoin
@@ -90,7 +91,10 @@ const About = ({ t }) => {
       </div>
 
       {/*Avatar Coin*/}
-      <div className="relative mx-auto w-60 h-60 mt-20">
+      <motion.div
+        whileHover={{ scale: 1.2 }}
+        className="relative mx-auto w-60 h-60 mt-20"
+      >
         <div
           className={`
           shadow-glow bg-gradient-to-b from-teal-600 to bg-teal-400
@@ -110,7 +114,7 @@ const About = ({ t }) => {
             {/*priority against above the fold warning*/}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

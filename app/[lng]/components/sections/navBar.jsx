@@ -33,7 +33,7 @@ const NavBar = ({
   darkmodeToggle,
   activeSection,
   toggleTooltip,
-  isTooltipVisible,
+
   scrollToSection,
   togglePopupBox,
   isPopupBoxOpen,
@@ -44,6 +44,7 @@ const NavBar = ({
   t,
   isDropDownLangOpen,
   LangDropdownToggle,
+  isTooltipVisible,
   setIsTooltipVisible,
 }) => {
   const [isGameActive, setIsGameActive] = useState(false);
@@ -121,7 +122,10 @@ const NavBar = ({
         {/*Logo*/}
         <div className="flex flex-row">
           <span className="flex items-center gap-4 ml-4 select-none">
-            <div
+            <motion.div
+              drag
+              whileDrag={{ scale: 1.5 }}
+              whileHover={{ scale: 0.8 }}
               className="w-8 h-8"
               style={{
                 backgroundImage: darkMode
@@ -135,7 +139,9 @@ const NavBar = ({
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "top",
               }}
-            ></div>
+            ></motion.div>
+
+            {/*Mail und Infoicon*/}
 
             <IoMdInformationCircle
               onClick={togglePopupBox}

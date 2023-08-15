@@ -128,8 +128,9 @@ export default function Home({ params: { lng } }) {
         darkMode={darkMode}
         darkmodeToggle={darkmodeToggle}
         activeSection={activeSection}
-        toggleTooltip={toggleTooltip}
         isTooltipVisible={isTooltipVisible}
+        setIsTooltipVisible={setIsTooltipVisible}
+        toggleTooltip={toggleTooltip}
         scrollToSection={scrollToSection}
         togglePopupBox={togglePopupBox}
         isPopupBoxOpen={isPopupBoxOpen}
@@ -140,7 +141,6 @@ export default function Home({ params: { lng } }) {
         t={t}
         isDropDownLangOpen={isDropDownLangOpen}
         LangDropdownToggle={LangDropdownToggle}
-        setIsTooltipVisible={setIsTooltipVisible}
       />
       {/* Content */}
       <main className="scroll-smooth overscroll-none">

@@ -25,6 +25,7 @@ const CatWool = ({ myRef, isGameActive, x, y }) => {
         damping: 3,
         stiffness: 50,
         restDelta: 0.001,
+        bounce: 10,
       }}
     />
   );
