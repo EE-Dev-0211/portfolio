@@ -3,6 +3,7 @@ import React from "react";
 
 const CatWool = ({ myRef, isGameActive, x, y }) => {
   const [rotate, setRotate] = React.useState(false);
+  const [move, setMove] = React.useState(false);
 
   return (
     <motion.div
@@ -16,6 +17,7 @@ const CatWool = ({ myRef, isGameActive, x, y }) => {
       className={`${isGameActive ? "" : "hidden"} woolBall active:cursor-paw3`}
       animate={{ x, y, rotate: rotate ? 500 : 0 }}
       onClick={() => {
+        setMove(!move);
         setRotate(!rotate);
       }}
       transition={{

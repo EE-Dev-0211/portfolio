@@ -2,6 +2,7 @@ import { CgPlayStopO } from "react-icons/cg";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { FaCat } from "react-icons/fa";
 import React from "react";
+import { motion } from "framer-motion";
 
 const CatGameClip = ({
   hasCatVanished,
@@ -49,7 +50,8 @@ const CatGameClip = ({
         />
       )}
 
-      <div
+      <motion.div
+        animate={{ scale: isTooltipVisible ? 1 : 0 }}
         className={`  
  ${
    isTooltipVisible
@@ -62,7 +64,7 @@ const CatGameClip = ({
           <br />
           {t("navbar.cat-tooltip2")}
         </span>
-      </div>
+      </motion.div>
     </div>
   );
 };

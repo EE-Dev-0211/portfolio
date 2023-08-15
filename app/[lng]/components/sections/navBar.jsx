@@ -146,8 +146,6 @@ const NavBar = ({
               onClick={handleEmailClick}
             />
             <LanguageToggler
-              navMotion={navMotion}
-              itemMotion={itemMotion}
               lng={lng}
               isDropDownLangOpen={isDropDownLangOpen}
               LangDropdownToggle={LangDropdownToggle}

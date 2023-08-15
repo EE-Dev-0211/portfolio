@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const Tooltip = ({ tooltipKey, tooltipContent }) => {
   const [position, setPosition] = useState({ top: 1, left: 1 });
@@ -8,7 +9,9 @@ const Tooltip = ({ tooltipKey, tooltipContent }) => {
   };
 
   return (
-    <div
+    <motion.div
+      animate={{ scale: 1 }}
+      initial={{ scale: 0 }}
       key={tooltipKey}
       className={`fixed z-50 w-auto bg-gray-700 dark:bg-blue-600 text-white px-4 py-2 rounded-md
         top-${position.top}
@@ -16,7 +19,7 @@ const Tooltip = ({ tooltipKey, tooltipContent }) => {
       onMouseMove={handleMouseMove}
     >
       {tooltipContent}
-    </div>
+    </motion.div>
   );
 };
 
