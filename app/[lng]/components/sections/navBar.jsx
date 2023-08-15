@@ -182,6 +182,8 @@ const NavBar = ({
               onClick={handleEmailClick}
             />
             <LanguageToggler
+              navMotion={navMotion}
+              itemMotion={itemMotion}
               lng={lng}
               isDropDownLangOpen={isDropDownLangOpen}
               LangDropdownToggle={LangDropdownToggle}
@@ -208,6 +210,8 @@ const NavBar = ({
         />
         {/* Imprint Popup */}
         <PopupBox
+          itemMotion={itemMotion}
+          navMotion={navMotion}
           darkMode={darkMode}
           isPopupBoxOpen={isPopupBoxOpen}
           togglePopupBox={togglePopupBox}
@@ -443,7 +447,7 @@ const NavBar = ({
                 variants={itemMotion}
                 onClick={() => scrollToSectionBurgerMenu("about")}
               >
-                About
+                {t("navbar.menu-item1")}
               </motion.button>
 
               <motion.button
@@ -451,7 +455,7 @@ const NavBar = ({
                 variants={itemMotion}
                 onClick={() => scrollToSectionBurgerMenu("skills")}
               >
-                Skills
+                {t("navbar.menu-item2")}
               </motion.button>
 
               <motion.button
@@ -459,7 +463,7 @@ const NavBar = ({
                 variants={itemMotion}
                 onClick={() => scrollToSectionBurgerMenu("resume")}
               >
-                Resumé
+                {t("navbar.menu-item3")}
               </motion.button>
             </motion.div>
           </motion.div>
