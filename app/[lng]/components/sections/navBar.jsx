@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import PopupBox from "app/[lng]/components/sharedComponents/popupBox.jsx";
 import { useFollowPointer } from "app/[lng]/components/use-follow-pointer.ts";
 import LanguageToggler from "/app/[lng]/components/sharedComponents/languageToggler";
+import { useMediaQuery } from "usehooks-ts";
 
 const navMotion = {
   visible: {
@@ -57,6 +58,8 @@ const NavBar = ({
 
   // from nav
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
+
+  const isScreenBiggerThan1100 = useMediaQuery("(min-width: 1100px)");
 
   // scroll to sections on click in mobile version, after a delay of closing the mobile menu
   function scrollToSectionBurgerMenu(sectionId) {
@@ -164,8 +167,10 @@ const NavBar = ({
               style={{
                 backgroundImage: darkMode
                   ? 'url("/logo-white.svg")'
-                  : isAboutInactive
-                  ? 'url("/logo-white.svg")'
+                  : isScreenBiggerThan1100
+                  ? isAboutInactive
+                    ? 'url("/logo-white.svg")'
+                    : 'url("/logo-black.svg")'
                   : 'url("/logo-black.svg")',
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
