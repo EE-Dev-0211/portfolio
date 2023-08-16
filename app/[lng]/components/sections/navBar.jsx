@@ -33,7 +33,6 @@ const NavBar = ({
   darkmodeToggle,
   activeSection,
   toggleTooltip,
-
   scrollToSection,
   togglePopupBox,
   isPopupBoxOpen,
@@ -413,6 +412,7 @@ const NavBar = ({
               className="flex flex-col gap-12 text-l "
             >
               <motion.button
+                whileHover={{ scale: 1.2 }}
                 className="text-black dark:text-white text-2xl"
                 variants={itemMotion}
                 onClick={() => scrollToSectionBurgerMenu("about")}
@@ -421,6 +421,7 @@ const NavBar = ({
               </motion.button>
 
               <motion.button
+                whileHover={{ scale: 1.2 }}
                 className="text-black dark:text-white  text-2xl"
                 variants={itemMotion}
                 onClick={() => scrollToSectionBurgerMenu("skills")}
@@ -429,6 +430,7 @@ const NavBar = ({
               </motion.button>
 
               <motion.button
+                whileHover={{ scale: 1.2 }}
                 className="text-black dark:text-white  text-2xl"
                 variants={itemMotion}
                 onClick={() => scrollToSectionBurgerMenu("resume")}
