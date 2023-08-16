@@ -37,7 +37,7 @@
     "text3": "I am still interested in philosophy (Cioran, Nietzsche, Camus, Schopenhauer, Hobbes, Sartre, Zizek) after my studies and a little bit (more and more) in visual arts (Grimshaw, Kittelsen, Corot, Bierstadt, Doré, Beksinski, Friedrich, Lessing, Giger) as well.",
     "text4": "Fitness and weight training are also essential to my life."
   },  "footer": {
-  "text1":"Coded in Webstorm. Built with Next.js and Tailwind CSS, deployed with Netlify."
+  "text1":"Coded in Webstorm. Built with Next.js, Tailwind and Framer Motion, deployed with Netlify."
 },
   "resumeHeader": {
     "additive": "Education & Work Experience",

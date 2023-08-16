@@ -38,7 +38,7 @@
     "text4": "Fitness und Krafttraining sind i mim Läbe witeri wichtigi Pünkt."
   },
   "footer": {
-    "text1":"Geschrieben in Webstorm. Mit Next.js and Tailwind CSS gebaut, deployed durch Netlify."
+    "text1":"Geschrieben in Webstorm. Mit Next.js, Tailwind und Framer Motion erstellt, deployed durch Netlify."
   },
   "resumeHeader": {
     "additive": "Usbildig & Berufserfahrig",

@@ -1,5 +1,6 @@
 import {
   SiAngular,
+  SiAstro,
   SiCsharp,
   SiCss3,
   SiGit,
@@ -17,10 +18,10 @@ import {
   SiVisualstudio,
   SiVisualstudiocode,
   SiWebstorm,
-
 } from "react-icons/si";
 import { DiDotnet } from "react-icons/di";
-import { TbSql } from "react-icons/tb";
+import { TbBrandFramerMotion, TbSql } from "react-icons/tb";
+import React from "react";
 
 export const languages = [
   {
@@ -177,11 +178,32 @@ export const framLibs = [
     progressText: "30%",
     icon: DiDotnet,
     iconColor: "md:text-blue-800",
-    bgColor: "bg-blue-400",
+    bgColor: "bg-blue-800",
     filled: "h-30",
     notFilled: "h-70",
   },
-
+  {
+    id: 15,
+    name: "Astro",
+    progressTwTag: "w-30",
+    progressText: "30%",
+    icon: SiAstro,
+    iconColor: "md:text-white",
+    bgColor: "bg-orange-200",
+    filled: "h-30",
+    notFilled: "h-70",
+  },
+  {
+    id: 16,
+    name: "Framer Motion",
+    progressTwTag: "w-30",
+    progressText: "30%",
+    icon: TbBrandFramerMotion,
+    iconColor: "md:text-violet-600",
+    bgColor: "bg-violet-600",
+    filled: "h-30",
+    notFilled: "h-70",
+  },
 ];
 
 export const software = [
