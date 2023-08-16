@@ -6,8 +6,6 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  // md for Mobile Screens, hw-md for bis screens where the whole
-  // context fits into the screen -> scroll snapping
   theme: {
     screens: {
       md: "1100px",

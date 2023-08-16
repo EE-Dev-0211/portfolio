@@ -336,7 +336,7 @@ const NavBar = ({
         {/*    big Menu ends*/}
         {/*mobile menu starts */}
 
-        <div className="md:hidden flex flex-row gap-6 justify-center items-center">
+        <div className="md:hidden  select-none flex flex-row gap-6 justify-center items-center">
           {/*mobile CV Button*/}
           <a
             href="/cv.pdf"
@@ -375,7 +375,7 @@ const NavBar = ({
           {/*burger menu button animated */}
           <div
             onClick={() => setIsMobileMenuToggled((prevToggle) => !prevToggle)}
-            className="space-y-1.5 cursor-pointer z-50 mr-6"
+            className="space-y-1.5 cursor-pointer z-50 mr-6 select-none"
           >
             <motion.span
               animate={{
@@ -401,7 +401,7 @@ const NavBar = ({
         {/*mobile popup-Menu*/}
         {isMobileMenuToggled && (
           <motion.div
-            className="md:hidden fixed flex bg-white dark:bg-black bottom-0 left-0 w-full h-screen
+            className="md:hidden select-none fixed flex bg-white dark:bg-black bottom-0 left-0 w-full h-screen
           items-center justify-center   bg-opacity-90 backdrop-filter backdrop-blur-sm
           "
           >

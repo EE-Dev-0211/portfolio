@@ -9,10 +9,9 @@ import LoadingScreen from "/app/[lng]/components/sharedComponents/loadingScreen"
 import { useTranslation } from "../../i18n/client";
 
 export default function Home({ params: { lng } }) {
-  const [contentLoading, setContentLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
+  const [contentLoading, setContentLoading] = useState(true);
   const [activeSection, setActiveSection] = useState(null);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   const [isPopupBoxOpen, setIsPopupBoxOpen] = useState(false);
   const [isCustomCursor, setIsCustomCursor] = useState(false);
@@ -23,8 +22,7 @@ export default function Home({ params: { lng } }) {
     setIsDropDownLangOpen(!isDropDownLangOpen);
   };
 
-  // toggles for Mobile Menu, Tooltip, Impressum & Darkmode
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  // toggles for Tooltip, Impressum & Darkmode
   const darkmodeToggle = () => setDarkMode(!darkMode);
   const togglePopupBox = () => setIsPopupBoxOpen(!isPopupBoxOpen);
   const toggleTooltip = () => setIsTooltipVisible(!isTooltipVisible);
@@ -33,23 +31,25 @@ export default function Home({ params: { lng } }) {
     // Get darkMode state from localStorage
     const storedDarkMode = localStorage.getItem("darkMode");
     console.log("darkMode is: " + storedDarkMode);
+    console.log("contentLoading is: " + contentLoading);
 
     // Set darkMode
     if (storedDarkMode !== null) {
       setDarkMode(storedDarkMode === "true");
     }
+  }, []);
 
+  useEffect(() => {
     // Timeout for loading screen (formerly for FOUC, now for style)
     const timeout = setTimeout(() => {
       setContentLoading(false);
-    }, 1000);
+    }, 1100);
 
     return () => clearTimeout(timeout);
-  }, []);
+  }, [darkMode]);
 
-  // DarkMode
+  // Save darkMode state to localStorage when it's changed
   useEffect(() => {
-    // Save darkMode state to localStorage when it's changed
     localStorage.setItem("darkMode", darkMode.toString());
     console.log("darkMode has been set to: " + darkMode);
   }, [darkMode]);
@@ -70,7 +70,7 @@ export default function Home({ params: { lng } }) {
       };
     }
   }, [contentLoading]);
-
+  //observe sections
   useEffect(() => {
     if (!contentLoading) {
       //monitor the viewed sections after the loading screen has disappeared
