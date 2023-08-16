@@ -141,7 +141,7 @@ const NavBar = ({
               }}
             ></motion.div>
 
-            {/*Mail und Infoicon*/}
+            {/*Mail und Info-icon*/}
 
             <IoMdInformationCircle
               onClick={togglePopupBox}
@@ -401,7 +401,11 @@ const NavBar = ({
         </div>
         {/*mobile popup-Menu*/}
         {isMobileMenuToggled && (
-          <motion.div className="md:hidden fixed flex bg-white dark:bg-black bottom-0 left-0 w-full h-screen items-center justify-center">
+          <motion.div
+            className="md:hidden fixed flex bg-white dark:bg-black bottom-0 left-0 w-full h-screen
+          items-center justify-center   bg-opacity-90 backdrop-filter backdrop-blur-sm
+          "
+          >
             <motion.div
               variants={navMotion}
               animate="visible"
