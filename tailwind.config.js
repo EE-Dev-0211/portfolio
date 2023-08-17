@@ -13,6 +13,7 @@ module.exports = {
     extend: {
       animation: {
         tilt: "tilt 10s infinite linear",
+        text: "text 5s ease infinite",
       },
       keyframes: {
         tilt: {
@@ -24,6 +25,16 @@ module.exports = {
           },
           "75%": {
             transform: "rotate(-1deg)",
+          },
+        },
+        text: {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
           },
         },
         fadeInLeft: {

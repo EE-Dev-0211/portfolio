@@ -3,6 +3,7 @@ import { SiReact, SiTailwindcss, SiWebstorm } from "react-icons/si";
 import React from "react";
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import { AiOutlineArrowUp } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 function scrollToTop() {
   const aboutSection = document.getElementById("about");
@@ -16,9 +17,15 @@ const Footer = ({ darkMode, lng, t }) => {
       className="pl-2 pt-20 flex justify-center bg-gray-900 h-fit select-none"
     >
       {/* Footer */}
-      <div className="text-xs md:text-lg text-white text-center leading-8 px-4 dark:text-gray-600">
-        {t("footer.text1")}
-        <div className="flex flex-row gap-6 pt-6 justify-center mx-auto text-white text-m dark:text-gray-600">
+      <div className="text-xs  md:text-lg text-white text-center leading-8 px-4 dark:text-gray-600">
+        <motion.span whileHover={{ scale: 0.8 }}>
+          {" "}
+          {t("footer.text1")}
+        </motion.span>
+        <div
+          className="flex flex-row gap-6 pt-6 justify-center mx-auto text-white text-m dark:text-gray-600
+        "
+        >
           <TbBrandNextjs />
           <SiWebstorm />
           <SiReact />

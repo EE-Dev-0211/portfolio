@@ -234,7 +234,7 @@ const NavBar = ({
                       after:origin-center after:transition-transform after:duration-300 after:hover:scale-x-100   
                       ${
                         activeSection === "about"
-                          ? "font-bold after:scale-x-100"
+                          ? "font-bold after:scale-x-100 hover:after:bg-white dark:hover:after:bg-teal-300"
                           : ""
                       }   `}
               href="#about"
@@ -248,7 +248,11 @@ const NavBar = ({
               className={`tracking-wider select-none mx-6 relative after:absolute after:inset-x-0 after:bottom-[-10px] 
                       after:h-px after:bg-blue-700 after:transform after:scale-x-0 
                       after:origin-center after:transition-transform after:duration-300 after:hover:scale-x-100   
-                      ${activeSection === "skills" ? "after:scale-x-100" : ""}
+                      ${
+                        activeSection === "skills"
+                          ? "after:scale-x-100 hover:after:bg-teal-300"
+                          : ""
+                      }
                       ${activeSection === "about" ? "font-bold" : ""}   `}
               href="#skills"
               onClick={() => scrollToSection("skills")}
@@ -261,7 +265,11 @@ const NavBar = ({
               className={`tracking-wider select-none mx-6 relative after:absolute after:inset-x-0 after:bottom-[-10px] 
                       after:h-px after:bg-blue-700 after:transform after:scale-x-0 
                       after:origin-center after:transition-transform after:duration-300 after:hover:scale-x-100   
-                      ${activeSection === "resume" ? "after:scale-x-100" : ""}
+                      ${
+                        activeSection === "resume"
+                          ? "after:scale-x-100 hover:after:bg-teal-300"
+                          : ""
+                      }
                       ${activeSection === "about" ? "font-bold" : ""}   `}
               href="#resume"
               onClick={() => scrollToSection("resume")}

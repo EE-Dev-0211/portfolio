@@ -29,8 +29,11 @@ const About = ({ t }) => {
           popInDelay={0.4}
           content={
             <h2
-              className=" text-5xl py-2
-        text-cobaltBlue dark:text-teal-400 font-extrabold md:text-6xl"
+              className="text-4xl py-2 bg-clip-text text-transparent
+            bg-gradient-to-r from-black via-cobaltBlue to-blue-900
+            animate-text dark:bg-gradient-to-r dark:from-teal-400
+            dark:via-cobaltBlue dark:to-teal-700 dark:animate-text
+            font-extrabold md:text-6xl"
             >
               Eric Eiselt
             </h2>
@@ -38,7 +41,7 @@ const About = ({ t }) => {
         />
 
         <h3
-          className="animate-fadeInLeft  font-extrabold
+          className="animate-fadeInLeft font-extrabold
         text-white dark:text-white text-2xl py-2 md:text-3xl"
         >
           {t("about.top-text2")}
@@ -58,22 +61,22 @@ const About = ({ t }) => {
           />
           <Reveal
             revealDuration={2}
-            revealDelay={0.75}
-            popInDelay={0.75}
+            revealDelay={0.9}
+            popInDelay={0.9}
             slide={""}
             content={<span>{t("about.top-text4")}</span>}
           />
           <Reveal
             revealDuration={2}
-            revealDelay={0.85}
-            popInDelay={0.85}
+            revealDelay={1.15}
+            popInDelay={1.15}
             slide={""}
             content={<span>{t("about.top-text5")}</span>}
           />
           <Reveal
             revealDuration={2}
-            revealDelay={1}
-            popInDelay={1}
+            revealDelay={1.4}
+            popInDelay={1.4}
             slide={""}
             content={<span>{t("about.top-text6")} </span>}
           />
@@ -86,7 +89,10 @@ const About = ({ t }) => {
           href="https://www.linkedin.com/in/eric-e-11x88"
           target="_blank"
         >
-          <AiFillLinkedin className="text-white hover:text-teal-200 dark:text-amber-50 dark:hover:text-teal-100" />
+          <AiFillLinkedin
+            className="text-white hover:text-blue-400 transition duration-1000
+                       dark:text-amber-50 dark:hover:text-teal-300 dark:transition dark:duration-1000"
+          />
         </a>{" "}
       </div>
 
