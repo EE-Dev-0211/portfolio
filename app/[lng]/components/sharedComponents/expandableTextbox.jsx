@@ -44,7 +44,7 @@ const ExpandableTextBox = ({ content, buttonText }) => {
         rounded-lg border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800
          bg-opacity-10  backdrop-filter backdrop-blur-sm
                   dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm
-            text-white leading-snug"
+            text-white"
         >
           {content}
         </div>

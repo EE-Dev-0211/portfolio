@@ -225,19 +225,18 @@ const NavBar = ({
         />
         {/*big menu*/}
 
-        {/* check if mobile or not */}
-
         <ul className="hidden md:flex md:items-center">
           <li key="about">
+            {/*underline effect for active nav point*/}
             <a
-              className={` ${
-                activeSection === "about"
-                  ? "font-bold text-black dark:text-teal-50 after:absolute after:inset-x-0 after:h-px " +
-                    "after:bg-blue-500 after:bottom-[-10px] after:font-bold "
-                  : "text-white"
-              } tracking-wider select-none mx-6 relative
-              hover:after:absolute hover:after:inset-x-0 hover:after:h-px 
-              hover:after:bg-blue-700 hover:after:bottom-[-10px] hover:after:font-bold`}
+              className={`tracking-wider select-none mx-6 relative after:absolute after:inset-x-0 after:bottom-[-10px] 
+                      after:h-px after:bg-blue-700 after:transform after:scale-x-0 
+                      after:origin-center after:transition-transform after:duration-300 after:hover:scale-x-100   
+                      ${
+                        activeSection === "about"
+                          ? "font-bold after:scale-x-100"
+                          : ""
+                      }   `}
               href="#about"
               onClick={() => scrollToSection("about")}
             >
@@ -246,19 +245,11 @@ const NavBar = ({
           </li>
           <li key="skills">
             <a
-              className={` ${
-                activeSection === "skills"
-                  ? "font-bold after:absolute after:inset-x-0 after:h-px after:bg-blue-500 after:bottom-[-10px] " +
-                    "after:font-bold dark:text-white"
-                  : ""
-              }  tracking-wider select-none mx-6 relative 
-              hover:after:absolute hover:after:inset-x-0 hover:after:h-px hover:after:bg-blue-700 
-              hover:after:bottom-[-10px] hover:after:font-bold 
-              ${
-                activeSection === "about"
-                  ? "font-bold text-black dark:text-gray-200"
-                  : ""
-              } `}
+              className={`tracking-wider select-none mx-6 relative after:absolute after:inset-x-0 after:bottom-[-10px] 
+                      after:h-px after:bg-blue-700 after:transform after:scale-x-0 
+                      after:origin-center after:transition-transform after:duration-300 after:hover:scale-x-100   
+                      ${activeSection === "skills" ? "after:scale-x-100" : ""}
+                      ${activeSection === "about" ? "font-bold" : ""}   `}
               href="#skills"
               onClick={() => scrollToSection("skills")}
             >
@@ -267,17 +258,11 @@ const NavBar = ({
           </li>
           <li key="resume" className="mr-4">
             <a
-              className={` ${
-                activeSection === "resume"
-                  ? "font-bold after:absolute after:inset-x-0 after:h-px after:bg-blue-500 after:bottom-[-10px] after:font-bold dark:text-teal-50"
-                  : ""
-              } tracking-wider mx-6 select-none relative hover:after:absolute hover:after:inset-x-0 hover:after:h-px 
-                  hover:after:bg-blue-700 hover:after:bottom-[-10px] hover:after:font-bold
-               ${
-                 activeSection === "about"
-                   ? "font-bold text-black dark:text-gray-200"
-                   : "text-white"
-               } `}
+              className={`tracking-wider select-none mx-6 relative after:absolute after:inset-x-0 after:bottom-[-10px] 
+                      after:h-px after:bg-blue-700 after:transform after:scale-x-0 
+                      after:origin-center after:transition-transform after:duration-300 after:hover:scale-x-100   
+                      ${activeSection === "resume" ? "after:scale-x-100" : ""}
+                      ${activeSection === "about" ? "font-bold" : ""}   `}
               href="#resume"
               onClick={() => scrollToSection("resume")}
             >
