@@ -145,7 +145,7 @@ export default function Home({ params: { lng } }) {
       {/* Content */}
       <main className="scroll-smooth overscroll-none">
         <div
-          className="hw-md:snap-y hw-md:snap-mandatory h-screen overflow-scroll scrollbar-hide"
+          className="h-screen overflow-scroll scrollbar-hide"
           style={{
             backgroundImage: darkMode
               ? 'url("/space-unsplash.jpg")'
