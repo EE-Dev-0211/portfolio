@@ -35,18 +35,30 @@ export default function Skills({ t }) {
        md:gap-16 md:flex-row md:items-start md:mx-10"
       >
         <div
-          className="items-center bg-gray-100 dark:bg-black text-center
+          className="group items-center bg-gray-100 dark:bg-black text-center
     p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 w-60 md:w-1/4 flex flex-col
     shadow-lg border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800
     bg-opacity-10 backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter
-    dark:backdrop-blur-sm"
+    dark:backdrop-blur-sm
+hover:border-yellow-100 transition duration-500
+dark:hover:border-teal-700 dark:transition dark:duration-500
+
+    "
         >
           <Reveal
             popInDuration={1}
             popInDelay={0.7}
             slide={"hidden"}
             content={
-              <h3 className="text-lg  font-medium pb-6 text-white">
+              <h3
+                className="text-lg font-medium pb-6 text-white
+                 group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r
+                 group-hover:from-gray-200 group-hover:via-gray-900 group-hover:to-gray-600 group-hover:animate-text
+
+                dark:group-hover:bg-clip-text dark:group-hover:text-transparent
+                dark:group-hover:bg-gradient-to-r dark:group-hover:from-teal-400
+                dark:group-hover:via-white dark:group-hover:to-teal-700 dark:group-hover:animate-text"
+              >
                 {t("skills.languages")}
               </h3>
             }
@@ -95,13 +107,6 @@ export default function Skills({ t }) {
                             setTooltipContent(null);
                           },
                         })}
-                        {/*show Tooltip only when != Null (on Hover) [mobile & desktop] */}
-                        {/*{tooltipContent === language.name && (*/}
-                        {/*  <Tooltip*/}
-                        {/*    tooltipKey={tooltipContent}*/}
-                        {/*    tooltipContent={language.name}*/}
-                        {/*  />*/}
-                        {/*)}*/}
                       </div>
                     </div>
                     <div className="col-span-2">
@@ -131,19 +136,28 @@ export default function Skills({ t }) {
         </div>
 
         <div
-          className="border-solid dark:border-double border-2 dark:border-teal-200
+          className="group border-solid dark:border-double border-2 dark:border-teal-200
         border-gray-800 w-60 items-center
         bg-gray-100 dark:bg-black text-center
         shadow-lg p-6 md:pt-8 md:px-8 md:pb-4 rounded-xl mt-6 mb-10 flex flex-col md:w-1/4
           bg-opacity-10 backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm
- "
+ hover:border-yellow-100 transition duration-500
+dark:hover:border-teal-700 dark:transition dark:duration-500"
         >
           <Reveal
             slide={"hidden"}
             duration={1.1}
             popInDelay={0.7}
             content={
-              <h3 className="text-lg font-medium pb-6 text-white ">
+              <h3
+                className="text-lg font-medium pb-6 text-white
+                group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r
+                 group-hover:from-gray-200 group-hover:via-gray-900 group-hover:to-gray-600 group-hover:animate-text
+
+                dark:group-hover:bg-clip-text dark:group-hover:text-transparent
+                dark:group-hover:bg-gradient-to-r dark:group-hover:from-teal-400
+                dark:group-hover:via-white dark:group-hover:to-teal-700 dark:group-hover:animate-text"
+              >
                 {t("skills.fw-lib")}
               </h3>
             }
@@ -217,16 +231,28 @@ export default function Skills({ t }) {
         </div>
 
         <div
-          className="border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800 w-60 md:w-1/4
+          className="group border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800 w-60 md:w-1/4
         bg-gray-100 dark:bg-black text-center md:p-10 rounded-xl mt-6 mb-10 flex flex-col
-         bg-opacity-10 shadow-lg backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm"
+         bg-opacity-10 shadow-lg backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm
+         hover:border-yellow-100 transition duration-500
+dark:hover:border-teal-700 dark:transition dark:duration-500"
         >
           <Reveal
             slide={"hidden"}
             duration={1.2}
             popInDelay={0.7}
             content={
-              <h3 className="text-lg font-medium py-6 text-white">Software</h3>
+              <h3
+                className="text-lg font-medium py-6 text-white
+              group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r
+                 group-hover:from-gray-200 group-hover:via-gray-900 group-hover:to-gray-600 group-hover:animate-text
+
+                dark:group-hover:bg-clip-text dark:group-hover:text-transparent
+                dark:group-hover:bg-gradient-to-r dark:group-hover:from-teal-400
+                dark:group-hover:via-white dark:group-hover:to-teal-700 dark:group-hover:animate-text"
+              >
+                Software
+              </h3>
             }
           />
 

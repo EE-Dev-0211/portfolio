@@ -13,43 +13,55 @@ const About = ({ t }) => {
     setIsFlipped(!isFlipped);
   };
 
+  const text = String(t("name"));
+
   return (
     <section id="about" className="pt-20 min-h-full bg-transparent select-none">
       <div className="mt-8 md:mt-4 text-center p-10">
         <span
-          className="font-custom animate-fadeInTopText
-        text-black font-extrabold dark:text-white text-xl py-2 md:text-2xl"
+          className="font-custom animate-fadeInLeft
+        text-black font-extrabold dark:text-white text-lg py-2 md:text-2xl"
         >
           {t("about.top-text1")}
         </span>
+
+        <div className="relative overflow-hidden">
+          {text.split("#").map((char, index) => (
+            <h3
+              key={index}
+              className="inline-block font-extrabold text-cobaltBlue
+                  dark:text-teal-400 text-4xl md:text-6xl  py-2 animate-fillAndEmpty
+                  "
+              style={{
+                animationDelay: `${index * 0.2}s`,
+              }}
+            >
+              {char}
+            </h3>
+          ))}
+        </div>
 
         <Reveal
           slide={"hidden"}
           popInDuration={0.5}
           popInDelay={0.4}
           content={
-            <h2
-              className="text-4xl py-2 bg-clip-text text-transparent
-            bg-gradient-to-r from-black via-cobaltBlue to-blue-900
-            animate-text dark:bg-gradient-to-r dark:from-teal-400
-            dark:via-cobaltBlue dark:to-teal-700 dark:animate-text
-            font-extrabold md:text-6xl"
-            >
-              Eric Eiselt
-            </h2>
+            <div className="text-center mt-1">
+              <h2
+                className="
+            text-lg md:text-3xl
+             py-2 text-gray-800 dark:text-white
+            font-extrabold "
+              >
+                {t("about.top-text2")}
+              </h2>{" "}
+            </div>
           }
         />
 
-        <h3
-          className="animate-fadeInLeft font-extrabold
-        text-white dark:text-white text-2xl py-2 md:text-3xl"
-        >
-          {t("about.top-text2")}
-        </h3>
-
         <div
           className="break-words md:break-normal animate-fadeInAvatar
-        text-md py-5 leading-8 font-bold text-white max-w-lg mx-auto
+        text-sm md:text-md py-5 leading-8 font-bold text-white max-w-lg mx-auto
         dark:text-amber-50"
         >
           <Reveal

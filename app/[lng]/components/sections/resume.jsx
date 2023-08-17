@@ -40,7 +40,8 @@ export default function Resume({ lng, t }) {
     dark:border-double border-2 dark:border-teal-200 border-gray-800
     w-60 md:w-full
     bg-opacity-10 backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm
-       "
+       hover:border-yellow-100 transition duration-500
+dark:hover:border-teal-700 dark:transition dark:duration-500"
             >
               {educationSections.map((educationSection) => (
                 <Reveal
@@ -112,7 +113,8 @@ export default function Resume({ lng, t }) {
             dark:border-double border-2 dark:border-teal-200 border-gray-800
             w-60 md:w-full
                bg-opacity-10  backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm
-             "
+            hover:border-yellow-100 transition duration-500
+dark:hover:border-teal-700 dark:transition dark:duration-500 "
             >
               {workSections.map((workSection) => (
                 <Reveal

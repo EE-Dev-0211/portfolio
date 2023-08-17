@@ -1,20 +1,16 @@
 import React from "react";
 
 const LoadingScreen = ({ t }) => {
-  const words = [
-    t("loadingScreen.word1"),
-    t("loadingScreen.word2"),
-    t("loadingScreen.word3"),
-    t("loadingScreen.word4"),
-  ];
+  const words = String(t("loadingScreen.text"));
 
   return (
     <div className="flex justify-center flex-col items-center h-screen bg-black">
-      <div className="pb-36  ">
-        {words.map((word, index) => (
+      <div className="pb-36 ">
+        {words.split(" ").map((word, index) => (
           <span
             key={index}
-            className="ml-4 items-center justify-center animate-flyInLeft md:text-4xl text-lg font-extrabold py-2 text-teal-500 select-none"
+            className="ml-4 items-center justify-center
+            animate-flyInLeft md:text-4xl text-lg font-extrabold py-2 text-teal-500 select-none"
             style={{ animationDelay: `${index * 0.15}s` }}
           >
             {word}

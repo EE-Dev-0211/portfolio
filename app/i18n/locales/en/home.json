@@ -1,4 +1,5 @@
 {
+  "name": "E#r#i#c E#i#s#e#l#t",
   "navbar": {
     "menu-item1": "About",
     "menu-item2": "Skills",
@@ -44,10 +45,7 @@
     "title": "Resume"
   },
   "loadingScreen": {
-  "word1": "WELCOME",
-  "word2": "TO",
-  "word3": "MY",
-  "word4": "PORTFOLIO"
+  "text": "WELCOME TO MY PORTFOLIO"
 }
 
 }

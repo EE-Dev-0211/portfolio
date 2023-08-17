@@ -13,9 +13,30 @@ module.exports = {
     extend: {
       animation: {
         tilt: "tilt 10s infinite linear",
+        fillAndEmpty: "fillAndEmpty 4.5s 3.5s infinite",
         text: "text 5s ease infinite",
       },
       keyframes: {
+        text: {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
+        fillAndEmpty: {
+          "0%, 100%": {
+            opacity: 0.5,
+            transform: "scale(1)",
+          },
+          "50%": {
+            opacity: 1,
+            transform: "scale(1.1)",
+          },
+        },
         tilt: {
           "0%, 50%, 100%": {
             transform: "rotate(0deg)",
@@ -25,16 +46,6 @@ module.exports = {
           },
           "75%": {
             transform: "rotate(-1deg)",
-          },
-        },
-        text: {
-          "0%, 100%": {
-            "background-size": "200% 200%",
-            "background-position": "left center",
-          },
-          "50%": {
-            "background-size": "200% 200%",
-            "background-position": "right center",
           },
         },
         fadeInLeft: {

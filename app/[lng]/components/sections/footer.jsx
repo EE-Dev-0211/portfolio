@@ -17,7 +17,7 @@ const Footer = ({ darkMode, lng, t }) => {
       className="pl-2 pt-20 flex justify-center bg-gray-900 h-fit select-none"
     >
       {/* Footer */}
-      <div className="text-xs  md:text-lg text-white text-center leading-8 px-4 dark:text-gray-600">
+      <div className="text-xs  md:text-lg text-white text-center leading-8 px-4 dark:text-gray-600   ">
         <motion.span whileHover={{ scale: 0.8 }}>
           {" "}
           {t("footer.text1")}
