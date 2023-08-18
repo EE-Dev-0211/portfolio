@@ -95,17 +95,16 @@ const About = ({ t }) => {
         </div>
       </div>
 
-      <div className="animate-fadeInAvatar  text-5xl flex justify-center gap-16 text-gray-600">
+      <div className="animate-fadeInAvatar text-6xl flex justify-center gap-16 text-gray-600">
         <a
-          className="z-10"
+          className="text-6xl text-white
+          hover:text-blue-400 transition duration-1000
+            dark:hover:text-teal-300 dark:transition dark:duration-1000"
           href="https://www.linkedin.com/in/eric-e-11x88"
           target="_blank"
         >
-          <AiFillLinkedin
-            className="text-white hover:text-blue-400 transition duration-1000
-                       dark:text-amber-50 dark:hover:text-teal-300 dark:transition dark:duration-1000"
-          />
-        </a>{" "}
+          <AiFillLinkedin />
+        </a>
       </div>
 
       {/*Avatar Coin*/}

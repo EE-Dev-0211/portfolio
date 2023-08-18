@@ -15,7 +15,8 @@ const CatGameClip = ({
 }) => {
   return (
     <div
-      className={`hidden md:block md:absolute md:-left-16 md:-bottom-24 md:hover:-left-4 md:hover:-bottom-24 md:w-20 md:h-20 md:z-0 
+      className={`hidden md:block md:absolute md:-left-16 
+      md:-bottom-40 md:hover:-left-4 md:hover:-bottom-40 md:w-20 md:h-20 md:z-0 
           ${hasCatVanished === true ? "" : "md:cursor-paw2"}
           md:rounded-r-full md:bg-gray-800 md:border-2 md:border-teal-100 `}
     >

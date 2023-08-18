@@ -15,8 +15,38 @@ module.exports = {
         tilt: "tilt 10s infinite linear",
         fillAndEmpty: "fillAndEmpty 4.5s 3.5s infinite",
         text: "text 5s ease infinite",
+        slide: "slide 5s linear infinite",
+        mobileSlide: "mobileSlide 5s linear infinite",
       },
       keyframes: {
+        slide: {
+          "0%, 100%": {
+            "margin-top": "0px",
+          },
+          "5%, 33%": {
+            "margin-top": "-82px",
+          },
+          "38%, 66%": {
+            "margin-top": "-165px",
+          },
+          "71%, 99.99%": {
+            "margin-top": "0px",
+          },
+        },
+        mobileSlide: {
+          "0%, 100%": {
+            "margin-top": "1px",
+          },
+          "5%, 33%": {
+            "margin-top": "-87px",
+          },
+          "38%, 66%": {
+            "margin-top": "-173px",
+          },
+          "71%, 99.99%": {
+            "margin-top": "0px",
+          },
+        },
         text: {
           "0%, 100%": {
             "background-size": "200% 200%",
