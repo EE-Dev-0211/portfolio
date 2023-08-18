@@ -22,23 +22,25 @@ const Footer = ({ darkMode, lng, t }) => {
       >
         <div
           className="text-gray-500 text-center font-bold 
-        flex flex-row justify-around"
+        flex flex-col justify-around"
         >
-          <span>Coded in Webstorm. Deployed with Netlify. Built with </span>
-          <div className="overflow-hidden h-14 mx-2.5 -translate-y-3">
+          <span>{t("footer.text1")} </span>
+          <span>{t("footer.text2")} </span>
+          <span>{t("footer.text3")} </span>
+          <div className="overflow-hidden h-14 mt-3 mx-2.5 -translate-y-3">
             <div className="animate-mobileSlide md:animate-slide">
               <span className="inline-block uppercase text-white py-1 px-2 mt-1 mb-11 bg-blue-500 border-2 border-blue-500 dark:text-gray-600 dark:bg-transparent dark:border-2 dark:border-gray-600">
-                Next.js
+                {t("footer.word1")}
               </span>
             </div>
             <div>
               <span className="inline-block uppercase text-white py-1 px-2 mb-11 bg-teal-500 border-2 border-teal-500  dark:text-gray-600 dark:bg-transparent dark:border-2 dark:border-gray-600">
-                Tailwind CSS
+                {t("footer.word2")}
               </span>
             </div>
             <div>
               <span className="inline-block uppercase text-white py-1 px-2 mb-11 bg-violet-600 border-2 border-violet-600  dark:text-gray-600 dark:bg-transparent dark:border-2 dark:border-gray-600">
-                Framer Motion
+                {t("footer.word3")}
               </span>
             </div>
           </div>

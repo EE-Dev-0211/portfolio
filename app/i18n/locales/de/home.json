@@ -38,7 +38,12 @@
     "text4": "Fitness und Krafttraining sind mir in meinem Leben ebenso wichtig."
   },
   "footer": {
-    "text1":"Geschrieben in Webstorm. Mit Next.js, Tailwind und Framer Motion erstellt, deployed durch Netlify."
+    "text1":"Geschrieben in Webstorm.",
+    "text2": "Deployed durch Netlify.",
+    "text3": "Erstellt mit:",
+    "word1": "Next.js",
+    "word2": "Tailwind CSS",
+    "word3": "Framer Motion"
   },
   "resumeHeader": {
   "additive": "Ausbildung & Berufserfahrung",
