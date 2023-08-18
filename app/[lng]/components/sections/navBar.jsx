@@ -125,7 +125,7 @@ const NavBar = ({
               drag
               whileDrag={{ scale: 1.5 }}
               whileHover={{ scale: 0.8 }}
-              className="w-8 h-8"
+              className="w-12 h-8"
               style={{
                 backgroundImage: darkMode
                   ? 'url("/logo-white.svg")'
