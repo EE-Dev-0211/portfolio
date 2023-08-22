@@ -18,6 +18,7 @@ export default function Home({ params: { lng } }) {
   const [isDropDownLangOpen, setIsDropDownLangOpen] = useState(false);
 
   const { t } = useTranslation(lng, "home");
+
   const LangDropdownToggle = () => {
     setIsDropDownLangOpen(!isDropDownLangOpen);
   };
@@ -46,7 +47,7 @@ export default function Home({ params: { lng } }) {
     }, 1100);
 
     return () => clearTimeout(timeout);
-  }, [darkMode]);
+  }, []);
 
   // Save darkMode state to localStorage when it's changed
   useEffect(() => {
