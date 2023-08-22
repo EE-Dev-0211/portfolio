@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const LoadingScreen = ({ t }) => {
+const LoadingScreen = ({ t, darkMode }) => {
   const words = String(t("loadingScreen.text"));
   const [percentage, setPercentage] = useState(0);
 
@@ -20,6 +20,10 @@ const LoadingScreen = ({ t }) => {
 
   return (
     <div className="flex justify-center flex-col items-center h-screen bg-black">
+      <div
+        className={` h-20 w-20 bg-green-300 ${darkMode ? "bg-amber-300" : ""} `}
+      ></div>
+
       <div className="pb-28 ">
         {words.split(" ").map((word, index) => (
           <span
