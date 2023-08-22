@@ -44,7 +44,7 @@ export default function Home({ params: { lng } }) {
     // Timeout for loading screen (formerly for FOUC, now for style)
     const timeout = setTimeout(() => {
       setContentLoading(false);
-    }, 2000);
+    }, 1100);
 
     return () => clearTimeout(timeout);
   }, []);
