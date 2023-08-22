@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { Reveal } from "app/[lng]/components/sharedComponents/reveal.jsx";
 import { motion } from "framer-motion";
+import { FaGithubSquare } from "react-icons/fa";
 
 const About = ({ t }) => {
   // state for the Avatarcoin
@@ -95,15 +96,26 @@ const About = ({ t }) => {
         </div>
       </div>
 
-      <div className="animate-fadeInAvatar text-6xl flex justify-center gap-16 text-gray-600">
+      <div className="animate-fadeInAvatar text-6xl flex justify-center gap-6 text-gray-600">
         <a
-          className="text-6xl text-white
+          className="text-5xl text-white
           hover:text-blue-400 transition duration-1000
             dark:hover:text-teal-300 dark:transition dark:duration-1000"
           href="https://www.linkedin.com/in/eric-e-11x88"
           target="_blank"
         >
           <AiFillLinkedin />
+        </a>
+
+        <a
+          className="text-5xl text-white
+          hover:text-black transition duration-1000
+            dark:hover:text-teal-300 dark:transition dark:duration-1000
+            "
+          href="https://github.com/daath-dweller"
+          target="_blank"
+        >
+          <FaGithubSquare />
         </a>
       </div>
 

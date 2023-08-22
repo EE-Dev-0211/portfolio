@@ -20,10 +20,6 @@ const LoadingScreen = ({ t, darkMode }) => {
 
   return (
     <div className="flex justify-center flex-col items-center h-screen bg-black">
-      <div
-        className={` h-20 w-20 bg-red-400 ${darkMode ? "bg-green-400" : ""} `}
-      ></div>
-
       <div className="pb-28 ">
         {words.split(" ").map((word, index) => (
           <span
