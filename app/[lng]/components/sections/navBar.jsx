@@ -279,12 +279,7 @@ const NavBar = ({
           </li>
           <li key="cv">
             <a
-              className={`tracking-wider select-none relative border-2 py-2.5
-                  px-5 font-medium uppercase transition-colors before:absolute
-                  before:left-0 before:top-0 before:-z-10 before:h-full before:w-full
-                  before:origin-top-left before:scale-x-0 before:transition-transform
-                  before:duration-300 before:content-[''] before:hover:scale-x-100     
-                  bg-transparent text-teal-200 border-teal-200 before:border-green-500 hover:text-gray-800 before:bg-teal-100        
+              className={`cv-button
                   ${
                     activeSection === "about"
                       ? "text-teal-500 border-teal-500 before:border-green-800 hover:text-gray-800 before:bg-teal-500"
@@ -331,15 +326,7 @@ const NavBar = ({
 
         <div className="md:hidden  select-none flex flex-row gap-6 justify-center items-center">
           {/*mobile CV Button*/}
-          <a
-            href="/cv.pdf"
-            target="_blank"
-            className="flex items-center justify-center w-6 h-6
-                  border-gray-400 border-2 text-xxs text-gray-800 font-bold rounded-full
-                  bg-gradient-to-b from-yellow-200 to-red-300 text-black dark:text-white
-                  dark:bg-gradient-to-b dark:from-teal-200 dark:to-gray-700
-                  "
-          >
+          <a href="/cv.pdf" target="_blank" className="mobile-cv-button">
             CV
           </a>
 

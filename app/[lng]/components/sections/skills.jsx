@@ -45,17 +45,7 @@ export default function Skills({ t }) {
                 popInDelay={0.7}
                 slide={"hidden"}
                 content={
-                  <h3
-                    className="text-lg font-medium pb-6 text-white
-                         group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r
-                         group-hover:from-gray-200 group-hover:via-gray-900 group-hover:to-gray-600 group-hover:animate-text
-
-                        dark:group-hover:bg-clip-text dark:group-hover:text-transparent
-                        dark:group-hover:bg-gradient-to-r dark:group-hover:from-teal-400
-                        dark:group-hover:via-white dark:group-hover:to-teal-700 dark:group-hover:animate-text"
-                  >
-                    {t("skills.languages")}
-                  </h3>
+                  <h3 className="heading-text">{t("skills.languages")}</h3>
                 }
               />
               {/*iterating over the languages*/}
@@ -139,19 +129,7 @@ export default function Skills({ t }) {
                 slide={"hidden"}
                 duration={1.1}
                 popInDelay={0.7}
-                content={
-                  <h3
-                    className="text-lg font-medium pb-6 text-white
-                group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r
-                 group-hover:from-gray-200 group-hover:via-gray-900 group-hover:to-gray-600 group-hover:animate-text
-
-                dark:group-hover:bg-clip-text dark:group-hover:text-transparent
-                dark:group-hover:bg-gradient-to-r dark:group-hover:from-teal-400
-                dark:group-hover:via-white dark:group-hover:to-teal-700 dark:group-hover:animate-text"
-                  >
-                    {t("skills.fw-lib")}
-                  </h3>
-                }
+                content={<h3 className="heading-text">{t("skills.fw-lib")}</h3>}
               />
               {/*iterating over frameworks & libraries*/}
               {framLibs.map((framLib) => (
@@ -231,19 +209,7 @@ export default function Skills({ t }) {
                 slide={"hidden"}
                 duration={1.2}
                 popInDelay={0.7}
-                content={
-                  <h3
-                    className="text-lg font-medium py-6 text-white
-              group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r
-                 group-hover:from-gray-200 group-hover:via-gray-900 group-hover:to-gray-600 group-hover:animate-text
-
-                dark:group-hover:bg-clip-text dark:group-hover:text-transparent
-                dark:group-hover:bg-gradient-to-r dark:group-hover:from-teal-400
-                dark:group-hover:via-white dark:group-hover:to-teal-700 dark:group-hover:animate-text"
-                  >
-                    Software
-                  </h3>
-                }
+                content={<h3 className="heading-text">Software</h3>}
               />
 
               <div className="grid grid-cols-3 text-black dark:text-white">

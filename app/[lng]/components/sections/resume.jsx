@@ -35,14 +35,7 @@ export default function Resume({ lng, t }) {
           <div className="pb-10 w-4/5 md:w-1/4 flex flex-col items-center ">
             {/*mapping the education entries*/}
 
-            <div
-              className="mt-4 bg-gray-100 dark:bg-black border-solid rounded-lg
-    dark:border-double border-2 dark:border-teal-200 border-gray-800
-    w-60 md:w-full
-    bg-opacity-10 backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm
-       hover:border-yellow-100 transition duration-500
-dark:hover:border-teal-700 dark:transition dark:duration-500"
-            >
+            <div className="info-box">
               {educationSections.map((educationSection) => (
                 <Reveal
                   key={educationSection.id}
@@ -108,14 +101,7 @@ dark:hover:border-teal-700 dark:transition dark:duration-500"
 
           <div className="w-4/5 md:w-1/4 flex flex-col items-center">
             {/*mapping the work experience entries*/}
-            <div
-              className="mt-4 bg-gray-100 dark:bg-black border-solid rounded-lg
-            dark:border-double border-2 dark:border-teal-200 border-gray-800
-            w-60 md:w-full
-               bg-opacity-10  backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter dark:backdrop-blur-sm
-            hover:border-yellow-100 transition duration-500
-dark:hover:border-teal-700 dark:transition dark:duration-500 "
-            >
+            <div className="info-box">
               {workSections.map((workSection) => (
                 <Reveal
                   key={workSection.id}
