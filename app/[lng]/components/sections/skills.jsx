@@ -96,6 +96,7 @@ export default function Skills({ t }) {
                         </div>
                         <div className="col-span-2">
                           {/* Progress bars are only shown when width > 1130px */}
+
                           <div
                             className="hidden md:block md:mt-4 md:w-full md:bg-gray-500 md:rounded-full
                         md:border-2 md:border-gray-500 md:dark:bg-white md:dark:border-white"

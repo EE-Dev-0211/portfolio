@@ -143,5 +143,9 @@ module.exports = {
       animation: ["motion-safe"],
     },
   },
-  plugins: [require("tailwind-scrollbar-hide"), require("tailwind-scrollbar")],
+  plugins: [
+    require("tailwind-scrollbar-hide"),
+    require("tailwind-scrollbar"),
+    require("daisyui"),
+  ],
 };

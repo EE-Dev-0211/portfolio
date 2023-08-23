@@ -60,10 +60,14 @@ const CatGameClip = ({
      : "hidden"
  } `}
       >
-        <span>
+        <span className="">
+          {" "}
           {t("navbar.cat-tooltip1")} <br />
           <br />
-          {t("navbar.cat-tooltip2")}
+        </span>
+        <span className="">
+          <kbd className="kbd -translate-x-1.5">Esc</kbd>
+          {t("navbar.cat-tooltip2")}{" "}
         </span>
       </motion.div>
     </div>

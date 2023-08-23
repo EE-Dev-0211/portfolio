@@ -23,6 +23,7 @@ const About = ({ t }) => {
           className="font-custom animate-fadeInLeft
         text-black font-extrabold dark:text-white text-lg py-2 md:text-2xl"
         >
+          {" "}
           {t("about.top-text1")}
         </span>
 
