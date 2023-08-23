@@ -101,7 +101,8 @@ const NavBar = ({
   return (
     <>
       <nav
-        className={` py-6 fixed flex w-screen justify-between
+        className={`
+        py-6 fixed flex w-screen justify-between
       top-0 z-50 mx-auto ${
         isAboutInactive
           ? "md:bg-gray-800 md:dark:bg-black md:text-white"

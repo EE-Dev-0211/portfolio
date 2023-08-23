@@ -26,7 +26,7 @@ const About = ({ t }) => {
           {t("about.top-text1")}
         </span>
 
-        <div className="relative overflow-hidden">
+        <div className="font-boo relative overflow-hidden">
           {text.split("#").map((char, index) => (
             <h3
               key={index}

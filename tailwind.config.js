@@ -134,7 +134,7 @@ module.exports = {
         darkGradient1: "linear-gradient(180deg, #111827, #273759, #111827)",
       },
       fontFamily: {
-        custom: "",
+        boo: ["var(--font-boo)"],
       },
     },
   },
