@@ -31,7 +31,7 @@ const About = ({ t }) => {
             <h3
               key={index}
               className="inline-block font-extrabold text-cobaltBlue
-                  dark:text-teal-400 text-4xl md:text-6xl  py-2 animate-fillAndEmpty
+                  dark:text-teal-400 text-4xl md:text-6xl py-2 px-0.5 animate-fillAndEmpty
                   "
               style={{
                 animationDelay: `${index * 0.2}s`,
@@ -47,7 +47,7 @@ const About = ({ t }) => {
           popInDuration={0.5}
           popInDelay={0.4}
           content={
-            <div className="text-center mt-1">
+            <div className=" text-center mt-1">
               <h2
                 className="
             text-lg md:text-3xl
