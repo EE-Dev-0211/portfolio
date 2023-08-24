@@ -1,4 +1,8 @@
-import { AiFillLinkedin } from "react-icons/ai";
+import {
+  AiFillLinkedin,
+  AiOutlinePauseCircle,
+  AiOutlinePlayCircle,
+} from "react-icons/ai";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { Reveal } from "app/[lng]/components/sharedComponents/reveal.jsx";
@@ -16,10 +20,13 @@ const About = ({ t }) => {
   };
 
   const text = String(t("name"));
+
   const typedText = useRef(null);
+  const typed = useRef(null);
+  const [isTypingAnimationActive, setIsTypingAnimation] = useState(true);
 
   useEffect(() => {
-    const typed = new Typed(typedText.current, {
+    const options = {
       strings: [
         t("about.top-text2.1"),
         t("about.top-text2.2"),
@@ -32,13 +39,19 @@ const About = ({ t }) => {
       backDelay: 200,
       loop: true,
       loopCount: Infinity,
-    });
+    };
+
+    typed.current = new Typed(typedText.current, options);
 
     return () => {
-      // Destroy Typed instance during cleanup to stop animation
-      typed.destroy();
+      typed.current.destroy();
     };
   }, []);
+
+  const typingToggle = () => {
+    typed.current.toggle();
+    setIsTypingAnimation(!isTypingAnimationActive);
+  };
 
   return (
     <section id="about" className="pt-20 min-h-full bg-transparent select-none">
@@ -82,6 +95,16 @@ const About = ({ t }) => {
                 {" "}
                 <span ref={typedText} />
               </h2>{" "}
+              <button
+                className="hover:text-amber-900 dark:hover:text-teal-400"
+                onClick={typingToggle}
+              >
+                {isTypingAnimationActive ? (
+                  <AiOutlinePauseCircle />
+                ) : (
+                  <AiOutlinePlayCircle />
+                )}
+              </button>
             </div>
           }
         />
