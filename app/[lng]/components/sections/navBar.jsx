@@ -283,8 +283,8 @@ const NavBar = ({
               className={`cv-button
                   ${
                     activeSection === "about"
-                      ? "text-teal-500 border-teal-500 before:border-green-800 hover:text-gray-800 before:bg-teal-500"
-                      : ""
+                      ? "bg-transparent before:bg-green-500 border-green-500 text-green-500 hover:text-black"
+                      : "border-teal-200 text-teal-200"
                   } dark:bg-transparent dark:text-gray-500 dark:border-gray-600
                   dark:hover:text-black dark:before:bg-gray-600 mr-6
                   `}

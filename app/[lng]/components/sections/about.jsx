@@ -76,7 +76,7 @@ const About = ({ t }) => {
               <h2
                 className="
             text-lg md:text-3xl
-             py-2 text-gray-800 dark:text-white
+             py-2 text-gray-100 dark:text-white
             font-extrabold "
               >
                 {" "}
