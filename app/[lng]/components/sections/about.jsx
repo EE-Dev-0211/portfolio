@@ -1,9 +1,10 @@
 import { AiFillLinkedin } from "react-icons/ai";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Reveal } from "app/[lng]/components/sharedComponents/reveal.jsx";
 import { motion } from "framer-motion";
 import { FaGithubSquare } from "react-icons/fa";
+import Typed from "typed.js";
 
 const About = ({ t }) => {
   // state for the Avatarcoin
@@ -15,6 +16,29 @@ const About = ({ t }) => {
   };
 
   const text = String(t("name"));
+  const typedText = useRef(null);
+
+  useEffect(() => {
+    const typed = new Typed(typedText.current, {
+      strings: [
+        t("about.top-text2.1"),
+        t("about.top-text2.2"),
+        t("about.top-text2.3"),
+      ],
+      typeSpeed: 150,
+      backSpeed: 30,
+      smartBackspace: true,
+      startDelay: 800,
+      backDelay: 200,
+      loop: true,
+      loopCount: Infinity,
+    });
+
+    return () => {
+      // Destroy Typed instance during cleanup to stop animation
+      typed.destroy();
+    };
+  }, []);
 
   return (
     <section id="about" className="pt-20 min-h-full bg-transparent select-none">
@@ -55,7 +79,8 @@ const About = ({ t }) => {
              py-2 text-gray-800 dark:text-white
             font-extrabold "
               >
-                {t("about.top-text2")}
+                {" "}
+                <span ref={typedText} />
               </h2>{" "}
             </div>
           }
