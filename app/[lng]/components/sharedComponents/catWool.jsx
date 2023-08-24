@@ -34,7 +34,9 @@ const CatWool = ({ myRef, isGameActive, x, y }) => {
         backgroundPosition: "top",
       }}
       ref={myRef}
-      className={`${isGameActive ? "" : "hidden"} woolBall active:cursor-paw3`}
+      className={`md:block md:absolute md:-left-16 md:-bottom-52 ${
+        isGameActive ? "" : "hidden"
+      } woolBall active:cursor-paw3 `}
       animate={{
         x: isFlyingAway ? originalPosition.x + 300 : x,
         y: isFlyingAway ? -300 : y,

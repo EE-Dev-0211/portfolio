@@ -119,6 +119,12 @@ const NavBar = ({
           t={t}
           isTooltipVisible={isTooltipVisible}
         />
+        {/*Cat Woolball Game*/}
+        {isGameActive ? (
+          <CatWool myRef={myRef} isGameActive={isGameActive} x={x} y={y} />
+        ) : (
+          ""
+        )}
         {/*Logo*/}
         <div className="flex flex-row">
           <span className="flex items-center gap-4 ml-4 select-none">
@@ -158,8 +164,6 @@ const NavBar = ({
             />
           </span>
         </div>
-        {/*Cat Woolball Game*/}
-        <CatWool myRef={myRef} isGameActive={isGameActive} x={x} y={y} />
         {/* Imprint Popup */}
         <PopupBox
           itemMotion={itemMotion}

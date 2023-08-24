@@ -89,13 +89,6 @@ body {
   mask: var(--mask);
 }
 
-.woolBall {
-  width: 25px;
-  height: 25px;
-  border-radius: 50% 50%;
-  border: 1px solid white;
-}
-
 @keyframes flyInLeft {
   0% {
     transform: translateX(-100%);
@@ -110,6 +103,10 @@ body {
 .animate-flyInLeft {
   animation: flyInLeft 0.5s ease forwards;
   opacity: 0; /* Add this line to hide the text initially */
+}
+
+.woolBall {
+  @apply inline-block w-[40px] h-[40px] rounded-full border border-white;
 }
 
 .cv-button {
