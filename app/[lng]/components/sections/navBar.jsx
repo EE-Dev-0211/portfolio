@@ -76,20 +76,6 @@ const NavBar = ({
 
   const catToggle = () => setHasCatVanished(!hasCatVanished);
   // stop the game via escape button
-  function userStopsGame() {
-    setIsGameActive(false);
-    setIsCustomCursor(false);
-    setIsTooltipVisible(false);
-  }
-
-  function handleKeyPress(event) {
-    if (event.keyCode === 27 || event.key === "Escape") {
-      userStopsGame();
-    }
-  }
-  useEffect(() => {
-    document.addEventListener("keydown", handleKeyPress);
-  }, []);
 
   function toggleImprintOnMobile() {
     toggleMenu();
@@ -118,6 +104,9 @@ const NavBar = ({
           catToggle={catToggle}
           t={t}
           isTooltipVisible={isTooltipVisible}
+          setIsTooltipVisible={setIsTooltipVisible}
+          setIsGameActive={setIsGameActive}
+          setIsCustomCursor={setIsCustomCursor}
         />
         {/*Cat Woolball Game*/}
         {isGameActive ? (
