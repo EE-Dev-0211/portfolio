@@ -8,7 +8,7 @@ import HeadingBox from "app/[lng]/components/sharedComponents/headingBox.jsx";
 import { BsFileTextFill } from "react-icons/bs";
 import { Reveal } from "app/[lng]/components/sharedComponents/reveal.jsx";
 
-export default function Resume({ lng, t }) {
+export default function Resume({ lng, t, darkMode }) {
   return (
     <section
       id="resume"
@@ -38,6 +38,7 @@ export default function Resume({ lng, t }) {
             <div className="info-box">
               {educationSections.map((educationSection) => (
                 <Reveal
+                  darkMode={darkMode}
                   key={educationSection.id}
                   revealDuration={1}
                   revealDelay={0.3}
@@ -104,6 +105,7 @@ export default function Resume({ lng, t }) {
             <div className="info-box">
               {workSections.map((workSection) => (
                 <Reveal
+                  darkMode={darkMode}
                   key={workSection.id}
                   revealDuration={1.2}
                   revealDelay={0.3}

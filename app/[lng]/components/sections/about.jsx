@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { FaGithub, FaGithubSquare, FaLinkedinIn } from "react-icons/fa";
 import Typed from "typed.js";
 
-const About = ({ t }) => {
+const About = ({ t, darkMode }) => {
   // state for the Avatarcoin
   const [isFlipped, setIsFlipped] = useState(true);
 
@@ -81,6 +81,7 @@ const About = ({ t }) => {
         </div>
 
         <Reveal
+          darkMode={darkMode}
           slide={"hidden"}
           popInDuration={0.5}
           popInDelay={0.4}
@@ -115,6 +116,7 @@ const About = ({ t }) => {
         dark:text-amber-50"
         >
           <Reveal
+            darkMode={darkMode}
             revealDuration={2}
             revealDelay={0.65}
             popInDelay={0.65}
@@ -122,6 +124,7 @@ const About = ({ t }) => {
             content={<span>{t("about.top-text3")} </span>}
           />
           <Reveal
+            darkMode={darkMode}
             revealDuration={2}
             revealDelay={0.9}
             popInDelay={0.9}
@@ -129,6 +132,7 @@ const About = ({ t }) => {
             content={<span>{t("about.top-text4")}</span>}
           />
           <Reveal
+            darkMode={darkMode}
             revealDuration={2}
             revealDelay={1.15}
             popInDelay={1.15}
@@ -136,6 +140,7 @@ const About = ({ t }) => {
             content={<span>{t("about.top-text5")}</span>}
           />
           <Reveal
+            darkMode={darkMode}
             revealDuration={2}
             revealDelay={1.4}
             popInDelay={1.4}
@@ -160,7 +165,7 @@ const About = ({ t }) => {
           <FaLinkedinIn />
         </button>
         <button
-          className="w-20 bg-black dark:bg-teal-800  text-white border border-gray-600 dark:border-teal-400 border-b-4 font-medium
+          className="w-20 bg-black dark:bg-teal-800  text-white border border-gray-400 dark:border-teal-400 border-b-4 font-medium
         overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4
         hover:border-b active:opacity-75 outline-none duration-300 group"
           onClick={() => openNewTab("https://github.com/daath-dweller")}
@@ -176,12 +181,14 @@ const About = ({ t }) => {
 
       {/*Avatar Coin*/}
       <motion.div
-        whileHover={{ scale: 1.2 }}
+        whileHover={{ scale: 1.12 }}
         className="relative mx-auto w-60 h-60 mt-20"
       >
         <div
-          className={`
-          shadow-glow bg-gradient-to-b from-teal-600 to bg-teal-400
+          className={`border-solid border-2 shadow-glow 
+          dark:border-teal-200  dark:shadow-teal-100 dark:bg-gradient-to-b dark:from-teal-200 dark:to dark:bg-teal-600
+          border-amber-300 shadow-amber-200 bg-gradient-to-b from-amber-300 to bg-amber-100
+         
           w-60 h-60 rounded-full flex items-center justify-center
           overflow-hidden cursor-pointer flip ${isFlipped ? "flipped" : ""}`}
           onClick={handleFlip}

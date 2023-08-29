@@ -156,9 +156,9 @@ export default function Home({ params: { lng } }) {
             backgroundPosition: "center",
           }}
         >
-          <About lng={lng} t={t} />
+          <About lng={lng} t={t} darkMode={darkMode} />
           <Skills darkMode={darkMode} lng={lng} t={t} />
-          <Resume lng={lng} t={t} />
+          <Resume lng={lng} t={t} darkMode={darkMode} />
           <Footer darkMode={darkMode} lng={lng} t={t} />
         </div>
       </main>

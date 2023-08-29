@@ -8,6 +8,7 @@ export const Reveal = ({
   revealDuration,
   revealDelay,
   popInDelay,
+  darkMode,
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -54,7 +55,7 @@ export const Reveal = ({
           bottom: 4,
           left: 0,
           right: 0,
-          background: "#2DD4BF",
+          background: darkMode ? "#2DD4BF" : "#ffd476",
           zIndex: 20,
         }}
       ></motion.div>

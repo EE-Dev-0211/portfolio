@@ -9,7 +9,7 @@ import { RiComputerFill } from "react-icons/ri";
 import { Reveal } from "app/[lng]/components/sharedComponents/reveal.jsx";
 import Tooltip from "/app/[lng]/components/sharedComponents/tooltip";
 import Skillbox from "/app/[lng]/components/sharedComponents/skillbox";
-export default function Skills({ t }) {
+export default function Skills({ t, darkMode }) {
   const [tooltipContent, setTooltipContent] = useState(null);
 
   return (
@@ -209,6 +209,7 @@ export default function Skills({ t }) {
           content={
             <>
               <Reveal
+                darkMode={darkMode}
                 slide={"hidden"}
                 duration={1.2}
                 popInDelay={0.7}
@@ -219,6 +220,7 @@ export default function Skills({ t }) {
                 {/*iterating over the software entries*/}
                 {software.map((software) => (
                   <Reveal
+                    darkMode={darkMode}
                     key={software.id}
                     revealDuration={1.2}
                     revealDelay={0.2}
