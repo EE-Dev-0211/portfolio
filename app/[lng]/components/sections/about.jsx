@@ -49,6 +49,10 @@ const About = ({ t }) => {
     setIsTypingAnimation(!isTypingAnimationActive);
   };
 
+  const openNewTab = (url) => {
+    window.open(url, "_blank");
+  };
+
   return (
     <section id="about" className="pt-20 min-h-full bg-transparent select-none">
       <div className="mt-8 md:mt-4 text-center p-10">
@@ -146,6 +150,7 @@ const About = ({ t }) => {
           className="w-20 bg-blue-800 dark:bg-teal-800 text-white border border-blue-400 dark:border-teal-400
         border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md
         hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group"
+          onClick={() => openNewTab("https://www.linkedin.com/in/eric-e-11x88")}
         >
           <span
             className="bg-blue-400 dark:bg-teal-400 shadow-blue-400 dark:shadow-teal-400 absolute -top-[150%]
@@ -158,6 +163,7 @@ const About = ({ t }) => {
           className="w-20 bg-black dark:bg-teal-800  text-white border border-gray-600 dark:border-teal-400 border-b-4 font-medium
         overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4
         hover:border-b active:opacity-75 outline-none duration-300 group"
+          onClick={() => openNewTab("https://github.com/daath-dweller")}
         >
           <span
             className="bg-gray-400 dark:bg-teal-400 shadow-gray-400 dark:shadow-teal-400 absolute
