@@ -7,8 +7,9 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { Reveal } from "app/[lng]/components/sharedComponents/reveal.jsx";
 import { motion } from "framer-motion";
-import { FaGithubSquare } from "react-icons/fa";
+import { FaGithub, FaGithubSquare, FaLinkedinIn } from "react-icons/fa";
 import Typed from "typed.js";
+import { FiGithub } from "react-icons/all";
 
 const About = ({ t }) => {
   // state for the Avatarcoin
@@ -145,27 +146,31 @@ const About = ({ t }) => {
         </div>
       </div>
 
-      <div className="animate-fadeInAvatar text-6xl flex justify-center gap-6 text-gray-600">
-        <a
-          className="text-5xl text-white
-          hover:text-blue-400 transition duration-1000
-            dark:hover:text-teal-300 dark:transition dark:duration-1000"
-          href="https://www.linkedin.com/in/eric-e-11x88"
-          target="_blank"
+      <div className="animate-fadeInAvatar text-5xl flex justify-center gap-6 text-gray-600">
+        <button
+          className="w-20 bg-blue-800 dark:bg-teal-800 text-white border border-blue-400 dark:border-teal-400
+        border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md
+        hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group"
         >
-          <AiFillLinkedin />
-        </a>
-
-        <a
-          className="text-5xl text-white
-          hover:text-black transition duration-1000
-            dark:hover:text-teal-300 dark:transition dark:duration-1000
-            "
-          href="https://github.com/daath-dweller"
-          target="_blank"
+          <span
+            className="bg-blue-400 dark:bg-teal-400 shadow-blue-400 dark:shadow-teal-400 absolute -top-[150%]
+          left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%]
+          duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"
+          ></span>
+          <FaLinkedinIn />
+        </button>
+        <button
+          className="w-20 bg-black dark:bg-teal-800  text-white border border-gray-600 dark:border-teal-400 border-b-4 font-medium
+        overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4
+        hover:border-b active:opacity-75 outline-none duration-300 group"
         >
-          <FaGithubSquare />
-        </a>
+          <span
+            className="bg-gray-400 dark:bg-teal-400 shadow-gray-400 dark:shadow-teal-400 absolute
+          -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md
+          opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"
+          ></span>
+          <FaGithub />
+        </button>
       </div>
 
       {/*Avatar Coin*/}
