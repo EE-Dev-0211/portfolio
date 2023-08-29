@@ -41,6 +41,7 @@ export default function Skills({ t, darkMode }) {
           content={
             <>
               <Reveal
+                darkMode={darkMode}
                 popInDuration={1}
                 popInDelay={0.7}
                 slide={"hidden"}
@@ -129,6 +130,7 @@ export default function Skills({ t, darkMode }) {
           content={
             <>
               <Reveal
+                darkMode={darkMode}
                 slide={"hidden"}
                 duration={1.1}
                 popInDelay={0.7}
