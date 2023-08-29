@@ -31,9 +31,9 @@ const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
             ></div>
           ) : (
             <div
-              className="rounded-full border-solid border-2 border-white w-8 h-8"
+              className="rounded-full border-solid border-2 border-white w-8 h-8 bg-white"
               style={{
-                backgroundImage: 'url("/usa.svg")',
+                backgroundImage: 'url("/uk.svg")',
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "top",
@@ -84,9 +84,9 @@ const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
                       animate={{
                         scale: isDropDownLangOpen ? 1 : 0,
                       }}
-                      className="rounded-full border-solid border-2 border-white w-6 h-6"
+                      className="rounded-full border-solid border-2 border-white w-6 h-6 bg-white"
                       style={{
-                        backgroundImage: 'url("/usa.svg")',
+                        backgroundImage: 'url("/uk.svg")',
                         backgroundSize: "cover",
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "top",
