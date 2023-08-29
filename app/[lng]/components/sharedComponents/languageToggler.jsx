@@ -11,7 +11,7 @@ const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
         <button onClick={LangDropdownToggle}>
           {lng === "de" ? (
             <div
-              className="rounded-full border-solid border-2 border-white w-6 h-6"
+              className="rounded-full border-solid border-2 border-white w-8 h-8"
               style={{
                 backgroundImage: 'url("/germany.svg")',
                 backgroundSize: "cover",
@@ -21,7 +21,7 @@ const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
             ></div>
           ) : lng === "ch" ? (
             <div
-              className="rounded-full border-solid border-2 border-white w-6 h-6"
+              className="rounded-full border-solid border-2 border-white w-8 h-8"
               style={{
                 backgroundImage: 'url("/switzerland.svg")',
                 backgroundSize: "cover",
@@ -31,7 +31,7 @@ const LanguageToggler = ({ lng, isDropDownLangOpen, LangDropdownToggle }) => {
             ></div>
           ) : (
             <div
-              className="rounded-full border-solid border-2 border-white w-6 h-6"
+              className="rounded-full border-solid border-2 border-white w-8 h-8"
               style={{
                 backgroundImage: 'url("/usa.svg")',
                 backgroundSize: "cover",

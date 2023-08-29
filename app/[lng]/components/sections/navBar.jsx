@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import { BsFillMoonStarsFill, BsFillSunFill, BsFlagFill } from "react-icons/bs";
-import { AiFillMail } from "react-icons/ai";
+import React, { useRef, useState } from "react";
+import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
+import { AiFillMail, AiOutlineInfoCircle, AiOutlineMail } from "react-icons/ai";
 import { IoMdInformationCircle } from "react-icons/io";
 import { motion } from "framer-motion";
 import PopupBox from "app/[lng]/components/sharedComponents/popupBox.jsx";
@@ -138,12 +138,12 @@ const NavBar = ({
 
             {/*Mail und Info-icon*/}
 
-            <IoMdInformationCircle
+            <AiOutlineInfoCircle
               onClick={togglePopupBox}
-              className="hidden md:block text-base font-bolder hover:cursor-help hover:text-green-400"
+              className="hidden md:block text-2xl font-bolder hover:cursor-help hover:text-green-400 transition duration-1000"
             />
-            <AiFillMail
-              className="hidden md:block text-base font-bolder hover:cursor-pointer hover:text-blue-400"
+            <AiOutlineMail
+              className="hidden md:block text-2xl font-bolder hover:cursor-pointer hover:text-blue-400 transition duration-1000"
               onClick={handleEmailClick}
             />
             <LanguageToggler
