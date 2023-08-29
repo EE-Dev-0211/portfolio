@@ -41,7 +41,6 @@ export default function Skills({ t, darkMode }) {
           content={
             <>
               <Reveal
-                darkMode={darkMode}
                 popInDuration={1}
                 popInDelay={0.7}
                 slide={"hidden"}
@@ -53,6 +52,7 @@ export default function Skills({ t, darkMode }) {
               {languages.map((language) => (
                 <div key={language.id}>
                   <Reveal
+                    darkMode={darkMode}
                     key={language.id}
                     revealDuration={1}
                     revealDelay={0.2}
@@ -130,7 +130,6 @@ export default function Skills({ t, darkMode }) {
           content={
             <>
               <Reveal
-                darkMode={darkMode}
                 slide={"hidden"}
                 duration={1.1}
                 popInDelay={0.7}
@@ -140,6 +139,7 @@ export default function Skills({ t, darkMode }) {
               {framLibs.map((framLib) => (
                 <div key={framLib.id}>
                   <Reveal
+                    darkMode={darkMode}
                     key={framLib.id}
                     revealDuration={1.1}
                     revealDelay={0.2}
