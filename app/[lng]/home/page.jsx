@@ -9,7 +9,7 @@ import LoadingScreen from "/app/[lng]/components/sharedComponents/loadingScreen"
 import { useTranslation } from "../../i18n/client";
 
 export default function Home({ params: { lng } }) {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [contentLoading, setContentLoading] = useState(true);
   const [activeSection, setActiveSection] = useState(null);
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
