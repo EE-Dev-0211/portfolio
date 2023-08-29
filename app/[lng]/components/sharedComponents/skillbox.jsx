@@ -8,7 +8,7 @@ const Skillbox = ({ content }) => {
             shadow-lg border-solid dark:border-double border-2 dark:border-teal-200 border-gray-800
             bg-opacity-10 backdrop-filter backdrop-blur-sm  dark:bg-opacity-10  dark:backdrop-filter
             dark:backdrop-blur-sm hover:border-yellow-100 transition duration-500
-        dark:hover:border-teal-700 dark:transition dark:duration-500"
+        dark:hover:border-teal-700 dark:transition dark:duration-500 md:hover:scale-105"
     >
       {content}
     </div>

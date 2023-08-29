@@ -1,15 +1,10 @@
-import {
-  AiFillLinkedin,
-  AiOutlinePauseCircle,
-  AiOutlinePlayCircle,
-} from "react-icons/ai";
+import { AiOutlinePauseCircle, AiOutlinePlayCircle } from "react-icons/ai";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { Reveal } from "app/[lng]/components/sharedComponents/reveal.jsx";
 import { motion } from "framer-motion";
 import { FaGithub, FaGithubSquare, FaLinkedinIn } from "react-icons/fa";
 import Typed from "typed.js";
-import { FiGithub } from "react-icons/all";
 
 const About = ({ t }) => {
   // state for the Avatarcoin

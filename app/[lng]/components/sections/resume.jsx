@@ -49,7 +49,7 @@ export default function Resume({ lng, t }) {
                     >
                       <div
                         className="w-2 h-2 rounded-full bg-gradient-to-tr from-rose-950 to-orange-300
-            dark:from-teal-100 dark:to-blue-600 mb-2"
+            dark:from-teal-100 dark:to-blue-600 mb-2 "
                       ></div>
                       <span className="">{educationSection.period}</span>
                       <span className="font-bold">

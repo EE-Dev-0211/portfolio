@@ -83,8 +83,10 @@ export default function Skills({ t }) {
                               </div>
                             </div>
                             {/* Desktop version */}
+
                             {React.createElement(language.icon, {
-                              className: `hidden md:block ${language.iconColor} text-5xl dark:text-white hover:cursor-help md:mr-16`,
+                              className: `hidden md:block ${language.iconColor} text-5xl dark:text-white hover:cursor-help 
+                             mr-16 hover:opacity-50`,
                               onMouseEnter: () => {
                                 setTooltipContent(language.name);
                               },
@@ -168,7 +170,7 @@ export default function Skills({ t }) {
                             </div>
                             {/*-Desktop--*/}
                             {React.createElement(framLib.icon, {
-                              className: `hidden md:block ${framLib.iconColor} md:text-5xl md:dark:text-white md:hover:cursor-help md:mr-16`,
+                              className: `hidden md:block ${framLib.iconColor} md:text-5xl md:dark:text-white md:hover:cursor-help hover:opacity-50 mr-16`,
                               onMouseEnter: () =>
                                 setTooltipContent(framLib.name),
                               onMouseLeave: () => setTooltipContent(null),
