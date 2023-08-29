@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
-import { AiFillMail, AiOutlineInfoCircle, AiOutlineMail } from "react-icons/ai";
+import { AiFillMail, AiOutlineMail } from "react-icons/ai";
 import { IoMdInformationCircle } from "react-icons/io";
 import { motion } from "framer-motion";
 import PopupBox from "app/[lng]/components/sharedComponents/popupBox.jsx";
@@ -9,6 +9,7 @@ import LanguageToggler from "/app/[lng]/components/sharedComponents/languageTogg
 import { useMediaQuery } from "usehooks-ts";
 import CatGameClip from "/app/[lng]/components/sharedComponents/catGameClip";
 import CatWool from "/app/[lng]/components/sharedComponents/catWool";
+import { TbInfoSquare } from "react-icons/tb";
 
 const navMotion = {
   visible: {
@@ -138,7 +139,7 @@ const NavBar = ({
 
             {/*Mail und Info-icon*/}
 
-            <AiOutlineInfoCircle
+            <TbInfoSquare
               onClick={togglePopupBox}
               className="hidden md:block text-2xl font-bolder hover:cursor-help hover:text-green-400 transition duration-1000"
             />
