@@ -26,7 +26,7 @@ const LoadingScreen = ({ t, darkMode }) => {
             key={index}
             className="ml-4 items-center justify-center
             animate-flyInLeft md:text-4xl text-lg font-extrabold py-2 text-teal-500 select-none "
-            style={{ animationDelay: `${1 + index * 0.15}s` }}
+            style={{ animationDelay: `${0.7 + index * 0.15}s` }}
           >
             {word}
           </span>
