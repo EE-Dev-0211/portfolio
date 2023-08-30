@@ -21,6 +21,7 @@ const About = ({ t, darkMode }) => {
   const typed = useRef(null);
   const [isTypingAnimationActive, setIsTypingAnimation] = useState(true);
 
+  //Typed.js npm package
   useEffect(() => {
     const options = {
       strings: [
@@ -91,8 +92,7 @@ const About = ({ t, darkMode }) => {
                 className="
             text-lg md:text-3xl
              py-2 text-gray-100 dark:text-white
-            font-extrabold "
-              >
+            font-extrabold " >
                 {" "}
                 <span ref={typedText} />
               </h2>{" "}

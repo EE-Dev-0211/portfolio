@@ -188,7 +188,7 @@ const NavBar = ({
               >
                 [2]
               </a>{" "}
-              {t("imprint.part4")}
+              {t("imprint.part4")}{" "}
               <a
                 className="text-gray-500 hover:text-gray-800 dark:text-teal-100 dark:hover:text-teal-500"
                 href="https://unsplash.com/de/lizenz"

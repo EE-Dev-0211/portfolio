@@ -19,19 +19,19 @@ const PopupBox = ({
         >
           <motion.div
             variants={itemMotion}
-            className="border-4 border-solid border-cobaltBlue dark:border-white text-center bg-white text-black
-              font-bold dark:text-white dark:bg-gray-800 text-xs md:text-xl w-3/4 md:w-auto p-4 rounded-lg shadow
-             bg-gradient-to-b from-yellow-100 to-gray-300"
-            // Prevent the menu from closing, stop the click event from propagating to the parent element
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              backgroundImage: darkMode ? 'url("/dotgrid.svg")' : "",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "top",
-            }}
+            className="w-3/4 md:w-auto p-1.5 bg-gradient-to-b from-red-400 via-yellow-300 to-orange-400
+            dark:bg-gradient-to-b dark:from-teal-300 dark:via-lime-300 dark:to-green-950 rounded-lg"
           >
-            <span className="leading-loose">{content}</span>
+            <div
+              className="text-center bg-white text-black
+              font-bold dark:text-white text-xs md:text-xl w-full p-4 rounded-lg shadow
+             bg-gradient-to-b from-yellow-100 to-gray-300
+             dark:bg-gradient-to-b dark:from-black dark:to-gray-700"
+              // Prevent the menu from closing, stop the click event from propagating to the parent element
+              onClick={(e) => e.stopPropagation()}
+            >
+              <span className="leading-loose">{content}</span>
+            </div>
           </motion.div>
         </div>
       )}
