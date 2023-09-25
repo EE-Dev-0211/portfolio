@@ -196,7 +196,7 @@ const About = ({ t, darkMode }) => {
           <div>
             <Image
               className="animate-fadeInAvatar"
-              src={isFlipped ? "/8bitpix.png" : "/portrait.png"}
+              src={isFlipped ? "/8bitpix.png" : darkMode ? "/a5875a45.jpg" : "/8589bf0b.jpg"}
               alt="Front of coin"
               width={500}
               height={500}
