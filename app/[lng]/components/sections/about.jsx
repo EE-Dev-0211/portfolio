@@ -92,7 +92,8 @@ const About = ({ t, darkMode }) => {
                 className="
             text-lg md:text-3xl
              py-2 text-gray-100 dark:text-white
-            font-extrabold " >
+            font-extrabold "
+              >
                 {" "}
                 <span ref={typedText} />
               </h2>{" "}
@@ -155,7 +156,7 @@ const About = ({ t, darkMode }) => {
           className="w-20 bg-blue-800 dark:bg-teal-800 text-white border border-blue-400 dark:border-teal-400
         border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md
         hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group"
-          onClick={() => openNewTab("https://www.linkedin.com/in/eric-e-11x88")}
+          onClick={() => openNewTab("https://www.linkedin.com/in/eric-e-e211/")}
         >
           <span
             className="bg-blue-400 dark:bg-teal-400 shadow-blue-400 dark:shadow-teal-400 absolute -top-[150%]
@@ -196,7 +197,13 @@ const About = ({ t, darkMode }) => {
           <div>
             <Image
               className="animate-fadeInAvatar"
-              src={isFlipped ? "/8bitpix.png" : darkMode ? "/a5875a45.jpg" : "/8589bf0b.jpg"}
+              src={
+                isFlipped
+                  ? "/8bitpix.png"
+                  : darkMode
+                  ? "/a5875a45.jpg"
+                  : "/8589bf0b.jpg"
+              }
               alt="Front of coin"
               width={500}
               height={500}
