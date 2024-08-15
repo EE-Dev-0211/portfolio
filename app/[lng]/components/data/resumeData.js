@@ -1,6 +1,17 @@
 export const workSections = [
   {
     id: 2,
+    period: "02/2024 - now",
+    periodDE: "02/2024 - jetzt",
+    position: "IT Specialist & Copywriter",
+    positionDE: "Informatiker & Copywriter",
+    positionCH: "Informatiker & Copywriter",
+    company: "Claym Kommunikation GmbH",
+    location: "Basel, Basel-Stadt, Switzerland",
+    locationDE: "Basel, Basel-Stadt, CH",
+  },
+  {
+    id: 3,
     period: "04/2021 - 07/2021",
     position: "Technical Support",
     positionDE: "Technischer Support",
@@ -13,7 +24,7 @@ export const workSections = [
     locationDE: "Leipzig, Sachsen, DE",
   },
   {
-    id: 3,
+    id: 4,
     period: "10/2019 - 03/2021",
     position: "Commercial Employee",
     positionDE: "Technischer Support",
@@ -26,7 +37,7 @@ export const workSections = [
     locationDE: "Schkeuditz, Sachsen, DE",
   },
   {
-    id: 4,
+    id: 5,
     period: "10/2018 - 03/2019",
     position: "Junior IT Recruiter",
     positionDE: "Junior IT Recruiter",
@@ -36,7 +47,7 @@ export const workSections = [
     locationDE: "Leipzig, Sachsen, DE",
   },
   {
-    id: 5,
+    id: 6,
     period: "02/2017 - 09/2018",
     position: "Employee Data Entry",
     positionDE: "Mitarbeiter Datenerfassung",
@@ -46,7 +57,7 @@ export const workSections = [
     locationDE: "Leipzig, Sachsen, DE",
   },
   {
-    id: 6,
+    id: 7,
     period: "06/2016 - 01/2017",
     position: "Shipping Staff",
     positionDE: "Versandmitarbeiter",
@@ -56,7 +67,7 @@ export const workSections = [
     locationDE: "Leipzig, Sachsen, DE",
   },
   {
-    id: 7,
+    id: 8,
     period: "10/2015 - 06/2016",
     position: "SEO Texter &",
     positionDE: "SEO Texter &",
@@ -73,8 +84,7 @@ export const workSections = [
 export const educationSections = [
   {
     id: 1,
-    period: "09/2021 - now",
-    periodDE: "09/2021 - jetzt",
+    period: "09/2021 - 01/2024",
     position: "Apprentice",
     positionDE: "Auszubildender",
     positionCH: "Lernender",
@@ -86,7 +96,7 @@ export const educationSections = [
     locationDE: "Leipzig, Sachsen, DE",
   },
   {
-    id: 8,
+    id: 9,
     period: "10/2010 - 09/2015",
     position: "Teaching Profession",
     positionDE: "Lehramt",
