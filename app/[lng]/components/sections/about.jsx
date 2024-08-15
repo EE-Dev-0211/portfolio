@@ -148,6 +148,14 @@ const About = ({ t, darkMode }) => {
             slide={""}
             content={<span>{t("about.top-text6")} </span>}
           />
+          <Reveal
+            darkMode={darkMode}
+            revealDuration={2}
+            revealDelay={1.5}
+            popInDelay={1.5}
+            slide={""}
+            content={<span>{t("about.top-text7")} </span>}
+          />
         </div>
       </div>
 
@@ -169,7 +177,7 @@ const About = ({ t, darkMode }) => {
           className="w-20 bg-black dark:bg-teal-800  text-white border border-gray-400 dark:border-teal-400 border-b-4 font-medium
         overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4
         hover:border-b active:opacity-75 outline-none duration-300 group"
-          onClick={() => openNewTab("https://github.com/daath-dweller")}
+          onClick={() => openNewTab("https://github.com/EE-Dev-0211")}
         >
           <span
             className="bg-gray-400 dark:bg-teal-400 shadow-gray-400 dark:shadow-teal-400 absolute
